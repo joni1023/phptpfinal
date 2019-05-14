@@ -1,32 +1,61 @@
-<!Doctype html>
+<?php
+require 'header.php';?>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
 
-<HTML>
-<title>login</title>
-<link rel="stylesheet" href="css/bootstrap.min.css">
-<script src="js/bootstrap.min.js"></script>
-<body class="container">
-        <form class="form-group" action="logear.php" method="post">
-            <div class="form-group">
-                <label>Ingrese Usuario</label>
-                <input type="text" class="form-control" name="usuario" placeholder="ejemplo: miUsurios">
+            <!-- aqui insertaremos el slider -->
+            <div id="carousel1" class="carousel slide" data-ride="carousel">
+                <!-- Indicatodores -->
+                <ol class="carousel-indicators">
+                    <li data-target="#carousel1" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel1" data-slide-to="1"></li>
+                    <li data-target="#carousel1" data-slide-to="2"></li>
+                </ol>
+
+                <!-- Contenedor de las imagenes -->
+                <div class="carousel-inner" role="listbox">
+
+                    <div class="item active">
+                        <img src="img/banner-computacion1.jpg" alt="Imagen 1">
+                        <div class="carousel-caption"> Mi imagen 1 </div>
+                    </div>
+
+                    <div class="item">
+                        <img src="img/005.jpg" alt="Imagen 2">
+                        <div class="carousel-caption"> Mi imagen 2 </div>
+                    </div>
+
+                    <div class="item">
+                        <img src="img/003.jpg" alt="Imagen 3">
+                        <div class="carousel-caption"> Mi imagen 3 </div>
+                    </div>
+                </div>
+
+                <!-- Controls -->
+                <a class="left carousel-control" href="#carousel1" role="button" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                    <span class="sr-only">Anterior</span>
+                </a>
+                <a class="right carousel-control" href="#carousel1" role="button" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                    <span class="sr-only">Siguiente</span>
+                </a>
+
             </div>
-            <div class="form-group">
-                <label >Ingrese Contraseña</label>
-                <input type="password" class="form-control" name="pass" placeholder="Password">
-            </div>
-            <button type="submit" class="btn btn-primary">confirmar</button>
-            <a class="btn btn-success" href="registrar.php">Registrar</a>
 
-        </form>
-<!--        --><?php
-//        require 'logear.php';
-//        if(!isset($error)){
-//
-//        }else{
-//            echo $error;
-//        }
 
-        ?>
+        </div>
+    </div>
+</div>
+
+
+
 </body>
 
-</HTML>
+
+<?php
+
+require 'footer.php';
+?>
