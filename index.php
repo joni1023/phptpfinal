@@ -18,7 +18,7 @@ require 'header.php';?>
                 <div class="carousel-inner" role="listbox">
 
                     <div class="item active">
-                        <img src="img/banner-computacion1.jpg" alt="Imagen 1">
+                       <a href="login.php"> <img src="img/banner-computacion1.jpg" alt="Imagen 1"></a>
                         <div class="carousel-caption"> Mi imagen 1 </div>
                     </div>
 

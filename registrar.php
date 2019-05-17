@@ -8,22 +8,26 @@
         require 'header.php';
         ?>
     <body>
-//modificar no usar tabla puede romper
 <h1> Formulario de Registro</h1>
 <h3>Los campos con * son obligatorios</h3>
-<form method="post" action="registro.php">
-    email
-    <input type="text" name="email" required>
-    </br>
-    Nick Usuario
-    <input type="text" name="nick" required>
-    </br>
-    Contraseña
-    <input type="password" name="pass" required>
-    </br>
-    Confirmacion de contraseña
-    <input type="password" name="repass" required>
-    </br>
+<form  method="post" action="registro.php">
+    <div class="form-group">
+        <label>email</label>
+        <input type="text" name="email" required>
+    </div>
+    <div class="form-group"
+        <label>Nick Usuario</label>
+        <input type="text" name="nick" required>
+    </div>
+    <div class="form-group">
+        <label>Contraseña</label>
+        <input type="password" name="pass" required>
+    </div>
+    <div class="form-group">
+        <label>Confirmacion de contraseña</label>
+        <input type="password" name="repass" required>
+    </div>
+
     <input type="submit" name="submit" value="Registrar">
     <input type="reset">
 
