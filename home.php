@@ -13,7 +13,7 @@
 session_start();
 $usuario=$_SESSION['username'];
 if(!isset($usuario)){
-    location("location:index.php");
+    header("location:index.php");
 
 }else {
     echo "<p style='margin-top: 40px'>Usuario: $usuario</p>";

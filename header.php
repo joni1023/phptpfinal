@@ -1,8 +1,9 @@
 <head>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
 
 </head>
@@ -10,11 +11,24 @@
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
             <div class="navbar-header">
+                <img src="img/logo.png" width="45" height="45">
+            </div>
+            <div class="navbar-header">
                 <a class="navbar-brand" href="index.php">Electro.</a>
             </div>
             <ul class="nav navbar-nav">
+                <?php
+                if(!isset($_SESSION)) session_start();
+                if(isset($_SESSION)){
+                    if (isset($_SESSION['rol'])){
+                            if($_SESSION['rol']=="admin"){
+                                echo "<li class='active'><a href=''>administrar</a></li>";
+                            }else{
+                                echo "<li class='active'><a href=''>vender</a></li>";
+                            }}
+                }
 
-                <!--                <li class="active"><a href="#">Home</a></li>-->
+            ?>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="registrar.php">Registrate</a> </li>

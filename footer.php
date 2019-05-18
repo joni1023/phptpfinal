@@ -5,77 +5,41 @@
 
             <!-- footer menus -->
             <div class="row">
-                <div class="col-md-3">
-                    <h3>About</h3>
 
-                </div>
-                <div class="col-md-3">
-                    <h3>Help</h3>
+                <div class="col-md-6">
+                    <h3>Contactos</h3>
                     <ul class="list-unstyled">
                         <li>
-                            <a href="">
-                                Go to a class
+                            <a class=""href="">
+                                trabaja con nostros
                             </a>
                         </li>
                         <li>
                             <a href="">
-                                Find an order
+                                politica y privacidd
                             </a>
                         </li>
                         <li>
                             <a href="">
-                                Courses
+                                ayuda
                             </a>
                         </li>
-                        <li>
-                            <a href="">
-                                Jobs
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                                Contact us
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                                About us
-                            </a>
-                        </li>
+
                     </ul>
                 </div>
-                <div class="col-md-3">
-                    <h3>Social</h3>
-                    <ul class="list-unstyled">
-                        <li>
-                            <h3>
-                                <i class="fa fa-facebook" aria-hidden="true"></i>
-                            </h3>
-                        </li>
-                        <li>
-                            <h3>
-                                <i class="fa fa-twitter" aria-hidden="true"></i>
-                            </h3>
-                        </li>
-                        <li>
-                            <h3>
-                                <i class="fa fa-vk" aria-hidden="true"></i>
-                            </h3>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-md-3">
-                    <div class="form-group">
-                        <a class="btn btn-alt btn-block" href="">
-                            Student Login
-                        </a>
-                    </div>
-                    <div class="form-group">
-                        <a class="btn btn-alt btn-block" href="">
-                            Teacher Login
-                        </a>
+                <div class="col-md-6">
+                    <h3>redes sociales</h3>
+                    <div class="col-md-12">
+                        <ul class="social-network social-circle">
+                            <li class="iconos"><a  href="#" class="icoRss" title="Rss"><i class="fa fa-rss"></i></a></li>
+                            <li class="iconos"><a  href="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                            <li class="iconos"><a  href="#" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                            <li class="iconos"><a  href="#" class="icoGoogle" title="Google +"><i class="fa fa-google-plus"></i></a></li>
+                            <li class="iconos"><a  href="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+                        </ul>
                     </div>
                 </div>
+
             </div>
             <!-- end footer menus -->
 
@@ -85,9 +49,9 @@
             <div class="row">
                 <div class="col-md-12">
                             <span class="text-muted">
-                                High quality English lessons
+                                direccion
                                 <div class="pull-right">
-                                    <a href="">Privacy</a> | <a href="">Terms and Conditions</a>
+                                    <a href="">descarga nuestr app</a>
                                 </div>
                             </span>
                 </div>

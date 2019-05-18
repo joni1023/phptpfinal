@@ -30,7 +30,7 @@ imagen varchar(30),
 -- decidir si se va a subir a la carpeta del servidor o a la base de datos 
 -- si es asi cambia el tipo , se probara con una sola imagen y despues se cargaran las 10 
 primary key (id),
-foreign key (id_usario) references usuario(id)
+foreign key (id_usuario) references usuario(id)
 -- hace referencia a la id del usuario 
 );
 
