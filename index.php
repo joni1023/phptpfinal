@@ -23,12 +23,12 @@ require 'header.php';?>
                     </div>
 
                     <div class="item">
-                        <img src="img/005.jpg" alt="Imagen 2">
+                        <img src="img/banner-computacion2.jpg" alt="Imagen 2">
                         <div class="carousel-caption"> Mi imagen 2 </div>
                     </div>
 
                     <div class="item">
-                        <img src="img/003.jpg" alt="Imagen 3">
+                        <img src="img/banner-computacion3.jpg" alt="Imagen 3">
                         <div class="carousel-caption"> Mi imagen 3 </div>
                     </div>
                 </div>

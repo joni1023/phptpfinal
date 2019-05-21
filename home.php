@@ -1,49 +1,56 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>E-Commerce</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/estilos.css">
+
 </head>
-<body>
 <header>
-    <div class="barraSuperior" id="barraSuperior">
-        <img src="img/logo-it.jpeg" alt="Foto_De_Logo" />
-        <?php
-session_start();
-$usuario=$_SESSION['username'];
-if(!isset($usuario)){
-    header("location:index.php");
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <img src="img/logo.png" width="45" height="45">
+            </div>
+            <div class="navbar-header">
+                <a class="navbar-brand" href="index.php">Electro.</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <?php
+                if(!isset($_SESSION)) session_start();
+                if(isset($_SESSION)){
+                    if (isset($_SESSION['rol'])){
+                        if($_SESSION['rol']=="admin"){
+                            echo "<li class='active'><a href=''>administrar</a></li>";
+                        }else{
+                            echo "<li class='active'><a href=''>vender</a></li>";
+                        }}
+                }
 
-}else {
-    echo "<p style='margin-top: 40px'>Usuario: $usuario</p>";
+                ?>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="registrar.php">Registrate</a> </li>
+                <?php
+                if (!isset($_SESSION)) session_start();
+                if(isset($_SESSION['username'])){
+                    $nombre=$_SESSION['username'];
+                    echo "<li><a href=''>".$nombre."</a> </li>";
+                    echo "<li><a href='salir.php'>salir</a></li>";
+                }else{
+                    echo "<li><a href='login.php'>loguear</a></li>";
+                }
 
-}?>
-        <div class="separador"></div>
-        <div class="acciones">
-                        <span class="buscador">
-                            <input type="text" name="buscador" id="buscador" placeholder="¿Que estás buscando?">
-                        </span>
-            <span class="botonBuscar">
-                                <input type="submit" value=" ">
-                        </span>
+                ?>
+
+            </ul>
         </div>
-        <div class="separador"></div>
-        <div class="ver_carrito"><h3>Ver Carrito</h3></div>
-        <div class="carrito">
-            <div class="numero"><p>1</p></div>
-        </div>
-        <div class="separador"></div>
-    </div>
-
-    <div class="barraInferior">
-        <ul>
-            <li><a class="active" href="#">Inicio</a></li>
-            <li><a href="#">Productos</a></li>
-            <li><a href="#">Contacto</a></li>
-        </ul>
-    </div>
+    </nav>
 </header>
+<body>
 <main>
     <div class="flecha">
         <a href="#barraSuperior">
@@ -51,7 +58,54 @@ if(!isset($usuario)){
         </a>
     </div>
 
-    <div class="banner"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+
+                <!-- aqui insertaremos el slider -->
+                <div id="carousel1" class="carousel slide" data-ride="carousel">
+                    <!-- Indicatodores -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#carousel1" data-slide-to="0" class="active"></li>
+                        <li data-target="#carousel1" data-slide-to="1"></li>
+                        <li data-target="#carousel1" data-slide-to="2"></li>
+                    </ol>
+
+                    <!-- Contenedor de las imagenes -->
+                    <div class="carousel-inner" role="listbox">
+
+                        <div class="item active">
+                            <a href="login.php"> <img src="img/banner-computacion1.jpg" alt="Imagen 1"></a>
+                            <div class="carousel-caption"> Mi imagen 1 </div>
+                        </div>
+
+                        <div class="item">
+                            <img src="img/banner-computacion2.jpg" alt="Imagen 2">
+                            <div class="carousel-caption"> Mi imagen 2 </div>
+                        </div>
+
+                        <div class="item">
+                            <img src="img/banner-computacion3.jpg" alt="Imagen 3">
+                            <div class="carousel-caption"> Mi imagen 3 </div>
+                        </div>
+                    </div>
+
+                    <!-- Controls -->
+                    <a class="left carousel-control" href="#carousel1" role="button" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                        <span class="sr-only">Anterior</span>
+                    </a>
+                    <a class="right carousel-control" href="#carousel1" role="button" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                        <span class="sr-only">Siguiente</span>
+                    </a>
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
 
     <section>
         <h3 class="titulo">PRODUCTOS</h3>

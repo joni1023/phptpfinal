@@ -16,12 +16,12 @@ if(count($array)>0){
 //       usario administrador
        $_SESSION['rol']=$array[rol];
        $_SESSION['username']=$array[nick];
-       header("location:index.php");
+       header("location:home.php");
    }else{
 //       usuario normal
        $_SESSION['username']=$array[nick];
        $_SESSION['rol']=$array[rol];
-       header("location:home.php");
+       header("location:index.php");
    }
 }else{
 //    usuario no encontrado

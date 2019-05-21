@@ -126,32 +126,9 @@ section{
     top:85px;
     z-index: 1;
 }
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
 
-li {
-    float: left;
-}
 
-li a {
-    transition: 0.3s;
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
 
-li a:hover {
-    background-color: #808080;
-}
-
-.active {
-    background-color: #3c64b9;
-}
 
 
 
