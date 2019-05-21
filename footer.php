@@ -11,17 +11,17 @@
                     <ul class="list-unstyled">
                         <li>
                             <a class=""href="">
-                                trabaja con nostros
+                                Trabaja con nosotros
                             </a>
                         </li>
                         <li>
                             <a href="">
-                                politica y privacidd
+                                Politica y privacidd
                             </a>
                         </li>
                         <li>
                             <a href="">
-                                ayuda
+                                Ayuda
                             </a>
                         </li>
 
@@ -49,9 +49,9 @@
             <div class="row">
                 <div class="col-md-12">
                             <span class="text-muted">
-                                direccion
+                                Direccion
                                 <div class="pull-right">
-                                    <a href="">descarga nuestr app</a>
+                                    <a href="">Descarga nuestra app</a>
                                 </div>
                             </span>
                 </div>
@@ -65,7 +65,7 @@
     <div class="container-fluid bg-copyright">
         <div class="container">
             <p class="copyright">
-                &copy; 2016 Toucan-Talk.com ltd
+                &copy; 2019 Equipo Numero 6
             </p>
         </div>
     </div>

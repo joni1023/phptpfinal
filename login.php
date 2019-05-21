@@ -7,7 +7,7 @@
         <form class="form-group" action="logear.php" method="post">
             <div class="form-group">
                 <label>Ingrese Usuario</label>
-                <input type="text" class="form-control" name="usuario" placeholder="ejemplo: miUsurios">
+                <input type="text" class="form-control" name="usuario" placeholder="Ejemplo: 'nombre'">
             </div>
             <div class="form-group">
                 <label >Ingrese Contraseña</label>
