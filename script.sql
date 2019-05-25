@@ -14,6 +14,7 @@ rol varchar(25),
 calle varchar(25),
 altura integer,
 localidad varchar(30),
+estado varchar(20),
 primary key (id)
 );
 --  para las claves sha1 de debe de ser varchar de 40 y anteponer sha1('clave'), esto hace que la clave sea codificada
