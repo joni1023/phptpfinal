@@ -8,16 +8,42 @@
         require 'header.php';
         ?>
     <body>
-<h1> Formulario de Registro</h1>
-<h3>Los campos con * son obligatorios</h3>
-<form  method="post" action="registro.php">
+
+<div class="container">
+    <h1> Formulario de Registro</h1>
+    <h3>Los campos con * son obligatorios</h3>
+<form  method="post" action="registro.php" class="form-row">
+    <div class="col-lg-6">
+        <h3>informacion personal</h3>
+        <div class="form-group">
+        <label>Nombre</label>
+        <input type="text" name="nombre" required>
+        </div>
+        <div class="form-group">
+        <label>Apellido</label>
+        <input type="text" name="apellido" required>
+        </div>
+        <div class="form-group">
+        <label>sexo</label>
+        <input type="radio" name="sexo" >
+        <label for="mujer">Mujer</label>
+        <input type="radio" name="sexo" >
+        <label for="hombre">Hombre</label>
+        </div>
     <div class="form-group">
-        <label>email</label>
-        <input type="text" name="email" required>
+    <label>CUIL</label>
+    <input type="text" name="cuil" required placeholder="20-17458521-1">
+        </div>
     </div>
-    <div class="form-group"
-        <label>Nick Usuario</label>
-        <input type="text" name="nick" required>
+ <div class="col-lg-6">
+    <h3>Dato de cuenta</h3>
+    <div class="form-group">
+        <label>E-mail</label>
+        <input type="email" name="email" required>
+    </div>
+    <div class="form-group">
+    <label>Nick</label>
+    <input type="text" name="nick" required>
     </div>
     <div class="form-group">
         <label>Contraseña</label>
@@ -27,11 +53,29 @@
         <label>Confirmacion de contraseña</label>
         <input type="password" name="repass" required>
     </div>
+ </div>
+<div class="col-lg-12">
+    <h3>direccion:</h3>
+    <div class="form-group">
+        <label class="control-label">localidad</label>
+        <input class="form-group" type="text" name="localidad" required>
+    </div>
 
-    <input type="submit" name="submit" value="Registrar">
-    <input type="reset">
+    <div class="form-group">
+        <label>Calle</label>
+        <input type="text" name="calle" required>
+    </div>
+
+    <div class="form-group">
+        <label>altura</label>
+        <input type="text" name="altura" required>
+    </div>
+</div>
+    <input type="submit" class="btn btn-primary" name="submit" value="Registrar">
+    <input type="reset" class="btn btn-success">
 
 </form>
+</div>
 <?php
 if(isset($_POST['submit'])){
     require ("registro.php");
