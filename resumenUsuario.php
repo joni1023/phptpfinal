@@ -1,42 +1,99 @@
 <?php
 require 'header.php'; ?>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        * {box-sizing: border-box}
+        body {font-family: "Lato", sans-serif;}
+
+        /* Style the tab */
+        .tab {
+            float: left;
+            background-color: #ffffff;
+            width: 15%;
+            height: 300px;
+        }
+
+        /* Style the buttons inside the tab */
+        .tab button {
+            display: block;
+            background-color: inherit;
+            color: black;
+            padding: 22px 16px;
+            width: 100%;
+            border: none;
+            outline: none;
+            text-align: left;
+            cursor: pointer;
+            transition: 0.3s;
+            font-size: 17px;
+        }
+
+        /* Change background color of buttons on hover */
+        .tab button:hover {
+            background-color: #dee3ea;
+        }
+
+        /* Create an active/current "tab button" class */
+        .tab button.active {
+            background-color: #d8deea;
+        }
+
+        /* Style the tab content */
+        .tabcontent {
+            float: left;
+            padding: 0px 12px;
+            width: 80%;
+            border-left: none;
+            height: 300px;
+        }
+    </style>
+</head>
 <body>
-<div class="flecha">
-    <a href="#header">
-        <img src="img/flechaArriba.png" alt="Flecha_Ir_Arriba">
-    </a>
+<div class="tab">
+    <button class="tablinks" onclick="openCity(event, 'Publicar')" id="defaultOpen">Publicar</button>
+    <button class="tablinks" onclick="openCity(event, 'Misventas')">Mis ventas</button>
+    <button class="tablinks" onclick="openCity(event, 'Miscompras')">Mis compras</button>
 </div>
 
-<div class="container">
-    <div class="row">
-
-        <div class="col-md-6">
-            <h3>Pills left</h3>
-            <!-- tabs left -->
-            <div class="tabbable">
-                <ul class="nav nav-pills nav-stacked col-md-3">
-                    <li><a href="#a" data-toggle="tab">One</a></li>
-                    <li class="active"><a href="#b" data-toggle="tab">Two</a></li>
-                    <li><a href="#c" data-toggle="tab">Twee</a></li>
-                </ul>
-                <div class="tab-content col-md-9">
-                    <div class="tab-pane active" id="a">Lorem ipsum dolor sit amet, charetra varius rci quis tortor imperdiet venenatis quam sit amet vulputate. Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero.</div>
-                    <div class="tab-pane" id="b">Secondo sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan. Aliquam in felis sit amet augue.</div>
-                    <div class="tab-pane" id="c">Thirdamuno, ipsum dolor sit amet, consectetur adipiscing elit. Duis elementum auctor accumsan. Duis pharetra
-                        varius quam sit amet vulputate. Quisque mauris augue, molestie tincidunt condimentum vitae. </div>
-                </div>
-            </div>
-            <!-- /tabs -->
-        </div>
-
-    </div>
-    <!-- /row -->
+<div id="Publicar" class="tabcontent">
+    <?php
+    require 'publicar.php';
+    ?>
 </div>
 
-<hr>
+<div id="Misventas" class="tabcontent">
+    <?php
+    require 'compras.php';
+    ?>
+</div>
+
+<div id="Miscompras" class="tabcontent">
+    <?php
+    require 'ventas.php';
+    ?>
+</div>
+
+<script>
+    function openCity(evt, cityName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+
+    // Get the element with id="defaultOpen" and click on it
+    document.getElementById("defaultOpen").click();
+</script>
 
 </body>
-<?php
-require 'footer.php';
-?>
-</html>
+</html> 

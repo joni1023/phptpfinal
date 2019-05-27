@@ -28,7 +28,7 @@
                     </ul>
                 </div>
                 <div class="col-md-6">
-                    <h3>redes sociales</h3>
+                    <h3>Redes sociales</h3>
                     <div class="col-md-12">
                         <ul class="social-network social-circle">
                             <li class="iconos"><a  href="#" class="icoRss" title="Rss"><i class="fa fa-rss"></i></a></li>

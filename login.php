@@ -3,6 +3,7 @@
 <HTML>
 <title>login</title>
 <?php require 'header.php' ?>
+<div id="page-container">
 <div class="container">
         <form class="form-group" action="logear.php" method="post">
             <div class="form-group">
@@ -21,5 +22,5 @@
 <?php
 require 'footer.php';
 ?>
-
+</div>
 </HTML>
