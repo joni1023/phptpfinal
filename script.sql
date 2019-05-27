@@ -48,5 +48,12 @@ fecha date,
 primary key (id_transaccion),
 foreign key (id_usuario) references usuario(id),
 foreign key (id_item) references item(id)
-)
--- faltarian los insert , pero hay que tener claros algunos puntos q todavia no tengo
+);
+INSERT INTO item (id_usuario,nombre,descripcion,categoria,estado,precio,imagen) VALUES (1,'Pendrive','8GB','Electronica','activo',326,'001.jpg');
+INSERT INTO item (id_usuario,nombre,descripcion,categoria,estado,precio,imagen) VALUES (1,'Teclado','Gamer','Electronica','activo',420,'002.jpg');
+INSERT INTO item (id_usuario,nombre,descripcion,categoria,estado,precio,imagen) VALUES (1,'Mouse','Gamer','Electronica','activo','312','003.jpg');
+INSERT INTO item (id_usuario,nombre,descripcion,categoria,estado,precio,imagen) VALUES (1,'Monitor','HP','Electronica','activo','4011','004.jpg');
+INSERT INTO item (id_usuario,nombre,descripcion,categoria,estado,precio,imagen) VALUES (1,'Disco Rigido','1 TeraByte','Electronica','activo','822','005.jpg');
+INSERT INTO item (id_usuario,nombre,descripcion,categoria,estado,precio,imagen) VALUES (1,'Impresora Epson','PD365','Electronica','activo','3850','006.jpg');
+INSERT INTO item (id_usuario,nombre,descripcion,categoria,estado,precio,imagen) VALUES (1,'Notebook Dell','Procesador Intel 5','Electronica','activo','18000','007.jpg');
+INSERT INTO item (id_usuario,nombre,descripcion,categoria,estado,precio,imagen) VALUES (1,'Kit Gamer','Monitor+CPU+Mouse+Teclado','Electronica','activo','45000','008.jpg');
