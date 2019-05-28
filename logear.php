@@ -15,7 +15,7 @@ if(count($array)>0){
 //       usario administrador
        $_SESSION['rol']=$array[rol];
        $_SESSION['username']=$array[nick];
-       header("location:index.php");
+       header("location:admin.php");
    }else{
 //       usuario normal
        $_SESSION['username']=$array[nick];

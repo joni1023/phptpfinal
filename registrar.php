@@ -24,7 +24,7 @@
         <input type="text" name="apellido" required>
         </div>
         <div class="form-group">
-        <label>sexo</label>
+        <label>Sexo</label>
         <input type="radio" name="sexo" >
         <label for="mujer">Mujer</label>
         <input type="radio" name="sexo" >
@@ -57,7 +57,7 @@
 <div class="col-lg-12">
     <h3>direccion:</h3>
     <div class="form-group">
-        <label class="control-label">localidad</label>
+        <label class="control-label">Localidad</label>
         <input class="form-group" type="text" name="localidad" required>
     </div>
 
@@ -84,7 +84,4 @@ if(isset($_POST['submit'])){
     </body>
 
 
-<?php
-require 'footer.php';
-?>
 </html>
