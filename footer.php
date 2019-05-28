@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="css/stilo.css">
+
 <footer>
     <div class="container-fluid bg-footer">
         <div class="container">
