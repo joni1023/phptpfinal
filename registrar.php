@@ -25,9 +25,9 @@
         </div>
         <div class="form-group">
         <label>Sexo</label>
-        <input type="radio" name="sexo" >
+        <input type="radio" name="sexo" value="mujer">
         <label for="mujer">Mujer</label>
-        <input type="radio" name="sexo" >
+        <input type="radio" name="sexo" value="hombre">
         <label for="hombre">Hombre</label>
         </div>
     <div class="form-group">

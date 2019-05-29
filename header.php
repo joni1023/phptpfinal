@@ -22,7 +22,7 @@
                 if(isset($_SESSION)){
                     if (isset($_SESSION['rol'])){
                             if($_SESSION['rol']=="admin"){
-                                echo "<li class='active'><a href=''>administrar</a></li>";
+
                             }else{
                                 echo "<li class='active'><a href=''>vender</a></li>";
                             }}
@@ -36,17 +36,23 @@
                 if (!isset($_SESSION)) session_start();
                 if(isset($_SESSION['username'])){
                     $nombre=$_SESSION['username'];
-                    echo "<li><a style='cursor:pointer' id='carrito'><span class='glyphicon glyphicon-shopping-cart fa-lg'></span><asp:Label ID='lblCartCount' ForeColor='White'/> 3</a></li>";
+                    echo "<li><a style='cursor:pointer' id='carrito'><span class='glyphicon glyphicon-shopping-cart fa-lg'></span><asp:Label ID='lblCartCount' ForeColor='White'/> 0</a></li>";
                     echo"<li class='dropdown'>
     <a href='#' class='dropdown-toggle' data-toggle='dropdown' role='button' aria-haspopup='true' aria-expanded='false'><span class='glyphicon glyphicon-user'></span> ".$nombre."<span class='caret'></span></a>
     <ul class='dropdown-menu'>
         <li><a href='resumenUsuario.php'>Publicaciones</a></li>
         <li><a href='resumenUsuario.php'>Ventas</a></li>
-        <li><a href='resumenUsuario.php'>Facturacion</a></li>
-        <li role='separator' class='divider'></li>
-        <li><a href='resumenUsuario.php'>Configuracion</a></li>
-    </ul>
-</li>";
+        <li><a href='resumenUsuario.php'>Compras</a></li>
+        <li><a href='#'>Mis datos</a></li>";
+                        if(isset($_SESSION)){
+                            if (isset($_SESSION['rol'])){
+                                if($_SESSION['rol']=="admin"){
+                                    echo "<li role='separator' class='divider'></li>
+                                          <li><a href='admin.php'>Configuracion</a></li>";
+                                }}
+                        };
+                        echo"</ul></li>";
+
                     echo "<li><a href='salir.php'>salir</a></li>";
                 }else{
                     echo "<li><a href='registrar.php'>Registrate</a> </li>";

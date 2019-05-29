@@ -66,13 +66,13 @@ require 'header.php'; ?>
 
 <div id="Misventas" class="tabcontent">
     <?php
-    require 'compras.php';
+    require 'ventas.php';
     ?>
 </div>
 
 <div id="Miscompras" class="tabcontent">
     <?php
-    require 'ventas.php';
+    require 'compras.php';
     ?>
 </div>
 

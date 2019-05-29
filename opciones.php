@@ -9,4 +9,7 @@ if(isset($_SESSION['username'])){
         if(mysqli_query($conexion,$q)){
             header("location:index.php");
         }
+    }
+}
+
 

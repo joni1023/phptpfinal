@@ -15,7 +15,7 @@ require 'header.php';
 
         <div class="col-lg-3"></div>
         <div class="col-lg-6 " >
-            <form class="form form-inline " action="index.php" method="post">
+            <form class="form form-inline " action="admin.php" method="post">
                 <div class="form-group">
                     <label class="control-label">Buscar el Usuario:</label>
                     <input type="text" class="form-control" name="usuariobuscado" placeholder="ingrese nombre del usuario" required">
@@ -39,7 +39,6 @@ require 'header.php';
             echo "<table class='table'>
         <thead>
                 <tr>
-                  <th scope='col'>ID</th>
                   <th scope='col'>Nombre</th>
                   <th scope='col'>Apellido</th>
                   <th scope='col'>Sexo</th>
@@ -54,7 +53,6 @@ require 'header.php';
               </thead>";
             echo " <tbody>
                 <tr>
-                  <th scope='row'>".$array["id"]."</th>
                   <td>".$array["nombre"]."</td>
                   <td>".$array["apellido"]."</td>
                   <td>".$array["sexo"]."</td>
@@ -68,8 +66,17 @@ require 'header.php';
             if(isset($_SESSION['username'])){
                 echo " <form  action='opciones.php' method='post'>
                     <input type='hidden' name='id' value='".$array['id']."'>
-                    <input type='submit' name='botone' value='eliminar'>
-                    <input type='submit' formaction='modificar.php' value='modificar'>
+                    <input type='hidden' name='nombre' value='" . $array['nombre'] . "'>
+                    <input type='hidden' name='apellido' value='" . $array['apellido'] . "'>
+                    <input type='hidden' name='sexo' value='" . $array['sexo'] . "'>
+                    <input type='hidden' name='cuil' value='" . $array['cuil'] . "'>
+                    <input type='hidden' name='nick' value='" . $array['nick'] . "'>
+                    <input type='hidden' name='email' value='" . $array['email'] . "'>
+                    <input type='hidden' name='calle' value='" . $array['calle'] . "'>
+                    <input type='hidden' name='altura' value='" . $array['altura'] . "'>
+                    <input type='hidden' name='localidad' value='" . $array['localidad'] . "'>
+                    <input type='submit' class='btn btn-danger' name='botone' value='eliminar'>
+                    <input type='submit' class='btn btn-primary' formaction='modificar.php' value='modificar'>
                   </form> ";}
 
 
@@ -110,8 +117,17 @@ require 'header.php';
                     if(isset($_SESSION['username'])){
                         echo " <form  action='opciones.php' method='post'>
                     <input type='hidden' name='id' value='".$colum['id']."'>
-                    <input type='submit' name='botone' value='eliminar'>
-                    <input type='submit' formaction='modificar.php' value='modificar'>
+                    <input type='hidden' name='nombre' value='" . $colum['nombre'] . "'>
+                    <input type='hidden' name='apellido' value='" . $colum['apellido'] . "'>
+                    <input type='hidden' name='sexo' value='" . $colum['sexo'] . "'>
+                    <input type='hidden' name='cuil' value='" . $colum['cuil'] . "'>
+                    <input type='hidden' name='nick' value='" . $colum['nick'] . "'>
+                    <input type='hidden' name='email' value='" . $colum['email'] . "'>
+                    <input type='hidden' name='calle' value='" . $colum['calle'] . "'>
+                    <input type='hidden' name='altura' value='" . $colum['altura'] . "'>
+                    <input type='hidden' name='localidad' value='" . $colum['localidad'] . "'>
+                    <input type='submit' class='btn btn-danger' name='botone' value='eliminar'>
+                    <input type='submit' class='btn btn-primary' formaction='modificar.php' value='modificar'>
                   </form> ";
                     }
 
@@ -133,7 +149,6 @@ require 'header.php';
         echo " <table class='table'>
               <thead>
                 <tr>
-                  <th scope='col'>Id</th>
                   <th scope='col'>Nombre</th>
                   <th scope='col'>Apellido</th>
                   <th scope='col'>Sexo</th>
@@ -151,7 +166,6 @@ require 'header.php';
             do {
                 echo " <tbody>
                 <tr>
-                  <th scope='row'>" . $colum["id"] . "</th>
                   <td>" . $colum["nombre"] . "</td>
                   <td>" . $colum["apellido"] . "</td>
                   <td>" . $colum["sexo"] . "</td>
@@ -166,8 +180,17 @@ require 'header.php';
                 if (isset($_SESSION['username'])) {
                     echo " <form  action='opciones.php' method='post'>
                     <input type='hidden' name='id' value='" . $colum['id'] . "'>
-                    <input type='submit' name='botone' value='eliminar'>
-                    <input type='submit' formaction='modificar.php' value='modificar'>
+                    <input type='hidden' name='nombre' value='" . $colum['nombre'] . "'>
+                    <input type='hidden' name='apellido' value='" . $colum['apellido'] . "'>
+                    <input type='hidden' name='sexo' value='" . $colum['sexo'] . "'>
+                    <input type='hidden' name='cuil' value='" . $colum['cuil'] . "'>
+                    <input type='hidden' name='nick' value='" . $colum['nick'] . "'>
+                    <input type='hidden' name='email' value='" . $colum['email'] . "'>
+                    <input type='hidden' name='calle' value='" . $colum['calle'] . "'>
+                    <input type='hidden' name='altura' value='" . $colum['altura'] . "'>
+                    <input type='hidden' name='localidad' value='" . $colum['localidad'] . "'>
+                    <input type='submit' class='btn btn-danger' name='botone' value='eliminar'>
+                    <input type='submit' class='btn btn-primary' formaction='modificar.php' value='modificar'>
                   </form> ";
                 }
 
