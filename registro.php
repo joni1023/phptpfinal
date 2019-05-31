@@ -11,23 +11,44 @@ if (isset($_POST['submit'])) {
     $calle=$_POST['calle'];
     $altura=$_POST['altura'];
     $localidad=$_POST['localidad'];
+    $lat=$_POST['latitud'];
+    $long=$_POST['longitud'];
 
 // primero se valida que no esten vacios
-    if ($nick != null && $pass != null && $repass != null) {
-        if ($pass === $repass) {
-            require 'database.php';
-            $pass = sha1($pass);
-            mysqli_query($conexion, "INSERT INTO usuario (email,nick,pass)VALUES ('$email','$nick','$pass')");
-            mysqli_close($conexion);
-            header("location:index.php");
-        } else {
-            echo "introdusca contraseñas iguales";
+    if ($nick != null && $pass != null && $repass != null && $nombre!=null && $apellido!=null && $cuil!=null && $email!=null && $calle!= null && $altura!=null && $localidad!=null && $lat!= null && $long!=null) {
+        $coeficiente = array(5, 4, 3, 2, 7, 6, 5, 4, 3, 2);
+
+        $cuit2 = str_replace('-', '', $cuil);
+        $cuit = str_split($cuit2);
+        $verificador = array_pop($cuit);
+        $sum = 0;
+
+        for ($i = 0; $i < 10; $i++) {
+
+            $sum += ($cuit[$i] * $coeficiente[$i]);
+            $resultado = $sum % 11;
+            $resultado = 11 - $resultado;
         }
-    } else {
-        echo "rellene todos los campos";
+//saco el digito verificador
 
-    }
+            $veri_nro = intval($verificador);
+            if ($resultado===11){$resultado=0;}else if($resultado===10){$resultado=9;}
+            if ($veri_nro <> $resultado) {
+                echo "cuit invalido";
+            } else {
+                if ($pass === $repass) {
+                    require 'database.php';
+                    $pass = sha1($pass);
+                    mysqli_query($conexion, "INSERT INTO usuario (nombre,apellido,cuil,email,nick,pass,calle,altura,localidad,latitud,longitud)VALUES ('$nombre$'$apellido','$cui','$email','$nick','$pass','$calle','$altura','$localidad','$lat','$long')");
+                    mysqli_close($conexion);
+                    header("location:index.php");
+                } else {
+                    echo "introdusca contraseñas iguales";
+                }
 
+            }
+    }else {
+                    echo "rellene todos los campos";}
 }else{
     header("location:registrar.php");
 }
