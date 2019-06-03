@@ -39,9 +39,15 @@ if (isset($_POST['submit'])) {
                 if ($pass === $repass) {
                     require 'database.php';
                     $pass = sha1($pass);
-                    mysqli_query($conexion, "INSERT INTO usuario (nombre,apellido,cuil,email,nick,pass,calle,altura,localidad,latitud,longitud)VALUES ('$nombre$'$apellido','$cui','$email','$nick','$pass','$calle','$altura','$localidad','$lat','$long')");
-                    mysqli_close($conexion);
-                    header("location:index.php");
+                    $q="INSERT INTO usuario (nombre,apellido,cuil,email,rol,nick,pass,calle,altura,localidad,latitud,longitud) VALUES ('$nombre','$apellido','$cuil','$email','normal','$nick','$pass','$calle','$altura','$localidad','$lat','$long'); ";
+//para ver los errores de la consulta
+                    //                    if (mysqli_query($conexion, $q)) {
+//                        echo "New record created successfully";
+//                    }    else {
+//                        echo "Error: " . $q . "<br>" . mysqli_error($conexion);
+//                    }
+
+                   header("location:index.php");
                 } else {
                     echo "introdusca contraseñas iguales";
                 }

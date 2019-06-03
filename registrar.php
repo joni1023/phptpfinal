@@ -103,6 +103,7 @@
 
 
 <?php
+//require_once 'registro.php';
 require 'footer.php';
 
 ?>

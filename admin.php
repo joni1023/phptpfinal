@@ -1,3 +1,12 @@
+<?php
+session_start();
+if(!isset($_SESSION['rol'])){
+header("location:index.php");
+}
+if($_SESSION['rol']!= "admin"){
+    header("location:index.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 <title>Registro de Usuarios</title>

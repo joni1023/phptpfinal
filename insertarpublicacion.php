@@ -1,4 +1,13 @@
 <?php
+//para no ingresar a la pagina por la url
+session_start();
+if (!isset($_SESSION['rol'])){
+    header("location:index.php");
+}
+if($_SESSION['rol']!="normal"){
+    header("location:index.php");
+}
+////
 // Create database connection
 $db = mysqli_connect("localhost", "root", "", "tp_pw");
 
@@ -27,4 +36,4 @@ if (isset($_POST['publicar'])) {
     mysqli_query($db, $sql);
 }
 
-?>
+?>sd

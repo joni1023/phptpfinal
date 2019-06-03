@@ -1,4 +1,12 @@
 <?php
+session_start();
+if (!isset($_SESSION['rol'])){
+    header("location:index.php");
+}
+if($_SESSION['rol']!="normal"){
+    header("location:index.php");
+}
+echo "hola";
 include 'header.php';
 
 if(isset($_SESSION['username'])){
