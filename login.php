@@ -1,7 +1,7 @@
 <!Doctype html>
 
 <HTML>
-<title>login</title>
+<title>Login Electro</title>
 <?php require 'header.php' ?>
 <div id="page-container">
 <div class="container">

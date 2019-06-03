@@ -31,8 +31,7 @@ descripcion varchar(150),
 categoria varchar(25), -- categoria , revisar si es solo una o varias a la vez
 estado varchar(25), -- indicara activo, finalizado , pausado
 precio double,
-imagen varchar(30),  
--- decidir si se va a subir a la carpeta del servidor o a la base de datos 
+-- decidir si se va a subir a la carpeta del servidor o a la base de datos
 -- si es asi cambia el tipo , se probara con una sola imagen y despues se cargaran las 10 
 primary key (id),
 foreign key (id_usuario) references usuario(id)
@@ -49,11 +48,15 @@ primary key (id_transaccion),
 foreign key (id_usuario) references usuario(id),
 foreign key (id_item) references item(id)
 );
-INSERT INTO item (id_usuario,nombre,descripcion,categoria,estado,precio,imagen) VALUES (1,'Pendrive','8GB','Electronica','activo',326,'001.jpg');
-INSERT INTO item (id_usuario,nombre,descripcion,categoria,estado,precio,imagen) VALUES (1,'Teclado','Gamer','Electronica','activo',420,'002.jpg');
-INSERT INTO item (id_usuario,nombre,descripcion,categoria,estado,precio,imagen) VALUES (1,'Mouse','Gamer','Electronica','activo','312','003.jpg');
-INSERT INTO item (id_usuario,nombre,descripcion,categoria,estado,precio,imagen) VALUES (1,'Monitor','HP','Electronica','activo','4011','004.jpg');
-INSERT INTO item (id_usuario,nombre,descripcion,categoria,estado,precio,imagen) VALUES (1,'Disco Rigido','1 TeraByte','Electronica','activo','822','005.jpg');
-INSERT INTO item (id_usuario,nombre,descripcion,categoria,estado,precio,imagen) VALUES (1,'Impresora Epson','PD365','Electronica','activo','3850','006.jpg');
-INSERT INTO item (id_usuario,nombre,descripcion,categoria,estado,precio,imagen) VALUES (1,'Notebook Dell','Procesador Intel 5','Electronica','activo','18000','007.jpg');
-INSERT INTO item (id_usuario,nombre,descripcion,categoria,estado,precio,imagen) VALUES (1,'Kit Gamer','Monitor+CPU+Mouse+Teclado','Electronica','activo','45000','008.jpg');
+
+create table imagen_item(
+-- imagenes a la venta o publicado por el usuario por cada item
+id int auto_increment,
+imagen  blob NOT NULL,
+principal bit NOT NULL,
+id_item int NOT NULL,
+
+primary key (id),
+foreign key (id) references item(id)
+-- hace referencia a la id del item
+);

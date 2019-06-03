@@ -1,6 +1,7 @@
 <?php
 require 'header.php'; ?>
     <body>
+    <title>Electro</title>
     <div class="flecha">
         <a href="#header">
             <img src="img/flechaArriba.png" alt="Flecha_Ir_Arriba">
