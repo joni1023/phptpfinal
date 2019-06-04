@@ -186,6 +186,9 @@
             value=valor;
             document.getElementById("file"+valor).click();
         }
+        function outputUpdate(vol) {
+            document.querySelector('#dias').value = vol+' Dias';
+        }
     </script>
 </head>
 <body>
@@ -225,14 +228,25 @@
             <p>Nombre</p>
             <input type="text" name="nombre">
             <p>Descripcion</p>
-            <input type="text" name="descripcion">
+            <textarea maxlength="150" name="descripcion" id="descripcion">
+            </textarea>
             <p>Categoria</p>
             <input type="text" name="categoria">
             <p>Precio</p>
             <input type="number" name="precio">
+            <br>
+            <br>
+            <label for="fader">Dias de publicacion</label>
+            <input type="range" min="0" max="100" style="width: 50%" name="dias" value="50" id="fader"
+                   step="1" oninput="outputUpdate(value)">
+            <output for="fader" id="dias">50 Dias</output>
+            <br>
+            <p>Metodo de Entrega:</p>
+            <input type="radio" name="entrega" value="domicilio" checked> A domicilio
+            <input type="radio" name="entrega"value="coordinar"> A coordinar de forma privada
         </div>
         <div>
-            <p></p>
+            <br>
             <button type="submit" id="publicar" name="publicar" class="btn btn-success">Guardar</button>
         </div>
     </form>

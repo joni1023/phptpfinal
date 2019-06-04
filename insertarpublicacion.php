@@ -29,8 +29,10 @@ if (isset($_POST['publicar'])) {
     $descripcion = mysqli_real_escape_string($db, $_POST['descripcion']);
     $categoria = mysqli_real_escape_string($db, $_POST['categoria']);
     $precio = mysqli_real_escape_string($db, $_POST['precio']);
+    $dias =  $_POST['dias'];
+    $entrega = mysqli_real_escape_string($db, $_POST['entrega']);
 
-    $sql = "INSERT INTO item (id_usuario,nombre,descripcion,categoria,estado,precio) VALUES (1,'$nombre','$descripcion','$categoria','activo','$precio');";
+    $sql = "INSERT INTO item (id_usuario,nombre,descripcion,categoria,estado,precio,dias,tipo_entrega) VALUES (1,'$nombre','$descripcion','$categoria','activo','$precio','$dias','$entrega');";
     $file = addslashes(file_get_contents($_FILES["image1"]["tmp_name"]));
     mysqli_query($db, $sql);
     $last_id = mysqli_insert_id($db);

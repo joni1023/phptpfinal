@@ -31,6 +31,8 @@ descripcion varchar(150),
 categoria varchar(25), -- categoria , revisar si es solo una o varias a la vez
 estado varchar(25), -- indicara activo, finalizado , pausado
 precio double,
+dias int,
+tipo_entrega varchar(25),
 -- decidir si se va a subir a la carpeta del servidor o a la base de datos
 -- si es asi cambia el tipo , se probara con una sola imagen y despues se cargaran las 10 
 primary key (id),

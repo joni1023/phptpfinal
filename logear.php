@@ -15,11 +15,13 @@ if(count($array)>0){
 //       usario administrador
        $_SESSION['rol']=$array[rol];
        $_SESSION['username']=$array[nick];
+       $_SESSION['carrito']=array();
        header("location:admin.php");
    }else{
 //       usuario normal
        $_SESSION['username']=$array[nick];
        $_SESSION['rol']=$array[rol];
+        $_SESSION['carrito']=array();
        header("location:index.php");
    }
 }else{
