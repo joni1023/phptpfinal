@@ -29,10 +29,15 @@ if (isset($_POST['publicar'])) {
     $descripcion = mysqli_real_escape_string($db, $_POST['descripcion']);
     $categoria = mysqli_real_escape_string($db, $_POST['categoria']);
     $precio = mysqli_real_escape_string($db, $_POST['precio']);
-    $dias =  $_POST['dias'];
     $entrega = mysqli_real_escape_string($db, $_POST['entrega']);
+    $dias =  $_POST['dias'];
+    //calcular vencimiento
+    $fecha = date('Y-m-j');
+    $nuevafecha = strtotime ( '+2 day' , strtotime ( $fecha ) ) ;
+    $nuevafecha = date ( 'Y-m-j' , $nuevafecha );
 
-    $sql = "INSERT INTO item (id_usuario,nombre,descripcion,categoria,estado,precio,dias,tipo_entrega) VALUES (1,'$nombre','$descripcion','$categoria','activo','$precio','$dias','$entrega');";
+
+    $sql = "INSERT INTO item (id_usuario,nombre,descripcion,categoria,estado,precio,vencimiento,tipo_entrega) VALUES (1,'$nombre','$descripcion','$categoria','activo','$precio','$nuevafecha','$entrega');";
     $file = addslashes(file_get_contents($_FILES["image1"]["tmp_name"]));
     mysqli_query($db, $sql);
     $last_id = mysqli_insert_id($db);
