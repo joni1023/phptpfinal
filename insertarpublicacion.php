@@ -51,37 +51,37 @@ if (isset($_POST['publicar'])) {
     mysqli_query($db, $query);
     }
     if($_FILES['image3']['size']>0){
-    $file3= addslashes(file_get_contents($_FILES["image2"]["tmp_name"]));
+    $file3= addslashes(file_get_contents($_FILES["image3"]["tmp_name"]));
     $query = "INSERT INTO imagen_item(imagen,principal,id_item) VALUES ('$file3',0,'$last_id')";
     mysqli_query($db, $query);
     }
     if($image4['size']>0){
-    $file4= addslashes(file_get_contents($_FILES["image2"]["tmp_name"]));
+    $file4= addslashes(file_get_contents($_FILES["image4"]["tmp_name"]));
     $query = "INSERT INTO imagen_item(imagen,principal,id_item) VALUES ('$file4',0,'$last_id')";
     mysqli_query($db, $query);
     }
     if($image5['size']>0){
-    $file5= addslashes(file_get_contents($_FILES["image2"]["tmp_name"]));
+    $file5= addslashes(file_get_contents($_FILES["image5"]["tmp_name"]));
     $query = "INSERT INTO imagen_item(imagen,principal,id_item) VALUES ('$file5',0,'$last_id')";
     }
     if($image6['size']>0){
-    $file6= addslashes(file_get_contents($_FILES["image2"]["tmp_name"]));
+    $file6= addslashes(file_get_contents($_FILES["image6"]["tmp_name"]));
     $query = "INSERT INTO imagen_item(imagen,principal,id_item) VALUES ('$file6',0,'$last_id')";
     }
     if($image7['size']>0){
-    $file7= addslashes(file_get_contents($_FILES["image2"]["tmp_name"]));
+    $file7= addslashes(file_get_contents($_FILES["image7"]["tmp_name"]));
     $query = "INSERT INTO imagen_item(imagen,principal,id_item) VALUES ('$file7',0,'$last_id')";
     }
     if($image8['size']>0){
-    $file8= addslashes(file_get_contents($_FILES["image2"]["tmp_name"]));
+    $file8= addslashes(file_get_contents($_FILES["image8"]["tmp_name"]));
     $query = "INSERT INTO imagen_item(imagen,principal,id_item) VALUES ('$file8',0,'$last_id')";
     }
     if($image9['size']>0){
-    $file9= addslashes(file_get_contents($_FILES["image2"]["tmp_name"]));
+    $file9= addslashes(file_get_contents($_FILES["image9"]["tmp_name"]));
     $query = "INSERT INTO imagen_item(imagen,principal,id_item) VALUES ('$file9',0,'$last_id')";
     }
     if($image10['size']>0){
-    $file10= addslashes(file_get_contents($_FILES["image2"]["tmp_name"]));
+    $file10= addslashes(file_get_contents($_FILES["image10"]["tmp_name"]));
     $query = "INSERT INTO imagen_item(imagen,principal,id_item) VALUES ('$file10',0,'$last_id')";
     }
 
