@@ -50,7 +50,7 @@ if (isset($_POST['submit'])) {
 
 //                   header("location:index.php");
                 } else {
-                    echo "introdusca contraseñas iguales";
+                    echo "introduzca contraseñas iguales";
                 }
 
             }

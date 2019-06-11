@@ -59,9 +59,9 @@ require 'header.php'; ?>
 </head>
 <body>
 <div class="tab">
-    <button class="tablinks" onclick="openCity(event, 'Publicar')" id="defaultOpen">Publicar</button>
-    <button class="tablinks" onclick="openCity(event, 'Misventas')">Mis ventas</button>
-    <button class="tablinks" onclick="openCity(event, 'Miscompras')">Mis compras</button>
+    <button class="tablinks" onclick="openTab(event, 'Publicar')" id="defaultOpen">Publicar</button>
+    <button class="tablinks" onclick="openTab(event, 'Misventas')">Mis ventas</button>
+    <button class="tablinks" onclick="openTab(event, 'Miscompras')">Mis compras</button>
 </div>
 
 <div id="Publicar" class="tabcontent">
@@ -83,7 +83,7 @@ require 'header.php'; ?>
 </div>
 
 <script>
-    function openCity(evt, cityName) {
+    function openTab(evt, cityName) {
         var i, tabcontent, tablinks;
         tabcontent = document.getElementsByClassName("tabcontent");
         for (i = 0; i < tabcontent.length; i++) {
