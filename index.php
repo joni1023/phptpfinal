@@ -1,6 +1,8 @@
+<!DOCTYPE html>
+<html>
 <?php
 require 'header.php'; ?>
-    <body>
+
     <title>Electro</title>
     <div class="flecha">
         <a href="#header">
@@ -14,5 +16,6 @@ require 'carousel.php'; ?>
                     <?php
                     require 'productosenventa.php'; ?>
                 </section>
+
     </body>
     </html>

@@ -1,9 +1,24 @@
+<?php
+require 'database.php';
+$q="select * from item";
+$consult=mysqli_query($conexion,$q);
+$array=array();
+while ($row=mysqli_fetch_array($consult)){
+    $item=$row['nombre'];
+    array_push($array,$item);
+}
+?>
 <head>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="css/bootstrap.min.css">
-<script src="js/jquery.min.js"></script>
+
+    <script
+            src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            crossorigin="anonymous"></script>
     <script src="js/bootstrap.min.js"></script>
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/jquery.ui.css">
     <link rel="stylesheet" href="css/estilos.css">
 
 </head>
@@ -62,15 +77,30 @@
                 ?>
 
             </ul>
-            <form class="navbar-form">
+            <form method="post" action="buscaritem.php" class="navbar-form">
                 <div class="form-group" style="display:inline;">
                     <div class="input-group" style="display:table;">
-                        <input class="form-control" name="buscar" placeholder="Buscar" autocomplete="off" type="text">
-                        <span class="input-group-addon" style="width:5%;"><span class="glyphicon glyphicon-search" style="cursor:pointer"></span></span>
+                        <input class="form-control" id="buscar" name="itemb" placeholder="Buscar" type="text">
+                        <span class="input-group-addon" style="width:5%;"><span class="glyphicon glyphicon-search" style="cursor:pointer"><button type="submit"></button></span></span>
                     </div>
                 </div>
             </form>
         </div>
     </nav>
 </header>
+
+<script
+        src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"
+        integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E="
+        crossorigin="anonymous"></script>
+
+<script type="application/javascript" >
+    $(document).ready(function () {
+        var items = <?= json_encode($array) ?>
+
+            $("#buscar").autocomplete({
+                source: items
+            });
+    });
+</script>
 
