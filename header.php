@@ -51,7 +51,7 @@ while ($row=mysqli_fetch_array($consult)){
                 if (!isset($_SESSION)) session_start();
                 if(isset($_SESSION['username'])){
                     $nombre=$_SESSION['username'];
-                    $carrito=sizeof($_SESSION['carrito']);
+                    $carrito=$_SESSION['carrito'];
                     echo "<li><a style='cursor:pointer' id='carrito' href='vercarrito.php'><span class='glyphicon glyphicon-shopping-cart fa-lg'></span><asp:Label ID='lblCartCount' ForeColor='White'/>".$carrito."</a></li>";
                     echo"<li class='dropdown'>
     <a href='#' class='dropdown-toggle' data-toggle='dropdown' role='button' aria-haspopup='true' aria-expanded='false'><span class='glyphicon glyphicon-user'></span> ".$nombre."<span class='caret'></span></a>

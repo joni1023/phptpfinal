@@ -34,8 +34,9 @@ echo "    <div class='column_right' >
     
     <h5>Categoria</h5>
     <p>".$resultImage['categoria']."</p>
-    <br>
-    <a href='#' class='btn'>Agregar al carrito</a>
+    <br><h5>Cantidad</h5>
+    <input type='number' value='1'>
+    <a onclick='agregarProducto(".$resultImage['id'].")' class='btn'>Agregar al carrito</a>
     </div>";
 
 
