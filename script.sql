@@ -33,7 +33,8 @@ descripcion varchar(150),
 categoria varchar(25), -- categoria , revisar si es solo una o varias a la vez
 estado varchar(25), -- indicara activo, finalizado , pausado
 precio double,
-imagen varchar(30),  
+vencimiento date,
+tipo_entrega varchar(25), 
 -- decidir si se va a subir a la carpeta del servidor o a la base de datos 
 -- si es asi cambia el tipo , se probara con una sola imagen y despues se cargaran las 10 
 primary key (id),
@@ -55,11 +56,18 @@ foreign key (id_item) references item(id)
 create table carrito(
 id_usuario int,
 id_item int,
-cantidad int,
-
-
+cantidad int
 );
-
+create table imagen_item(
+-- imagenes a la venta o publicado por el usuario por cada item
+id int auto_increment,
+imagen  blob NOT NULL,
+principal bit NOT NULL,
+id_item int NOT NULL,
+primary key (id),
+foreign key (id) references item(id)
+-- hace referencia a la id del item
+);
 INSERT INTO item (id_usuario,nombre,descripcion,categoria,estado,precio,imagen) VALUES (1,'Pendrive','8GB','Electronica','activo',326,'001.jpg');
 INSERT INTO item (id_usuario,nombre,descripcion,categoria,estado,precio,imagen) VALUES (1,'Teclado','Gamer','Electronica','activo',420,'002.jpg');
 INSERT INTO item (id_usuario,nombre,descripcion,categoria,estado,precio,imagen) VALUES (1,'Mouse','Gamer','Electronica','activo','312','003.jpg');
