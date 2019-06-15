@@ -5,6 +5,7 @@ $item=$_POST['itemb'];
 
 $q="SELECT * FROM item WHERE nombre LIKE '$item%'";
 $consulta = mysqli_query($conexion,$q);
+$result = mysqli_query($conexion, "SELECT * FROM imagen_item where id_item='$var_value'");
 
     require 'header.php';
 echo "<body>";
