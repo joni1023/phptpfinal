@@ -62,17 +62,17 @@ create table imagen_item(
 -- imagenes a la venta o publicado por el usuario por cada item
 id int auto_increment,
 imagen  blob NOT NULL,
-principal bit NOT NULL,
+principal blob NOT NULL,
 id_item int NOT NULL,
 primary key (id),
 foreign key (id) references item(id)
 -- hace referencia a la id del item
 );
-INSERT INTO item (id_usuario,nombre,descripcion,categoria,estado,precio,imagen) VALUES (1,'Pendrive','8GB','Electronica','activo',326,'001.jpg');
-INSERT INTO item (id_usuario,nombre,descripcion,categoria,estado,precio,imagen) VALUES (1,'Teclado','Gamer','Electronica','activo',420,'002.jpg');
-INSERT INTO item (id_usuario,nombre,descripcion,categoria,estado,precio,imagen) VALUES (1,'Mouse','Gamer','Electronica','activo','312','003.jpg');
-INSERT INTO item (id_usuario,nombre,descripcion,categoria,estado,precio,imagen) VALUES (1,'Monitor','HP','Electronica','activo','4011','004.jpg');
-INSERT INTO item (id_usuario,nombre,descripcion,categoria,estado,precio,imagen) VALUES (1,'Disco Rigido','1 TeraByte','Electronica','activo','822','005.jpg');
-INSERT INTO item (id_usuarioimagen_item,nombre,descripcion,categoria,estado,precio,imagen) VALUES (1,'Impresora Epson','PD365','Electronica','activo','3850','006.jpg');
-INSERT INTO item (id_usuario,nombre,descripcion,categoria,estado,precio,imagen) VALUES (1,'Notebook Dell','Procesador Intel 5','Electronica','activo','18000','007.jpg');
-INSERT INTO item (id_usuario,nombre,descripcion,categoria,estado,precio,imagen) VALUES (1,'Kit Gamer','Monitor+CPU+Mouse+Teclado','Electronica','activo','45000','008.jpg');
+INSERT INTO item (id_usuario,nombre,descripcion,categoria,estado,precio) VALUES (1,'Pendrive','8GB','Electronica','activo',326);
+INSERT INTO item (id_usuario,nombre,descripcion,categoria,estado,precio) VALUES (1,'Teclado','Gamer','Electronica','activo',420);
+INSERT INTO item (id_usuario,nombre,descripcion,categoria,estado,precio) VALUES (1,'Mouse','Gamer','Electronica','activo',312);
+INSERT INTO item (id_usuario,nombre,descripcion,categoria,estado,precio) VALUES (1,'Monitor','HP','Electronica','activo',4011);
+INSERT INTO item (id_usuario,nombre,descripcion,categoria,estado,precio) VALUES (1,'Disco Rigido','1 TeraByte','Electronica','activo',822);
+INSERT INTO item (id_usuario,imagen_item,nombre,descripcion,categoria,estado,precio,imagen) VALUES (1,'Impresora Epson','PD365','Electronica','activo',3850);
+INSERT INTO item (id_usuario,nombre,descripcion,categoria,estado,precio) VALUES (1,'Notebook Dell','Procesador Intel 5','Electronica','activo',18000);
+INSERT INTO item (id_usuario,nombre,descripcion,categoria,estado,precio) VALUES (1,'Kit Gamer','Monitor+CPU+Mouse+Teclado','Electronica','activo',45000);
