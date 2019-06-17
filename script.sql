@@ -20,8 +20,9 @@ longitud double,
 primary key (id)
 );
 --  para las claves sha1 de debe de ser varchar de 40 y anteponer sha1('clave'), esto hace que la clave sea codificada
-insert into usuario (nick,pass,email,rol) values('admin',sha1('admin'),'alumno@alumno.com','admin');
-insert into usuario(nick,pass,rol) values ('normal',sha1('normal'),'normal');
+insert into usuario (nombre,apellido,sexo,cuil,nick,pass,email,rol,calle,altura,localidad,estado,latitud,longitud) values('administrador','administrador','hombre','20223211231','admin',sha1('admin'),'alumno@alumno.com','admin','Avenida de Mayo','2222','Ramos Mejia','desbloqueado','-34.663649787755','-58.561294879592');
+insert into usuario (nombre,apellido,sexo,cuil,nick,pass,email,rol,calle,altura,localidad,estado,latitud,longitud) values('normal','normal','hombre','20223211231','normal',sha1('normal'),'alumno@alumno.com','normal','Avenida de Mayo','2222','Ramos Mejia','desbloqueado','-34.663649787755','-58.561294879592');
+
 -- select * from usuario where pass=sha1('alumno');
 -- select count(*) from usuario where nick='alumno' and pass=sha1('alumno');
 create table item(
@@ -67,6 +68,6 @@ imagen  blob NOT NULL,
 principal bit NOT NULL,
 id_item int NOT NULL,
 primary key (id),
-foreign key (id) references item(id)
+foreign key (id_item) references item(id)
 -- hace referencia a la id del item
 );

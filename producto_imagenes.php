@@ -35,12 +35,9 @@ echo "    <div class='column_right' >
     <h5>Categoria</h5>
     <p>".$resultImage['categoria']."</p>
     <br><h5>Cantidad</h5>
-    <input type='number' value='1'>
+    <input type='number' id='cantidad' value='1'>
     <a onclick='agregarProducto(".$resultImage['id'].")' class='btn'>Agregar al carrito</a>
     </div>";
-
-
-//    <a href='vercarrito.php?id=".$resultImage['id']."' class='btn'>Agregar al carrito</a>
 
 
 

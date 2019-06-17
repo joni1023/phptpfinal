@@ -17,6 +17,22 @@ require 'header.php'; ?>
         body {font-family: "Lato", sans-serif;}
 
     </style>
+    <script>
+        function agregarProducto(id) {
+            var confirmacion = confirm("Estas seguro de borrar este item?");
+
+            if (confirmacion) {
+                $.ajax({ url: 'borrar_producto_carrito.php',
+                    data: {id: id},
+                    type: 'post',
+                    success: function(data) {
+                        alert("Producto eliminado");
+                        location.reload();
+                    }
+                });
+            }
+        }
+    </script>
 </head>
 <body>
 <div class="container">
@@ -48,9 +64,8 @@ require 'header.php'; ?>
     <td>".$resultImage['descripcion']."</td>
     <td>$ ".$resultImage['precio']."</td>
     <td><input type='number' value='" . $row['cantidad'] . "'></td>
-    <td><button type='button' formaction='' class='btn btn-danger'>Borrar</button></td>
-</tr>
-<input type='hidden' name='id' value='" . $row['id'] . "'>";
+    <td><button type='button' onclick='agregarProducto(".$row['id'].")'  class='btn btn-danger'>Borrar</button></td>
+</tr>";
         }
         ?>
         </tbody>

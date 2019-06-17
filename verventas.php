@@ -7,12 +7,17 @@ $result = mysqli_query($db, "SELECT * FROM item");
 
 
 while ($row = mysqli_fetch_array($result)) {
-    echo"
-<tr>
+    if($row['estado']=='activo'){
+        echo"<tr>";
+    }
+    else{
+        echo"<tr bgcolor='#ff605b'>";
+    }
+        echo"
     <td>".$row['nombre']."</td>
     <td>".$row['descripcion']."</td>
     <td>".$row['categoria']."</td>
-    <td><select class='form-control'>
+    <td><select id='estado_producto_".$row['id']."' onchange='cambio_de_estado(".$row['id'].")' class='form-control'>
     ";
     if($row['estado']=='activo'){
         echo"<option value='activo' selected>Activo</option>

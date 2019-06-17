@@ -56,6 +56,18 @@ require 'header.php'; ?>
             height: 300px;
         }
     </style>
+    <script>
+        function cambio_de_estado(id) {
+            estado = document.getElementById("estado_producto_"+id).value;
+            $.ajax({ url: 'cambiar_estado_producto.php',
+                data: {id: id,estado:estado},
+                type: 'post',
+                success: function(data ) {
+                     location.reload();
+                }
+            });
+        }
+    </script>
 </head>
 <body>
 <div class="tab">
@@ -83,7 +95,7 @@ require 'header.php'; ?>
 </div>
 
 <script>
-    function openTab(evt, cityName) {
+    function openTab(evt, Name) {
         var i, tabcontent, tablinks;
         tabcontent = document.getElementsByClassName("tabcontent");
         for (i = 0; i < tabcontent.length; i++) {
@@ -93,7 +105,7 @@ require 'header.php'; ?>
         for (i = 0; i < tablinks.length; i++) {
             tablinks[i].className = tablinks[i].className.replace(" active", "");
         }
-        document.getElementById(cityName).style.display = "block";
+        document.getElementById(Name).style.display = "block";
         evt.currentTarget.className += " active";
     }
 

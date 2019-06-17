@@ -197,12 +197,13 @@ require 'header.php'; ?>
         dots[slideIndex-1].className += " active";
         captionText.innerHTML = dots[slideIndex-1].alt;
     }
-    function agregarProducto(n) {
+    function agregarProducto(item_id) {
+        var cantidad = document.getElementById('cantidad').value;
         $.ajax({ url: 'agregar_producto_carrito.php',
-            data: {id: 'n'},
+            data: {id: item_id,cantidad:cantidad},
             type: 'post',
-            success: function() {
-                alert("Producto Agregado con exito");
+            success: function(data ) {
+                location.reload();
             }
         });
     }

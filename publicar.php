@@ -226,14 +226,14 @@
         <div id="filediv10"><input name="image10" type="file" id="file10" style="display: none"/></div>
         <div>
             <p>Nombre</p>
-            <input type="text" name="nombre">
+            <input type="text" required name="nombre">
             <p>Descripcion</p>
-            <textarea maxlength="150" name="descripcion" id="descripcion">
+            <textarea maxlength="150" required name="descripcion" id="descripcion">
             </textarea>
             <p>Categoria</p>
-            <input type="text" name="categoria">
+            <input type="text" required name="categoria">
             <p>Precio</p>
-            <input type="number" name="precio">
+            <input type="number" required name="precio">
             <br>
             <br>
             <label for="fader">Dias de publicacion</label>
