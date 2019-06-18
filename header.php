@@ -59,7 +59,7 @@ while ($row=mysqli_fetch_array($consult)){
         <li><a href='resumenUsuario.php'>Publicaciones</a></li>
         <li><a href='resumenUsuario.php'>Ventas</a></li>
         <li><a href='resumenUsuario.php'>Compras</a></li>
-        <li><a href='#'>Mis datos</a></li>";
+        <li><a href='modificar.php'>Mis datos</a></li>";
                         if(isset($_SESSION)){
                             if (isset($_SESSION['rol'])){
                                 if($_SESSION['rol']=="admin"){
