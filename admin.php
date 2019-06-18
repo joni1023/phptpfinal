@@ -84,8 +84,8 @@ require 'header.php';
                     <input type='hidden' name='calle' value='" . $array['calle'] . "'>
                     <input type='hidden' name='altura' value='" . $array['altura'] . "'>
                     <input type='hidden' name='localidad' value='" . $array['localidad'] . "'>
-                    <input type='submit' class='btn btn-danger' name='botone' value='eliminar'>
-                    <input type='submit' class='btn btn-primary' formaction='modificar.php' value='modificar'>
+                    <input type='submit' class='btn btn-danger' name='botone' value='Bloquear'>
+                    <input type='submit' class='btn btn-primary' formaction='modificar.php' value='Desbloquear'>
                   </form> ";}
 
 
@@ -135,8 +135,8 @@ require 'header.php';
                     <input type='hidden' name='calle' value='" . $colum['calle'] . "'>
                     <input type='hidden' name='altura' value='" . $colum['altura'] . "'>
                     <input type='hidden' name='localidad' value='" . $colum['localidad'] . "'>
-                    <input type='submit' class='btn btn-danger' name='botone' value='eliminar'>
-                    <input type='submit' class='btn btn-primary' formaction='modificar.php' value='modificar'>
+                    <input type='submit' class='btn btn-danger' name='botone' value='Bloquear'>
+                    <input type='submit' class='btn btn-primary' formaction='modificar.php' value='Desbloquear'>
                   </form> ";
                     }
 
@@ -198,8 +198,8 @@ require 'header.php';
                     <input type='hidden' name='calle' value='" . $colum['calle'] . "'>
                     <input type='hidden' name='altura' value='" . $colum['altura'] . "'>
                     <input type='hidden' name='localidad' value='" . $colum['localidad'] . "'>
-                    <input type='submit' class='btn btn-danger' name='botone' value='eliminar'>
-                    <input type='submit' class='btn btn-primary' formaction='modificar.php' value='modificar'>
+                    <input type='submit' class='btn btn-danger' name='botone' value='Bloquear'>
+                    <input type='submit' class='btn btn-primary'  formaction='desbloqueo.php' name='envio' value='Desbloquear'>
                   </form> ";
                 }
 
