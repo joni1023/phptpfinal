@@ -82,7 +82,7 @@ while ($row=mysqli_fetch_array($consult)){
                 <div class="form-group" style="display:inline;">
                     <div class="input-group" style="display:table;">
                         <input class="form-control" id="buscar" name="itemb" placeholder="Buscar" type="text">
-                        <span class="input-group-addon" style="width:5%;"><span class="glyphicon glyphicon-search" style="cursor:pointer"><button type="submit"></button></span></span>
+                        <span class="input-group-addon" style="width:5%;"><button type="submit"><span class="glyphicon glyphicon-search" style="cursor:pointer"></span></button></span>
                     </div>
                 </div>
             </form>
