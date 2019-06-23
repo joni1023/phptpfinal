@@ -16,7 +16,7 @@ while ($row=mysqli_fetch_array($consult)){
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-    <title>Electro - HTML Ecommerce Template</title>
+    <title>Electro</title>
 
     <!-- Google font -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
@@ -217,13 +217,11 @@ while ($row=mysqli_fetch_array($consult)){
         <div id="responsive-nav">
             <!-- NAV -->
             <ul class="main-nav nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="#">Hot Deals</a></li>
-                <li><a href="#">Categories</a></li>
-                <li><a href="#">Laptops</a></li>
-                <li><a href="#">Smartphones</a></li>
-                <li><a href="#">Cameras</a></li>
-                <li><a href="#">Accessories</a></li>
+                <li class="active"><a href="#">Inicio</a></li>
+                <li><a href="#">Ofertas</a></li>
+                <li><a href="#">Categorias</a></li>
+                <?php
+                require 'categorias.php'; ?>
             </ul>
             <!-- /NAV -->
         </div>

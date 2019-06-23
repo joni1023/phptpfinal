@@ -1,61 +1,8 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Electro</title>
+<?php
+require 'header.php'; ?>
 
-    <!-- Google font -->
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
-
-    <!-- Bootstrap -->
-    <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"/>
-
-    <!-- Slick -->
-    <link type="text/css" rel="stylesheet" href="css/slick.css"/>
-    <link type="text/css" rel="stylesheet" href="css/slick-theme.css"/>
-
-    <!-- nouislider -->
-    <link type="text/css" rel="stylesheet" href="css/nouislider.min.css"/>
-
-    <!-- Font Awesome Icon -->
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-
-    <!-- Custom stlylesheet -->
-    <link type="text/css" rel="stylesheet" href="css/style.css"/>
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-</head>
-<!-- Aca hay que agregar el header-->
-<body>
-<nav id="navigation">
-    <!-- container -->
-    <div class="container">
-        <!-- responsive-nav -->
-        <div id="responsive-nav">
-            <!-- NAV -->
-            <ul class="main-nav nav navbar-nav">
-                <li class="active"><a href="#">Inicio</a></li>
-                <li><a href="#">Ofertas</a></li>
-                <!-- TODO: para revisar -->
-                <li><a href="#">Categorias</a></li>
-                <?php
-                require 'categorias.php'; ?>
-            </ul>
-            <!-- /NAV -->
-        </div>
-        <!-- /responsive-nav -->
-    </div>
-    <!-- /container -->
-</nav>
-<!-- /NAVIGATION -->
 
 <!-- SECTION -->
 <div class="section">
@@ -82,14 +29,11 @@
             <!-- section title -->
             <div class="col-md-12">
                 <div class="section-title">
-                    <h3 class="title">New Products</h3>
+                    <h3 class="title">Nuevos productos</h3>
                     <div class="section-nav">
                         <ul class="section-tab-nav tab-nav">
-                            <!-- TODO: agregar categorias-->
-                            <li class="active"><a data-toggle="tab" href="#tab1">Laptops</a></li>
-                            <li><a data-toggle="tab" href="#tab1">Smartphones</a></li>
-                            <li><a data-toggle="tab" href="#tab1">Cameras</a></li>
-                            <li><a data-toggle="tab" href="#tab1">Accessories</a></li>
+                            <?php
+                            require 'categoriasnav.php'; ?>
                         </ul>
                     </div>
                 </div>
@@ -275,13 +219,13 @@
                         <li>
                             <div>
                                 <h3>02</h3>
-                                <span>Days</span>
+                                <span>Dias</span>
                             </div>
                         </li>
                         <li>
                             <div>
                                 <h3>10</h3>
-                                <span>Hours</span>
+                                <span>Horas</span>
                             </div>
                         </li>
                         <li>
@@ -293,13 +237,13 @@
                         <li>
                             <div>
                                 <h3>60</h3>
-                                <span>Secs</span>
+                                <span>Segs</span>
                             </div>
                         </li>
                     </ul>
-                    <h2 class="text-uppercase">hot deal this week</h2>
-                    <p>New Collection Up to 50% OFF</p>
-                    <a class="primary-btn cta-btn" href="#">Shop now</a>
+                    <h2 class="text-uppercase">Ofertas de la semana</h2>
+                    <p>Productos destacados con 50% OFF</p>
+                    <a class="primary-btn cta-btn" href="#">Comprar ahora</a>
                 </div>
             </div>
         </div>
@@ -319,13 +263,11 @@
             <!-- section title -->
             <div class="col-md-12">
                 <div class="section-title">
-                    <h3 class="title">Top selling</h3>
+                    <h3 class="title">Top Ventas</h3>
                     <div class="section-nav">
                         <ul class="section-tab-nav tab-nav">
-                            <li class="active"><a data-toggle="tab" href="#tab2">Laptops</a></li>
-                            <li><a data-toggle="tab" href="#tab2">Smartphones</a></li>
-                            <li><a data-toggle="tab" href="#tab2">Cameras</a></li>
-                            <li><a data-toggle="tab" href="#tab2">Accessories</a></li>
+                            <?php
+                            require 'categoriasnav.php'; ?>
                         </ul>
                     </div>
                 </div>
@@ -506,7 +448,7 @@
         <div class="row">
             <div class="col-md-4 col-xs-6">
                 <div class="section-title">
-                    <h4 class="title">Top selling</h4>
+                    <h4 class="title">Los mas buscados</h4>
                     <div class="section-nav">
                         <div id="slick-nav-3" class="products-slick-nav"></div>
                     </div>
@@ -599,7 +541,7 @@
 
             <div class="col-md-4 col-xs-6">
                 <div class="section-title">
-                    <h4 class="title">Top selling</h4>
+                    <h4 class="title">Los mas vendidos</h4>
                     <div class="section-nav">
                         <div id="slick-nav-4" class="products-slick-nav"></div>
                     </div>
@@ -694,7 +636,7 @@
 
             <div class="col-md-4 col-xs-6">
                 <div class="section-title">
-                    <h4 class="title">Top selling</h4>
+                    <h4 class="title">Los precios mas bajos</h4>
                     <div class="section-nav">
                         <div id="slick-nav-5" class="products-slick-nav"></div>
                     </div>
@@ -800,10 +742,10 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="newsletter">
-                    <p>Sign Up for the <strong>NEWSLETTER</strong></p>
+                    <p>Suscribite a nuestro <strong>NEWSLETTER</strong></p>
                     <form>
-                        <input class="input" type="email" placeholder="Enter Your Email">
-                        <button class="newsletter-btn"><i class="fa fa-envelope"></i> Subscribe</button>
+                        <input class="input" type="email" placeholder="Ingresa tu email">
+                        <button class="newsletter-btn"><i class="fa fa-envelope"></i> Subscribirme</button>
                     </form>
                     <ul class="newsletter-follow">
                         <li>
