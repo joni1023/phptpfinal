@@ -11,7 +11,7 @@ while ($row = mysqli_fetch_array($result)) {
         </div>
         <div class='shop-body'>
             <h3>". $row['nombre'] . "<br>". $row['descripcion'] . "</h3>
-            <a href='#' class='cta-btn'>Comprar <i class='fa fa-arrow-circle-right'></i></a>
+            <a href='detalleproducto.php?id=".$row['id']."' class='cta-btn'>Comprar <i class='fa fa-arrow-circle-right'></i></a>
         </div>
     </div>
 </div>";

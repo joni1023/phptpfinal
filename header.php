@@ -104,12 +104,9 @@ while ($row=mysqli_fetch_array($consult)){
                 <!-- LOGO -->
                 <div class="col-md-3">
                     <div class="header-logo">
-                        <a href="#" class="logo">
+                        <a href="index.php" class="logo">
                             <img src="./img/logo.png" alt="">
                         </a>
-                    </div>
-                    <div class="navbar-header">
-                        <a class="navbar-brand" href="index.php">Electro.</a>
                     </div>
 
                 </div>
