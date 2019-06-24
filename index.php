@@ -25,25 +25,12 @@ require 'header.php'; ?>
     <div class="container">
         <!-- row -->
         <div class="row">
+           <?php
+           require 'categoriasnav.php'; ?>
 
-            <!-- section title -->
-            <div class="col-md-12">
-                <div class="section-title">
-                    <h3 class="title">Nuevos productos</h3>
-                    <div class="section-nav">
-                        <ul class="section-tab-nav tab-nav">
-                            <?php
-                            require 'categoriasnav.php'; ?>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <!-- /section title -->
 
             <!-- Products tab & slick -->
-            <div class="col-md-12">
-                <div class="row">
-                    <div class="products-tabs">
+
                         <!-- tab -->
                         <!-- TODO: agregar productos por categoria-->
                         <div id="tab1" class="tab-pane active">
@@ -196,9 +183,7 @@ require 'header.php'; ?>
                             <div id="slick-nav-1" class="products-slick-nav"></div>
                         </div>
                         <!-- /tab -->
-                    </div>
-                </div>
-            </div>
+
             <!-- Products tab & slick -->
         </div>
         <!-- /row -->

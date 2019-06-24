@@ -216,7 +216,7 @@ while ($row=mysqli_fetch_array($consult)){
             <ul class="main-nav nav navbar-nav">
                 <li class="active"><a href="#">Inicio</a></li>
                 <li><a href="#">Ofertas</a></li>
-                <li><a href="#">Categorias</a></li>
+                <li><a href="#">Todas las Categorias</a></li>
                 <?php
                 require 'categorias.php'; ?>
             </ul>
