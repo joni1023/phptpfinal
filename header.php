@@ -58,7 +58,6 @@ while ($row=mysqli_fetch_array($consult)){
                 <li><a href="#"><i class="fa fa-map-marker"></i> 1734 Stonecoal Road</a></li>
             </ul>
             <ul class="header-links pull-right">
-                <li><a href="#"><i class="fa fa-dollar"></i> USD</a></li>
                 <li><a href="#"><i class="fa fa-user-o"></i>
                         <?php
                         if (!isset($_SESSION)) session_start();
@@ -124,7 +123,7 @@ while ($row=mysqli_fetch_array($consult)){
                             <input class="input" placeholder="Buscame" list="buscados" id="buscar" name="itemb">
                             <datalist id="buscados" >
                             </datalist>
-                            <button class="search-btn">Search</button>
+                            <button class="search-btn">Buscar</button>
                         </form>
                     </div>
                 </div>
@@ -137,7 +136,7 @@ while ($row=mysqli_fetch_array($consult)){
                         <div>
                             <a href="#">
                                 <i class="fa fa-heart-o"></i>
-                                <span>Your Wishlist</span>
+                                <span>Favoritos</span>
                                 <div class="qty">2</div>
                             </a>
                         </div>
@@ -147,7 +146,7 @@ while ($row=mysqli_fetch_array($consult)){
                         <div class="dropdown">
                             <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
                                 <i class="fa fa-shopping-cart"></i>
-                                <span>Your Cart</span>
+                                <span>Mi Carrito</span>
                                 <div class="qty">3</div>
                             </a>
                             <div class="cart-dropdown">
@@ -214,7 +213,7 @@ while ($row=mysqli_fetch_array($consult)){
         <div id="responsive-nav">
             <!-- NAV -->
             <ul class="main-nav nav navbar-nav">
-                <li class="active"><a href="#">Inicio</a></li>
+                <li class="active"><a href="index.php">Inicio</a></li>
                 <li><a href="#">Ofertas</a></li>
                 <li><a href="#">Todas las Categorias</a></li>
                 <?php
