@@ -43,7 +43,15 @@ while ($row=mysqli_fetch_array($consult)){
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <style>
+        #map {
+            width: 500px;
+            height: 300px;
+        }
+    </style>
 
+    <script src="https://unpkg.com/leaflet@1.0.2/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.2/dist/leaflet.css" />
 
 </head>
 <body>
@@ -68,7 +76,7 @@ while ($row=mysqli_fetch_array($consult)){
                             echo"<li class='dropdown'>
     <a href='#' class='dropdown-toggle' data-toggle='dropdown' role='button' aria-haspopup='true' aria-expanded='false'><span class='glyphicon glyphicon-user'></span> ".$nombre."<span class='caret'></span></a>
     <ul class='dropdown-menu'>
-        <li><a href='resumenUsuario.php'>Publicaciones</a></li>
+        <li><a class='dropdown-item' href='resumenUsuario.php'>Publicaciones</a></li>
         <li><a href='resumenUsuario.php'>Ventas</a></li>
         <li><a href='resumenUsuario.php'>Compras</a></li>
         <li><a href='#'>Mis datos</a></li>";
@@ -143,46 +151,49 @@ while ($row=mysqli_fetch_array($consult)){
                         <!-- /Wishlist -->
 
                         <!-- Cart -->
-                        <div class="dropdown">
-                            <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
-                                <i class="fa fa-shopping-cart"></i>
+                        <?php if(isset($_SESSION['username'])){
+                            echo "<div class=\"dropdown\">
+                            <a class=\"dropdown-toggle\" data-toggle=\"dropdown\" aria-expanded=\"true\">
+                                <i class=\"fa fa-shopping-cart\"></i>
                                 <span>Mi Carrito</span>
-                                <div class="qty">3</div>
+                                <div class=\"qty\">".$carrito."</div>
                             </a>
-                            <div class="cart-dropdown">
-                                <div class="cart-list">
-                                    <div class="product-widget">
-                                        <div class="product-img">
-                                            <img src="./img/product01.png" alt="">
+                            <div class=\"cart-dropdown\">
+                                <div class=\"cart-list\">
+                                    <div class=\"product-widget\">
+                                        <div class=\"product-img\">
+                                            <img src=\"./img/product01.png\" alt=\"\">
                                         </div>
-                                        <div class="product-body">
-                                            <h3 class="product-name"><a href="#">product name goes here</a></h3>
-                                            <h4 class="product-price"><span class="qty">1x</span>$980.00</h4>
+                                        <div class=\"product-body\">
+                                            <h3 class=\"product-name\"><a href=\"#\">product name goes here</a></h3>
+                                            <h4 class=\"product-price\"><span class=\"qty\">1x</span>$980.00</h4>
                                         </div>
-                                        <button class="delete"><i class="fa fa-close"></i></button>
+                                        <button class=\"delete\"><i class=\"fa fa-close\"></i></button>
                                     </div>
 
-                                    <div class="product-widget">
-                                        <div class="product-img">
-                                            <img src="./img/product02.png" alt="">
+                                    <div class=\"product-widget\">
+                                        <div class=\"product-img\">
+                                            <img src=\"./img/product02.png\" alt=\"\">
                                         </div>
-                                        <div class="product-body">
-                                            <h3 class="product-name"><a href="#">product name goes here</a></h3>
-                                            <h4 class="product-price"><span class="qty">3x</span>$980.00</h4>
+                                        <div class=\"product-body\">
+                                            <h3 class=\"product-name\"><a href=\"#\">product name goes here</a></h3>
+                                            <h4 class=\"product-price\"><span class=\"qty\">3x</span>$980.00</h4>
                                         </div>
-                                        <button class="delete"><i class="fa fa-close"></i></button>
+                                        <button class=\"delete\"><i class=\"fa fa-close\"></i></button>
                                     </div>
                                 </div>
-                                <div class="cart-summary">
+                                <div class=\"cart-summary\">
                                     <small>3 Item(s) selected</small>
                                     <h5>SUBTOTAL: $2940.00</h5>
                                 </div>
-                                <div class="cart-btns">
-                                    <a href="#">View Cart</a>
-                                    <a href="#">Checkout  <i class="fa fa-arrow-circle-right"></i></a>
+                                <div class=\"cart-btns\">
+                                    <a href='vercarrito.php'>Ver Carrito</a>
+                                    <a href=\"#\">Revisa <i class=\"fa fa-arrow-circle-right\"></i></a>
                                 </div>
                             </div>
-                        </div>
+                        </div>";
+                        }
+                        ?>
                         <!-- /Cart -->
 
                         <!-- Menu Toogle -->
