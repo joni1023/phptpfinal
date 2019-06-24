@@ -36,7 +36,7 @@ require 'header.php'; ?>
     <script src="https://secure.mlstatic.com/sdk/javascript/v1/mercadopago.js"></script>
 
 </head>
-<body>
+<div>
 <div class="container">
     <h2>Productos en Carrito</h2>
     <table class="table">
@@ -153,12 +153,12 @@ $sumador=null;
         <div><h3>Otro metodo:</h3></div>
 
     </div>
-    <button type="submit}" class="btn btn-success"  style="margin-left: 25%; width: 50%;margin-top: 5%">finalizar la compra</button>
+    <button type="submit" class="btn btn-success"  style="margin-left: 25%; width: 50%;margin-top: 5%">finalizar la compra</button>
 
 </div>
 <p>fin de pagina</p>
-</body>
-<script>
+</div>
+<script type="application/javascript">
     $(document).ready(function(){
         $("#show").click(function(){
             $("#metodoEntrega").fadeIn();
@@ -167,27 +167,6 @@ $sumador=null;
             $("#mediodepago").fadeIn();
         });
     });
-    Mercadopago.setPublishableKey("TEST-b3d5b663-664a-4e8f-b759-de5d7c12ef8f");
-    Mercadopago.getIdentificationTypes();
-    function guessingPaymentMethod(event) {
-        var bin = getBin();
-
-        if (event.type == "keyup") {
-            if (bin.length >= 6) {
-                Mercadopago.getPaymentMethod({
-                    "bin": bin
-                }, setPaymentMethodInfo);
-            }
-        } else {
-            setTimeout(function() {
-                if (bin.length >= 6) {
-                    Mercadopago.getPaymentMethod({
-                        "bin": bin
-                    }, setPaymentMethodInfo);
-                }
-            }, 100);
-        }
-    };
-
 </script>
 </html>
+<?php include 'footer.php'; ?>

@@ -124,7 +124,7 @@ while ($row=mysqli_fetch_array($consult)){
                             <input class="input" placeholder="Buscame" list="buscados" id="buscar" name="itemb">
                             <datalist id="buscados" >
                             </datalist>
-                            <button class="search-btn">Search</button>
+                            <button class="search-btn">Buscar</button>
                         </form>
                     </div>
                 </div>
@@ -228,65 +228,5 @@ while ($row=mysqli_fetch_array($consult)){
 </nav>
 <!-- /NAVIGATION -->
 
-
-<!--<head>-->
-<!--    <meta charset="utf-8" />-->
-<!--    <link rel="stylesheet" href="css/bootstrap.min.css">-->
-<!---->
-<!--    <script-->
-<!--            src="https://code.jquery.com/jquery-3.4.1.min.js"-->
-<!--            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="-->
-<!--            crossorigin="anonymous"></script>-->
-<!--    <script src="js/bootstrap.min.js"></script>-->
-<!--    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">-->
-<!--    <link rel="stylesheet" href="css/jquery.ui.css">-->
-<!--    <link rel="stylesheet" href="css/estilos.css">-->
-<!---->
-<!--</head>-->
-<!--<header id="header">-->
-<!--    <nav class="navbar navbar-inverse">-->
-<!--        <div class="container-fluid">-->
-<!--            <div class="navbar-header">-->
-<!--                <img src="img/logo.png" width="45" height="45">-->
-<!--            </div>-->
-<!--            <div class="navbar-header">-->
-<!--                <a class="navbar-brand" href="index.php">Electro.</a>-->
-<!--            </div>-->
-<!--            <ul class="nav navbar-nav">-->
-<!--                --><?php
-//                if(!isset($_SESSION)) session_start();
-//                if(isset($_SESSION)){
-//                    if (isset($_SESSION['rol'])){
-//                            if($_SESSION['rol']=="admin"){
-//
-//                            }else{
-//                                echo "<li class='active'><a href=''>vender</a></li>";
-//                            }}
-//                }
-//
-//            ?>
-<!--            </ul>-->
-<!--            <ul class="nav navbar-nav navbar-right">-->
-<!---->
-<!---->
-<!---->
-<!--            </ul>-->
-<!--            <form method="post" action="buscaritem.php" class="navbar-form">-->
-<!--                <div class="form-group" style="display:inline;">-->
-<!--                    <div class="input-group" style="display:table;">-->
-<!--                        <input class="form-control" id="buscar" name="itemb" placeholder="Buscar" type="text">-->
-<!--                        <span class="input-group-addon" style="width:5%;"><button type="submit"><span class="glyphicon glyphicon-search" style="cursor:pointer"></span></button></span>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </form>-->
-<!--        </div>-->
-<!--    </nav>-->
-<!--</header>-->
-<!--se agrego a lo ultimo-->
-<script
-        src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"
-        integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E="
-        crossorigin="anonymous"></script>
-<script type="text/javascript" src="js/buscar.js"></script>
 
 
