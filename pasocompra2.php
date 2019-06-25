@@ -56,7 +56,10 @@ require  'database.php';
             <div><h3>Otro metodo:</h3></div>
 
         </div>
-        <button type="submit" class="btn btn-success"  style="margin-left: 25%; width: 50%;margin-top: 5%">finalizar la compra</button>
+        <div class="col-lg-12">
+            <button type="submit"  style="margin-left: 25%; width: 50%;margin-top: 5%" class="primary-btn order-submit" >finalizar la compra</button>
+        </div>
+
 
     </div>
 

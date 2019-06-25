@@ -292,6 +292,23 @@
 
     }
 </script>
+<!-- script del carrito-->
+<script>
+    function agregarProducto(id) {
+        var confirmacion = confirm("Estas seguro de borrar este item?");
+
+        if (confirmacion) {
+            $.ajax({ url: 'borrar_producto_carrito.php',
+                data: {id: id},
+                type: 'post',
+                success: function(data) {
+                    alert("Producto eliminado");
+                    location.reload();
+                }
+            });
+        }
+    }
+</script>
 <script src="js/main.js"></script>
 </body>
 </html>
