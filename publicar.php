@@ -2,7 +2,8 @@
 <html>
 <head>
     <title>Publicar</title>
-
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/css/jasny-bootstrap.min.css" rel="stylesheet"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script>
         var value=1;
         $('body').on('change', '#file1', function ()

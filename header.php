@@ -66,16 +66,14 @@ while ($row=mysqli_fetch_array($consult)){
                 <li><a href="#"><i class="fa fa-map-marker"></i> 1734 Stonecoal Road</a></li>
             </ul>
             <ul class="header-links pull-right">
-                <li><a href="#"><i class="fa fa-user-o"></i>
                         <?php
                         if (!isset($_SESSION)) session_start();
                         if(isset($_SESSION['username'])){
                             $nombre=$_SESSION['username'];
                             $carrito=$_SESSION['carrito'];
-                            echo "<li><a style='cursor:pointer' id='carrito' href='vercarrito.php'><span class='glyphicon glyphicon-shopping-cart fa-lg'></span><asp:Label ID='lblCartCount' ForeColor='White'/>".$carrito."</a></li>";
-                            echo"<li class='dropdown'>
-    <a href='#' class='dropdown-toggle' data-toggle='dropdown' role='button' aria-haspopup='true' aria-expanded='false'><span class='glyphicon glyphicon-user'></span> ".$nombre."<span class='caret'></span></a>
-    <ul class='dropdown-menu'>
+                            echo"<li class='dropdown' >
+    <a href='#' class='dropdown-toggle' data-toggle='dropdown' role='button' aria-haspopup='true' aria-expanded='false'><i class='fa fa-user-o'></i> ".$nombre."<span class='caret'></span></a>
+    <ul class='dropdown-menu' style='background-color: #1E1F29'>
         <li><a class='dropdown-item' href='resumenUsuario.php'>Publicaciones</a></li>
         <li><a href='resumenUsuario.php'>Ventas</a></li>
         <li><a href='resumenUsuario.php'>Compras</a></li>
