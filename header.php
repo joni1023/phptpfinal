@@ -61,9 +61,9 @@ while ($row=mysqli_fetch_array($consult)){
     <div id="top-header">
         <div class="container">
             <ul class="header-links pull-left">
-                <li><a href="#"><i class="fa fa-phone"></i> +021-95-51-84</a></li>
-                <li><a href="#"><i class="fa fa-envelope-o"></i> email@email.com</a></li>
-                <li><a href="#"><i class="fa fa-map-marker"></i> 1734 Stonecoal Road</a></li>
+                <li><a href="#"><i class="fa fa-phone"></i> +549-115-555-4541</a></li>
+                <li><a href="#"><i class="fa fa-envelope-o"></i> soporte@electroEcommerce.com</a></li>
+                <li><a href="#"><i class="fa fa-map-marker"></i> Florencio Varela 1903</a></li>
             </ul>
             <ul class="header-links pull-right">
                         <?php
@@ -223,8 +223,8 @@ while ($row=mysqli_fetch_array($consult)){
             <!-- NAV -->
             <ul class="main-nav nav navbar-nav">
                 <li class="active"><a href="index.php">Inicio</a></li>
-                <li><a href="#">Ofertas</a></li>
-                <li><a href="#">Todas las Categorias</a></li>
+                <li><a href='vercategorias.php?cat=Ofertas'>Ofertas</a></li>
+                <li><a href='vercategorias.php?cat=Todas'>Todas las Categorias</a></li>
                 <?php
                 require 'categorias.php'; ?>
             </ul>
