@@ -61,21 +61,25 @@ while ($row=mysqli_fetch_array($consult)){
     <div id="top-header">
         <div class="container">
             <ul class="header-links pull-left">
-                <li><a href="#"><i class="fa fa-phone"></i> +021-95-51-84</a></li>
-                <li><a href="#"><i class="fa fa-envelope-o"></i> email@email.com</a></li>
-                <li><a href="#"><i class="fa fa-map-marker"></i> 1734 Stonecoal Road</a></li>
+                <li><a href="#"><i class="fa fa-phone"></i> +549-115-555-4541</a></li>
+                <li><a href="#"><i class="fa fa-envelope-o"></i> soporte@electroEcommerce.com</a></li>
+                <li><a href="#"><i class="fa fa-map-marker"></i> Florencio Varela 1903</a></li>
             </ul>
             <ul class="header-links pull-right">
                 <li><a href="#">
-                        <?php
+
+<?php
                         if (!isset($_SESSION)) session_start();
                         if(isset($_SESSION['username'])){
                             $nombre=$_SESSION['username'];
                             $carrito=$_SESSION['carrito'];
-
                             echo"<li class='dropdown'>
     <a href='#' class='dropdown-toggle' data-toggle='dropdown' role='button' aria-haspopup='true' aria-expanded='false'> <i class=\"fa fa-user-o\"></i>".$nombre."<span class='caret'></span></a>
-    <ul class='dropdown-menu'>
+    <ul class='dropdown-menu'>";
+
+                            echo"<li class='dropdown' >
+    <a href='#' class='dropdown-toggle' data-toggle='dropdown' role='button' aria-haspopup='true' aria-expanded='false'><i class='fa fa-user-o'></i> ".$nombre."<span class='caret'></span></a>
+    <ul class='dropdown-menu' style='background-color: #1E1F29'>
         <li><a class='dropdown-item' href='resumenUsuario.php'>Publicaciones</a></li>
         <li><a href='resumenUsuario.php'>Ventas</a></li>
         <li><a href='resumenUsuario.php'>Compras</a></li>
@@ -225,8 +229,8 @@ while ($row=mysqli_fetch_array($consult)){
             <!-- NAV -->
             <ul class="main-nav nav navbar-nav">
                 <li class="active"><a href="index.php">Inicio</a></li>
-                <li><a href="#">Ofertas</a></li>
-                <li><a href="#">Todas las Categorias</a></li>
+                <li><a href='vercategorias.php?cat=Ofertas'>Ofertas</a></li>
+                <li><a href='vercategorias.php?cat=Todas'>Todas las Categorias</a></li>
                 <?php
                 require 'categorias.php'; ?>
             </ul>

@@ -99,7 +99,7 @@
         </div>
 </form>
         </div>
-
+        </body>
 
 
 <?php
