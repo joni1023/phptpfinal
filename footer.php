@@ -310,5 +310,31 @@
     }
 </script>
 <script src="js/main.js"></script>
+<script >
+    function Validar()
+    {
+        user=$('#usuario').val();
+        pwd=$('#pass').val();
+        if(user=="")
+        {
+            alert("El campo Usuario esta vacio");
+            user.focus();
+            return false;
+        }
+        else
+        {
+            if(pwd=="")
+            {
+                alert("El campo Constraseña esta vacio");
+                pwd.focus();
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+    }
+</script>
 </body>
 </html>
