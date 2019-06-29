@@ -4,8 +4,15 @@ if(!isset($_POST)){
     header("location:index.php");
 }
 $item=$_POST['itemb'];
-
+$buscarpor=$_POST['buscarpor'];
+if($buscarpor=="producto"){
 $q="SELECT * FROM item WHERE nombre LIKE '$item%'";
+}elseif ($buscarpor=="categoria"){
+    $q="SELECT * FROM item WHERE categoria LIKE '$item%'";
+}elseif ($buscarpor=="usuario"){
+    $q="select * from item inner join usuario
+on item.id_usuario=usuario.id where usuario.nombre like '$item%';";
+}
 $consulta = mysqli_query($conexion,$q);
     require 'header.php';
 ?>
