@@ -73,14 +73,10 @@ while ($row=mysqli_fetch_array($consult)){
                         if(isset($_SESSION['username'])){
                             $nombre=$_SESSION['username'];
                             $carrito=$_SESSION['carrito'];
-                            echo"<li class='dropdown'>
-    <a href='#' class='dropdown-toggle' data-toggle='dropdown' role='button' aria-haspopup='true' aria-expanded='false'> <i class=\"fa fa-user-o\"></i>".$nombre."<span class='caret'></span></a>
-    <ul class='dropdown-menu'>";
-
                             echo"<li class='dropdown' >
     <a href='#' class='dropdown-toggle' data-toggle='dropdown' role='button' aria-haspopup='true' aria-expanded='false'><i class='fa fa-user-o'></i> ".$nombre."<span class='caret'></span></a>
     <ul class='dropdown-menu' style='background-color: #1E1F29'>
-        <li><a class='dropdown-item' href='resumenUsuario.php'>Publicaciones</a></li>
+        <li style='width: 100%;'><a class='dropdown-item' href='resumenUsuario.php'>Publicaciones</a></li>
         <li><a href='resumenUsuario.php'>Ventas</a></li>
         <li><a href='resumenUsuario.php'>Compras</a></li>
         <li><a href='#'>Mis datos</a></li>";
