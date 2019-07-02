@@ -13,16 +13,16 @@
                     </form>
                     <ul class="newsletter-follow">
                         <li>
-                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="https://es-la.facebook.com/"><i class="fa fa-facebook"></i></a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="https://twitter.com/"><i class="fa fa-twitter"></i></a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-instagram"></i></a>
+                            <a href="https://www.instagram.com/?hl=es-la"><i class="fa fa-instagram"></i></a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-pinterest"></i></a>
+                            <a href="https://ar.pinterest.com/"><i class="fa fa-pinterest"></i></a>
                         </li>
                     </ul>
                 </div>
@@ -44,7 +44,7 @@
             <div class="row">
                 <div class="col-md-3 col-xs-6">
                     <div class="footer">
-                        <h3 class="footer-title">Nostros</h3>
+                        <h3 class="footer-title">Nosotros</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.</p>
                         <ul class="footer-links">
                             <li><a href="#"><i class="fa fa-map-marker"></i>1734 Stonecoal Road</a></li>
