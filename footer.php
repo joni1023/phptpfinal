@@ -6,7 +6,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="newsletter">
-                    <p>Suscribte para recibir nuestras <strong>PROMOCIONES</strong></p>
+                    <p>Suscribete para recibir nuestras <strong>PROMOCIONES</strong></p>
                     <form>
                         <input class="input" type="email" placeholder="Ingresa tu correo">
                         <button class="newsletter-btn"><i class="fa fa-envelope"></i> Suscribete</button>
@@ -45,24 +45,11 @@
                 <div class="col-md-3 col-xs-6">
                     <div class="footer">
                         <h3 class="footer-title">Nosotros</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.</p>
+                        <p>En Electro somos una empresa comprometida con nuestros usuarios y sus datos</p>
                         <ul class="footer-links">
-                            <li><a href="#"><i class="fa fa-map-marker"></i>1734 Stonecoal Road</a></li>
-                            <li><a href="#"><i class="fa fa-phone"></i>+021-95-51-84</a></li>
-                            <li><a href="#"><i class="fa fa-envelope-o"></i>email@email.com</a></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="col-md-3 col-xs-6">
-                    <div class="footer">
-                        <h3 class="footer-title">Categorias</h3>
-                        <ul class="footer-links">
-                            <li><a href="#">Hot deals</a></li>
-                            <li><a href="#">Laptops</a></li>
-                            <li><a href="#">Smartphones</a></li>
-                            <li><a href="#">Cameras</a></li>
-                            <li><a href="#">Accessories</a></li>
+                            <li><a style="cursor: default"><i class="fa fa-map-marker"></i>Florencio Varela 1903</a></li>
+                            <li><a style="cursor: default"><i class="fa fa-phone"></i>+021-95-51-84</a></li>
+                            <li><a style="cursor: default"><i class="fa fa-envelope-o"></i>soporte@electro.com</a></li>
                         </ul>
                     </div>
                 </div>
@@ -73,11 +60,10 @@
                     <div class="footer">
                         <h3 class="footer-title">Informacion</h3>
                         <ul class="footer-links">
-                            <li><a href="#">sobre nosotros</a></li>
-                            <li><a href="#">contactanos</a></li>
-                            <li><a href="#">Politicas de privacidad</a></li>
-                            <li><a href="#">Pedidos y Devoluciones</a></li>
-                            <li><a href="#">Terminos y condiciones</a></li>
+                            <li><a style="cursor: default">contactanos</a></li>
+                            <li><a style="cursor: default">Politicas de privacidad</a></li>
+                            <li><a style="cursor: default">Pedidos y Devoluciones</a></li>
+                            <li><a style="cursor: default">Terminos y condiciones</a></li>
                         </ul>
                     </div>
                 </div>
@@ -108,12 +94,12 @@
             <div class="row">
                 <div class="col-md-12 text-center">
                     <ul class="footer-payments">
-                        <li><a href="#"><i class="fa fa-cc-visa"></i></a></li>
-                        <li><a href="#"><i class="fa fa-credit-card"></i></a></li>
-                        <li><a href="#"><i class="fa fa-cc-paypal"></i></a></li>
-                        <li><a href="#"><i class="fa fa-cc-mastercard"></i></a></li>
-                        <li><a href="#"><i class="fa fa-cc-discover"></i></a></li>
-                        <li><a href="#"><i class="fa fa-cc-amex"></i></a></li>
+                        <li><a style="cursor: default"><i class="fa fa-cc-visa"></i></a></li>
+                        <li><a style="cursor: default"><i class="fa fa-credit-card"></i></a></li>
+                        <li><a style="cursor: default"><i class="fa fa-cc-paypal"></i></a></li>
+                        <li><a style="cursor: default"><i class="fa fa-cc-mastercard"></i></a></li>
+                        <li><a style="cursor: default"><i class="fa fa-cc-discover"></i></a></li>
+                        <li><a style="cursor: default"><i class="fa fa-cc-amex"></i></a></li>
                     </ul>
                     <span class="copyright">
 								<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
