@@ -134,7 +134,7 @@ $consulta = mysqli_query($conexion,$query);
                     <div class="store-filter clearfix">
                         <div class="store-sort">
                             <label>
-                                Sort By:
+                                Order Por:
                                 <select class="input-select">
                                     <option value="0">Popular</option>
                                     <option value="1">Position</option>
@@ -142,7 +142,7 @@ $consulta = mysqli_query($conexion,$query);
                             </label>
 
                             <label>
-                                Show:
+                                Mostrar:
                                 <select class="input-select">
                                     <option value="0">20</option>
                                     <option value="1">50</option>

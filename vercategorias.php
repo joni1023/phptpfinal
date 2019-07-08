@@ -130,15 +130,15 @@ require 'header.php';
                 <div class="store-filter clearfix">
                     <div class="store-sort">
                         <label>
-                            Sort By:
+                            Order Por:
                             <select class="input-select">
-                                <option value="0">Popular</option>
-                                <option value="1">Position</option>
+                                <option value="0">Precio</option>
+                                <option value="1">Nombre</option>
                             </select>
                         </label>
 
                         <label>
-                            Show:
+                            Mostrar:
                             <select class="input-select">
                                 <option value="0">20</option>
                                 <option value="1">50</option>
