@@ -71,3 +71,20 @@ primary key (id),
 foreign key (id_item) references item(id)
 -- hace referencia a la id del item
 );
+create table categorias(
+id int auto_increment,
+nombre varchar(50),
+primary key (id)
+);
+INSERT INTO categorias(nombre) VALUES ('Almacenamiento'),
+('Hardware'),
+('Software'),
+('Perifericos'),
+('Consolas'),
+('Impresoras'),
+('Monitores'),
+('Notebook'),
+('Accesorios'),
+('Celulares'),
+('Tablets'),
+('Otros');

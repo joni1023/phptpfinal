@@ -123,12 +123,7 @@ while ($row=mysqli_fetch_array($consult)){
                 <div class="col-md-6">
                     <div class="header-search">
                         <form method="post" action="buscaritem.php">
-                            <select class="input-select" id="buscarpor" name="buscarpor">
-                                <option value="categoria">categoria</option>
-                                <option value="producto">producto</option>
-                                <option value="usuario">usuario</option>
-                            </select>
-                            <input class="input" placeholder="Buscame" list="buscados" id="buscar" name="itemb">
+                            <input class="input" placeholder="Buscar..." list="buscados" id="buscar" name="itemb">
                             <datalist id="buscados" >
                             </datalist>
                             <button class="search-btn">Buscar</button>
