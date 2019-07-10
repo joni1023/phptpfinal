@@ -280,7 +280,7 @@
 </script>
 <!-- script del carrito-->
 <script>
-    function agregarProducto(id) {
+    function borrarProducto(id) {
         var confirmacion = confirm("Estas seguro de borrar este item?");
 
         if (confirmacion) {

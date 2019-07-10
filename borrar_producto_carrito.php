@@ -5,6 +5,7 @@ if (!isset($_SESSION)) session_start();
 if(isset($_SESSION['user_id']))
 {
     $userId=$_SESSION['user_id'];
+    $_SESSION['carrito']=$_SESSION['carrito']-1;
 }
 $db = mysqli_connect("localhost", "root", "", "tp_pw");
 $userId=$_SESSION['user_id'];
