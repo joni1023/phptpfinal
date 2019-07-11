@@ -40,7 +40,7 @@ $sumador=null;
     <td>$ ".$resultImage['precio']."</td>
     <td><input type='number' value='" . $row['cantidad'] . "'></td>
     <td>$  ". $subtotal=$row['cantidad']*$resultImage['precio']    ."         </td>
-    <td><button type='button' onclick='agregarProducto(".$row['id'].")'  class='btn btn-danger'>Borrar</button></td>
+    <td><button type='button' onclick='borrarProducto(".$row['id'].")'  class='btn btn-danger'>Borrar</button></td>
 </tr>";
             $sumador=$sumador+$subtotal;
         }

@@ -232,7 +232,13 @@
             <textarea maxlength="150" required name="descripcion" id="descripcion">
             </textarea>
             <p>Categoria</p>
-            <input type="text" required name="categoria">
+            <select name="categoria" required>
+                <?php require 'database.php';
+            $result=mysqli_query($conexion,"SELECT nombre FROM categorias");
+            while ($row = mysqli_fetch_array($result)) {
+                echo"<option value='". $row['nombre'] . "'>". $row['nombre'] . "</option>";
+            } ?>
+            </select>
             <p>Precio</p>
             <input type="number" required name="precio">
             <br>
