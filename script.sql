@@ -71,3 +71,14 @@ primary key (id),
 foreign key (id_item) references item(id)
 -- hace referencia a la id del item
 );
+create table mensaje (
+id int auto_increment,
+id_item int,
+remitente varchar(30),
+mensaje varchar (120),
+leido varchar(10),
+privado varchar(10),
+fecha date,
+primary key (id),
+foreign key (id_item) references item(id)
+);

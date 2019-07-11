@@ -28,6 +28,25 @@ $(document).ready(function () {
             }
                 })
 
-        })
+        });
+    
+    function listarmensajes() {
 
+        
+    }
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     });

@@ -51,6 +51,11 @@ while ($row=mysqli_fetch_array($consult)){
     </style>
 
     <script src="https://unpkg.com/leaflet@1.0.2/dist/leaflet.js"></script>
+    <script >        function vermsj(e) {
+
+            $("#vermensaje"+ e ).toggle("slow");
+        }
+    </script >
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.2/dist/leaflet.css" />
 
 </head>

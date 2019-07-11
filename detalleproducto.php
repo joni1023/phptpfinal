@@ -145,6 +145,7 @@ echo"
                         <li class='active'><a data-toggle='tab' href='#tab1'>Description</a></li>
                         <li><a data-toggle='tab' href='#tab2'>Details</a></li>
                         <li><a data-toggle='tab' href='#tab3'>Reviews (3)</a></li>
+                        <li><a data-toggle='tab' href='#tab4'>Mensajea(3)</a></li>
                     </ul>
                     <!-- /product tab nav -->
 
@@ -346,6 +347,50 @@ echo"
                             </div>
                         </div>
                         <!-- /tab3  -->
+                        <!-- tab4  -->
+                        <div id='tab4' class='tab-pane fade in'>
+                            <div class='row'>
+                                <!-- Reviews -->
+                                <div class='col-md-6'>
+                                    <div id='reviews'>
+                                        <ul class='reviews' id='mensajeria'>";
+
+                                       echo "</ul>
+                                        <ul class='reviews-pagination'>
+                                            <li class='active'>1</li>
+                                            <li><a href='#'>2</a></li>
+                                            <li><a href='#'>3</a></li>
+                                            <li><a href='#'>4</a></li>
+                                            <li><a href='#'><i class='fa fa-angle-right'></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!-- /Reviews -->
+
+                                <!-- Review Form -->
+                                <div class='col-md-6'>
+                                    <div id='review-form'>
+                                    <form class='review-form' id='form-mensaje'>
+                                                <div class=''>
+                                                <span>Enivar mensaje como </span>
+                                                <div class=''>
+                                                    <input id='metodomensaje' name='metodomensaje' value='publico' type='radio'>
+                                                    <label>Publico</label>
+                                                    <input id='metodomensaje' name='metodomensaje' value='privado' type='radio'> 
+                                                    <label>Privado</label> 
+                                                </div>
+                                            </div>
+                              <input id='iditem' name='iditem' value='".$product_id."' hidden>
+                                            <input name='remitente' id='remitente' class='input' type='text' placeholder='".$_SESSION['username'] ."' value='".$_SESSION['username']."'>
+                                            <textarea name='mensaje' id='mensaje' class='input' placeholder='Deja tu mensaje' autofocus></textarea>
+                                            <button class='primary-btn' type='submit' >Enviar</button>
+                                        </form>
+                                    </div>
+                                </div>
+                                <!-- /Review Form -->
+                            </div>
+                        </div>
+                        <!-- /tab4  -->
                     </div>
                     <!-- /product tab content  -->
                 </div>

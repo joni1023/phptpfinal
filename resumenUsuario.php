@@ -4,6 +4,8 @@ session_start();
 if (!isset($_SESSION['rol'])){
     header("location:index.php");
 }
+
+
 require 'header.php'; ?>
 
 <!DOCTYPE html>
@@ -74,6 +76,7 @@ require 'header.php'; ?>
     <button class="tablinks" onclick="openTab(event, 'Publicar')" id="defaultOpen">Publicar</button>
     <button class="tablinks" onclick="openTab(event, 'Misventas')">Mis ventas</button>
     <button class="tablinks" onclick="openTab(event, 'Miscompras')">Mis compras</button>
+    <button class="tablinks" onclick="openTab(event, 'Mispreguntas')">Mis preguntas</button>
 </div>
 
 <div id="Publicar" class="tabcontent">
@@ -92,6 +95,9 @@ require 'header.php'; ?>
     <?php
     require 'compras.php';
     ?>
+</div>
+<div id="Mispreguntas" class="tabcontent">
+
 </div>
 
 <script>
@@ -114,4 +120,4 @@ require 'header.php'; ?>
 </script>
 
 </body>
-</html> 
+</html>

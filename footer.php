@@ -309,7 +309,9 @@
         }
     }
 </script>
+<script src="js/mensajeria.js"></script>
 <script src="js/main.js"></script>
+<!-- validar login -->
 <script >
     function Validar()
     {
@@ -336,5 +338,6 @@
         }
     }
 </script>
+
 </body>
 </html>
