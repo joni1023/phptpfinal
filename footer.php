@@ -135,13 +135,19 @@
 <script>
     function agregarProducto(item_id) {
         var cantidad = document.getElementById('cantidad').value;
-        $.ajax({ url: 'agregar_producto_carrito.php',
-            data: {id: item_id,cantidad:cantidad},
-            type: 'post',
-            success: function(data ) {
-                location.reload();
-            }
-        });
+        var sessionActive='<?php  if(isset($_SESSION['rol'])){echo "true";}else{echo"false";};?>';
+        if(sessionActive==='true'){
+            $.ajax({ url: 'agregar_producto_carrito.php',
+                data: {id: item_id,cantidad:cantidad},
+                type: 'post',
+                success: function(data ) {
+                    location.reload();
+                }
+            });
+        }
+        else {
+            alert("Debe iniciar sesion para agregar productos al carrito!");
+        }
     }
 </script>
 <!--map-->
