@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <?php
-require 'header.php'; ?>
-<?php
+require 'header.php';
+
 require 'database.php';
 $product_id = $_GET['id'];
 $result = mysqli_query($conexion, "SELECT * FROM imagen_item where id_item='$product_id'");
@@ -142,17 +142,18 @@ echo"
                 <div id='product-tab'>
                     <!-- product tab nav -->
                     <ul class='tab-nav'>
-                        <li class='active'><a data-toggle='tab' href='#tab1'>Description</a></li>
+                    <li class='active'><a data-toggle='tab' href='#tab4'>Mensajea(3)</a></li>
+                        <li ><a data-toggle='tab' href='#tab1'>Description</a></li>
                         <li><a data-toggle='tab' href='#tab2'>Details</a></li>
                         <li><a data-toggle='tab' href='#tab3'>Reviews (3)</a></li>
-                        <li><a data-toggle='tab' href='#tab4'>Mensajea(3)</a></li>
+                        
                     </ul>
                     <!-- /product tab nav -->
 
                     <!-- product tab content -->
                     <div class='tab-content'>
                         <!-- tab1  -->
-                        <div id='tab1' class='tab-pane fade in active'>
+                        <div id='tab1' class='tab-pane fade in'>
                             <div class='row'>
                                 <div class='col-md-12'>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
@@ -348,7 +349,7 @@ echo"
                         </div>
                         <!-- /tab3  -->
                         <!-- tab4  -->
-                        <div id='tab4' class='tab-pane fade in'>
+                        <div id='tab4' class='tab-pane fade in active'>
                             <div class='row'>
                                 <!-- Reviews -->
                                 <div class='col-md-6'>
@@ -365,8 +366,13 @@ echo"
                                         </ul>
                                     </div>
                                 </div>
-                                <!-- /Reviews -->
+                                <!-- /Reviews -->";
 
+                                if($_SESSION['user_id']==$product_id){
+                                   echo "<a href='preguntaVenta.php' class='primary-btn'>acceda a su panel de mensajes</a>";
+                                }else{
+
+                                    echo "
                                 <!-- Review Form -->
                                 <div class='col-md-6'>
                                     <div id='review-form'>
@@ -374,7 +380,7 @@ echo"
                                                 <div class=''>
                                                 <span>Enivar mensaje como </span>
                                                 <div class=''>
-                                                    <input id='metodomensaje' name='metodomensaje' value='publico' type='radio'>
+                                                    <input id='metodomensaje' name='metodomensaje' value='publico' type='radio' checked>
                                                     <label>Publico</label>
                                                     <input id='metodomensaje' name='metodomensaje' value='privado' type='radio'> 
                                                     <label>Privado</label> 
@@ -387,7 +393,8 @@ echo"
                                         </form>
                                     </div>
                                 </div>
-                                <!-- /Review Form -->
+                                <!-- /Review Form -->";}
+                                echo "
                             </div>
                         </div>
                         <!-- /tab4  -->

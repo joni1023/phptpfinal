@@ -78,6 +78,7 @@ while ($row=mysqli_fetch_array($consult)){
                         if(isset($_SESSION['username'])){
                             $nombre=$_SESSION['username'];
                             $carrito=$_SESSION['carrito'];
+                            $user_id=$_SESSION['user_id'];
                             echo"<li class='dropdown' >
     <a href='#' class='dropdown-toggle' data-toggle='dropdown' role='button' aria-haspopup='true' aria-expanded='false'><i class='fa fa-user-o'></i> ".$nombre."<span class='caret'></span></a>
     <ul class='dropdown-menu' style='background-color: #1E1F29'>

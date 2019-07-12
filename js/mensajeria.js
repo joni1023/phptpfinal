@@ -49,12 +49,5 @@ function listarmensaje() {
         }
     });
 }
-    $('#formRespuesta').submit(function (e) {
-       e.preventDefault();
-
-
-
-
-    });
 
 });
