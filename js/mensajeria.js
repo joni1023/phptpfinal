@@ -23,7 +23,8 @@ $('#form-mensaje').submit(function (e) {
 
 });
 function listarmensaje() {
-    let iditem=$("#iditem").val();
+    let iditem = $("#iditemM").val();
+    console.log(iditem);
     $.ajax({
         url: "logica/listarmensaje.php",
         type:"POST",

@@ -7,6 +7,7 @@ $result = mysqli_query($conexion, "SELECT * FROM imagen_item where id_item='$pro
 $resultslider = mysqli_query($conexion, "SELECT * FROM imagen_item where id_item='$product_id'");
 $productdetail= mysqli_fetch_array(mysqli_query($conexion, "SELECT * FROM item where id='$product_id'"));
 echo"
+<input id='iditemM' name='iditem' value='".$product_id."' hidden>
 <!-- BREADCRUMB -->
 <div id='breadcrumb' class='section'>
     <!-- container -->
@@ -384,7 +385,7 @@ echo"
                                                     <label>Privado</label> 
                                                 </div>
                                             </div>
-                              <input id='iditem' name='iditem' value='".$product_id."' hidden>
+                              
                                             <input name='remitente' id='remitente' class='input' type='text' placeholder='".$_SESSION['username'] ."' value='".$_SESSION['username']."'>
                                             <textarea name='mensaje' id='mensaje' class='input' placeholder='Deja tu mensaje' autofocus></textarea>
                                             <button class='primary-btn' type='submit' >Enviar</button>
