@@ -3,7 +3,7 @@
 
 // Create database connection
 $db = mysqli_connect("localhost", "root", "", "tp_pw");
-$result = mysqli_query($db, "SELECT * FROM item");
+$result = mysqli_query($db, "SELECT * FROM item where id_usuario=$user_id ");
 
 
 while ($row = mysqli_fetch_array($result)) {

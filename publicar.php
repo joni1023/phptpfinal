@@ -1,9 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Publicar</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/css/jasny-bootstrap.min.css" rel="stylesheet"/>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
     <script>
         var value=1;
         $('body').on('change', '#file1', function ()
@@ -191,8 +186,8 @@
             document.querySelector('#dias').value = vol+' Dias';
         }
     </script>
-</head>
-<body>
+
+
 <h3>Publicar Producto</h3>
 <div id="content">
     <div style="display:-webkit-box;">
@@ -227,6 +222,7 @@
         <div id="filediv10"><input name="image10" type="file" id="file10" style="display: none"/></div>
         <div>
             <p>Nombre</p>
+            <input type="text" name="id_usuario" value="<?php echo $user_id;?>">
             <input type="text" required name="nombre">
             <p>Descripcion</p>
             <textarea maxlength="150" required name="descripcion" id="descripcion">
@@ -258,5 +254,3 @@
         </div>
     </form>
 </div>
-</body>
-</html>

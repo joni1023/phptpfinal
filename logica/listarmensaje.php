@@ -1,6 +1,6 @@
 <?php
 require '../database.php';
-$iditem=1;
+$iditem=$_POST['iditem'];
 $publico="publico";
 $q="SELECT * FROM mensaje where (id_item=$iditem and metodo like '$publico')and id_respuesta is null ";
 $respuesta=mysqli_query($conexion,$q);

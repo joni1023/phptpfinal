@@ -12,8 +12,7 @@ $fecha=date("Y-m-d H:i:s");
 $mod=mysqli_query($conexion,$m);
 $q="insert into mensaje (mensaje,id_respuesta,id_item,metodo,fecha,remitente) values ('$respuesta','$idmsj','$iditemmsj','$metodoR','$fecha','vendedor'); ";
 if (mysqli_query($conexion, $q)) {
-    echo "New record created successfully";
-    header("location:../preguntaVenta.php");
+    header("location:../resumenUsuario.php");
 }    else {
     echo "Error: " . $q . "<br>" . mysqli_error($conexion);
 }

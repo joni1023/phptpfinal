@@ -1,8 +1,6 @@
-<!DOCTYPE html>
-<html>
+
 <?php
 require 'header.php';
-
 require 'database.php';
 $product_id = $_GET['id'];
 $result = mysqli_query($conexion, "SELECT * FROM imagen_item where id_item='$product_id'");
@@ -156,7 +154,7 @@ echo"
                         <div id='tab1' class='tab-pane fade in'>
                             <div class='row'>
                                 <div class='col-md-12'>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                    <p>".$productdetail['descripcion']."</p>
                                 </div>
                             </div>
                         </div>
@@ -367,11 +365,11 @@ echo"
                                     </div>
                                 </div>
                                 <!-- /Reviews -->";
-
-                                if($_SESSION['user_id']==$product_id){
-                                   echo "<a href='preguntaVenta.php' class='primary-btn'>acceda a su panel de mensajes</a>";
+                                if(!isset($_SESSION['username'])){
+                                    echo "<a href='login.php' class='primary-btn'>inicie sesion para poder mandar mensaje</a>";
+                                }elseif($_SESSION['user_id']==$productdetail['id_usuario']){
+                                   echo "<a href='resumenUsuario.php' class='primary-btn'>acceda a su panel de mensajes</a>";
                                 }else{
-
                                     echo "
                                 <!-- Review Form -->
                                 <div class='col-md-6'>

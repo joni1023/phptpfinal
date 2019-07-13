@@ -79,7 +79,7 @@ remitente varchar(30),
 mensaje varchar (120),
 leido varchar(10),
 metodo varchar(10),
-fecha date,
+fecha datetime,
 id_respuesta int,
 primary key (id),
 foreign key (id_item) references item(id)

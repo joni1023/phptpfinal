@@ -1,7 +1,10 @@
-<?php require 'header.php';
+<?php
 require 'database.php';
-$q="select * from mensaje where remitente like '".$_SESSION['username']."' ";
-$consultamen=mysqli_query($conexion,$q);
+$Q="select mensaje.id,id_item,remitente,mensaje,leido,metodo,fecha,id_respuesta from mensaje 
+inner join item on mensaje.id_item=item.id
+inner join usuario on item.id_usuario=usuario.id
+where usuario.id=$user_id and id_respuesta is null ; ";
+$consultamen=mysqli_query($conexion,$Q);
 
 ?>
     <style>
@@ -10,14 +13,17 @@ $consultamen=mysqli_query($conexion,$q);
             cursor: pointer;
         }
     </style>
-<div class="row">
-    <header>
-
-</header>
-    <div class="col-lg-3"></div>
-<div class="col-lg-6">
+<h3 >Mis Mensaje por productos publicados</h3>
+<br>
+<div class="container" >
     <ul class="reviews">
         <?php
+        // if no tma en todos
+        if(!$consultamen){?>
+            <h4>Usted no tiene preguntas de sus productos publicados</h4>
+            <a href="resumenUsuario.php" class="primary-btn">cambiar publicaciones a modo top</a>
+        <?php
+        }else{
         $i = 0;
         while($row = mysqli_fetch_array($consultamen)){ ?>
             <li>
@@ -50,14 +56,11 @@ color: #FFF;">leido</p>
                 </div>
             </li>
         <?php $i++;
-         } ?>
+         } }
+         ?>
 
     </ul>
 
-
-</div>
-    <div class="col-lg-3"></div>
 </div>
 
 
-<?php require 'footer.php'; ?>

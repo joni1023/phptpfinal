@@ -71,15 +71,21 @@ while ($row=mysqli_fetch_array($consult)){
                 <li><a href="#"><i class="fa fa-map-marker"></i> Florencio Varela 1903</a></li>
             </ul>
             <ul class="header-links pull-right">
-                <li><a href="#">
+                <li>
 
 <?php
                         if (!isset($_SESSION)) session_start();
                         if(isset($_SESSION['username'])){
                             $nombre=$_SESSION['username'];
                             $carrito=$_SESSION['carrito'];
-                            $user_id=$_SESSION['user_id'];
-                            echo"<li class='dropdown' >
+                            $user_id=$_SESSION['user_id'];?>
+                            <li><a href='resumenUsuario.php'><i class="fa fa-envelope-o" aria-hidden="true"></i><span>Mensajes <?php
+                            if($mensajesNLeidos=mysqli_query($conexion,"select * from mensaje inner join item on mensaje.id_item=item.id where leido is null and item.id_usuario='$user_id' and id_respuesta is null ;")){
+                                $contadorM=mysqli_num_rows($mensajesNLeidos);
+                                echo $contadorM;
+                            }
+                            ?></span></a></li>
+                       <?php     echo"<li class='dropdown' >
     <a href='#' class='dropdown-toggle' data-toggle='dropdown' role='button' aria-haspopup='true' aria-expanded='false'><i class='fa fa-user-o'></i> ".$nombre."<span class='caret'></span></a>
     <ul class='dropdown-menu' style='background-color: #1E1F29'>
         <li style='width: 100%;'><a class='dropdown-item' href='resumenUsuario.php'>Publicaciones</a></li>
@@ -102,7 +108,7 @@ while ($row=mysqli_fetch_array($consult)){
                         }
 
                         ?>
-                    </a></li>
+                    </li>
             </ul>
         </div>
     </div>
@@ -129,7 +135,7 @@ while ($row=mysqli_fetch_array($consult)){
                 <div class="col-md-6">
                     <div class="header-search">
                         <form method="post" action="buscaritem.php">
-                            <input class="input" placeholder="Buscar..." list="buscados" id="buscar" name="itemb">
+                            <input class="input" placeholder="Buscar..." list="buscados" id="buscar" name="itemb" style="border-radius:40px 0px 0px 40px;">
                             <datalist id="buscados" >
                             </datalist>
                             <button class="search-btn">Buscar</button>
