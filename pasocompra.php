@@ -11,7 +11,7 @@ require  'database.php';
 
         <div class="col-lg-6 ">
             <div><h4 class="title">Retirar en la direccion:</h4></div>
-            <p>Diresccion del vendedor o algun correo </p>
+            <p>Direccion del vendedor o algun correo </p>
 
         </div>
         <div class="col-lg-6 order-details">

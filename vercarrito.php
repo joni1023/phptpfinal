@@ -50,7 +50,7 @@ $sumador=null;
         </tbody>
 
     </table>
-    <?php  echo "<h4>el total de sucompra es: ".$sumador."$</h4>"; ?>
+    <?php  echo "<h4>El total de su compra es: ".$sumador."$</h4>"; ?>
     <a href="pasocompra.php"><button type="submit" style="margin-left: 25%; width: 50%;margin-top: 5%" class="primary-btn order-submit" >Continuar con la compra</button></a>
 </div>
 </div>

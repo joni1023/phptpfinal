@@ -17,7 +17,7 @@ while ($row=mysqli_fetch_array($result)){
     $cantidad=$row['cantidad'];
     mysqli_query($conexion,"insert into pedido_item (id_pedido,id_item,cantidad) values ('$id_Pedido','$id_item','$cantidad')");
     // descontar cantidad del item
-    $cantidadItemCargado=mysqli_query($conexion,"select cantidad from item ")
+    $cantidadItemCargado=mysqli_query($conexion,"select cantidad from item ");
 
 
 }
