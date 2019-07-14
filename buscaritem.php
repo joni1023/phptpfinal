@@ -9,6 +9,11 @@ inner join usuario
 on item.id_usuario=usuario.id
 WHERE categoria like '$item%' or usuario.nombre like '$item%' or item.nombre like '$item%'";
 $consulta = mysqli_query($conexion,$query);
+session_start();
+$usuarioid=$_SESSION['user_id'];
+$query_estadistica="INSERT INTO estadisticas (accion,id_usuario,id_item,busqueda,fecha) value ('buscar',$usuarioid,null,'$item',now())";
+echo"$query_estadistica";
+mysqli_query($conexion,$query_estadistica);
     require 'header.php';
 ?>
 

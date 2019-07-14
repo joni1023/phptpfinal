@@ -126,10 +126,9 @@ create table estadisticas(
 id int auto_increment,
 accion varchar(50),
 id_usuario int,
-id_item int,
+id_item int null,
 busqueda varchar(150),
-fecha date,
+fecha datetime,
 primary key (id),
-foreign key (id_usuario) references usuario(id),
-foreign key (id_item) references item(id)
+foreign key (id_usuario) references usuario(id)
 );
