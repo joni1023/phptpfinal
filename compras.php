@@ -6,49 +6,49 @@ $itemComprados=mysqli_query($conexion,"SELECT item.id,item.id_usuario,nombre,des
 inner join pedido on pedido_item.id_pedido=pedido.id where pedido.id_usuario=".$usuarioid.";");
 ?>
     <style>
-        .product-widget {
+        .product-widgetC {
             position: relative;
             border: 1px solid #E4E7ED;
             width: 45%;
             left: 200px;
         }
 
-        .product-widget+.product-widget {
+        .product-widgetC+.product-widgetC {
             margin: 30px 0px;
         }
 
-        .product-widget .product-img {
+        .product-widgetC .product-img {
             position: absolute;
             left: 0px;
             top: 0px;
             width: 140px;
         }
 
-        .product-widget .product-img>img {
+        .product-widgetC .product-img>img {
             width: 100%;
         }
 
-        .product-widget .product-body {
+        .product-widgetC .product-body {
             padding-left: 175px;
             min-height: 140px;
         }
 
-        .product-widget .product-body .product-category {
+        .product-widgetC .product-body .product-category {
             text-transform: uppercase;
             font-size: 15px;
             color: #8D99AE;
         }
 
-        .product-widget .product-body .product-name {
+        .product-widgetC .product-body .product-name {
             text-transform: uppercase;
             font-size: 23px;
         }
 
-        .product-widget .product-body .product-name>a {
+        .product-widgetC .product-body .product-name>a {
             font-weight: 700;
         }
 
-        .product-widget .product-body .product-name>a:hover, .product-widget .product-body .product-name>a:focus {
+        .product-widgetC .product-body .product-name>a:hover, .product-widgetC .product-body .product-name>a:focus {
             color: #D10024;
         }
 
@@ -58,7 +58,7 @@ inner join pedido on pedido_item.id_pedido=pedido.id where pedido.id_usuario=".$
 while ($items=mysqli_fetch_array($itemComprados)){
 ?>
 <div class="section">
-                        <div class="product-widget">
+                        <div class="product-widgetC">
                             <div class="product-img">
                                 <?php $resultImage = mysqli_fetch_array(mysqli_query($conexion, "SELECT imagen FROM imagen_item where id_item='$items[id]' and principal=1"));
                                 if(empty($resultImage['imagen'])){

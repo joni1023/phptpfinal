@@ -71,6 +71,7 @@ if (!isset($_SESSION['rol'])){
     <button class="tablinks" onclick="openTab(event, 'Publicar')" id="defaultOpen">Publicar</button>
     <button class="tablinks" onclick="openTab(event, 'Misventas')">Mis ventas</button>
     <button class="tablinks" onclick="openTab(event, 'preguntasV')">preguntas</button>
+    <button class="tablinks" onclick="openTab(event, 'MisPedidos')">Mis Pedidos</button>
     <button class="tablinks" onclick="openTab(event, 'Miscompras')">Mis compras</button>
     <button class="tablinks" onclick="openTab(event, 'preguntasC')">preguntas</button>
 </div>
@@ -91,6 +92,11 @@ if (!isset($_SESSION['rol'])){
         require 'preguntaVenta.php';
         ?>
     </div>
+<div id="MisPedidos" class="col-lg-10 tabcontent">
+        <?php
+        require 'misPedidos.php';
+        ?>
+</div>
 <div id="Miscompras" class="col-lg-10 tabcontent">
     <?php
     require 'compras.php';

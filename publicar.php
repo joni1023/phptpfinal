@@ -222,7 +222,6 @@
         <div id="filediv10"><input name="image10" type="file" id="file10" style="display: none"/></div>
         <div>
             <p>Nombre</p>
-            <input type="text" name="id_usuario" value="<?php echo $user_id;?>">
             <input type="text" required name="nombre">
             <p>Descripcion</p>
             <textarea maxlength="150" required name="descripcion" id="descripcion">
