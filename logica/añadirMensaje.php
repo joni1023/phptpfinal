@@ -9,4 +9,3 @@ $fecha=date("Y-m-d H:i:s");
 
 $q="insert into mensaje (id_item,remitente,mensaje,metodo,fecha) values ('$iditem','$remitente','$mensaje','$metodomensaje','$fecha');";
 $respuesta=mysqli_query($conexion,$q);
-echo "si si logrado";

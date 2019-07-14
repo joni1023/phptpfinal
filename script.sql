@@ -36,22 +36,12 @@ estado varchar(25), -- indicara activo, finalizado , pausado
 precio double,
 vencimiento date,
 tipo_entrega varchar(25), 
+canitdad int,
 -- decidir si se va a subir a la carpeta del servidor o a la base de datos 
 -- si es asi cambia el tipo , se probara con una sola imagen y despues se cargaran las 10 
 primary key (id),
 foreign key (id_usuario) references usuario(id)
 -- hace referencia a la id del usuario 
-);
-
-create table item_compra(
-id_transaccion int auto_increment,
-id_usuario int,
-id_item int,
-cantidad int,
-fecha date,
-primary key (id_transaccion),
-foreign key (id_usuario) references usuario(id),
-foreign key (id_item) references item(id)
 );
 
 create table carrito(
@@ -103,3 +93,31 @@ INSERT INTO categorias(nombre) VALUES ('Almacenamiento'),
 ('Tablets'),
 ('Otros');
 
+create table pedido(
+id int auto_increment,
+id_usuario int,
+direccion varchar(125),
+fecha datetime,
+total  double,
+primary key (id),
+foreign key (id_usuario) references usuario(id)
+);
+ create table pedido_item(
+ id_pedido int,
+ id_item int,
+ cantidad int,
+ foreign key (id_item) references item(id),
+ foreign key (id_pedido) references pedido(id)
+ );
+ create table item_compra(
+id int auto_increment,
+id_usuario int,
+id_item int,
+id_pedido int,
+cantidad int,
+fecha date,
+foreign key (id_pedido) references pedido (id), 
+primary key (id),
+foreign key (id_usuario) references usuario(id),
+foreign key (id_item) references item(id)
+);

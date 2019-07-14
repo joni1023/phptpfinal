@@ -7,8 +7,6 @@ if (!isset($_SESSION['rol'])){
 
 
  ?>
-
-
     <style>
         * {box-sizing: border-box}
         body {font-family: "Lato", sans-serif;}
@@ -18,7 +16,7 @@ if (!isset($_SESSION['rol'])){
 
             background-color: #ffffff;
             width: 15%;
-            height: 300px;
+            height: 100%;
         }
 
         /* Style the buttons inside the tab */
@@ -51,7 +49,7 @@ if (!isset($_SESSION['rol'])){
             padding: 0px 12px;
             width: 100%;
             border-left: none;
-            height: 100%;
+
         }
     </style>
     <script>

@@ -5,7 +5,7 @@ $('#form-mensaje').submit(function (e) {
    e.preventDefault();
 
    let remitente=$("#remitente").val();
-       let iditem=$("#iditem").val();
+       let iditem=$("#iditemM").val();
         let mensaje=$("#mensaje").val();
     //forma de seleccion or el name del radio ckeck
         let metodomensaje=$("input[name='metodomensaje']:checked").val();

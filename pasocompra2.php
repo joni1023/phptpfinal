@@ -57,7 +57,7 @@ require  'database.php';
 
         </div>
         <div class="col-lg-12">
-            <button type="submit"  style="margin-left: 25%; width: 50%;margin-top: 5%" class="primary-btn order-submit" >finalizar la compra</button>
+            <a type="submit" href="logica/finalizarPedido.php" style="margin-left: 25%; width: 50%;margin-top: 5%" class="primary-btn order-submit" >finalizar la compra</a>
         </div>
 
 
