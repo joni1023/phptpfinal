@@ -1,7 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Publicar</title>
 
     <script>
         var value=1;
@@ -190,8 +186,8 @@
             document.querySelector('#dias').value = vol+' Dias';
         }
     </script>
-</head>
-<body>
+
+
 <h3>Publicar Producto</h3>
 <div id="content">
     <div style="display:-webkit-box;">
@@ -226,12 +222,19 @@
         <div id="filediv10"><input name="image10" type="file" id="file10" style="display: none"/></div>
         <div>
             <p>Nombre</p>
+            <input type="text" name="id_usuario" value="<?php echo $user_id;?>">
             <input type="text" required name="nombre">
             <p>Descripcion</p>
             <textarea maxlength="150" required name="descripcion" id="descripcion">
             </textarea>
             <p>Categoria</p>
-            <input type="text" required name="categoria">
+            <select name="categoria" required>
+                <?php require 'database.php';
+            $result=mysqli_query($conexion,"SELECT nombre FROM categorias");
+            while ($row = mysqli_fetch_array($result)) {
+                echo"<option value='". $row['nombre'] . "'>". $row['nombre'] . "</option>";
+            } ?>
+            </select>
             <p>Precio</p>
             <input type="number" required name="precio">
             <br>
@@ -251,5 +254,3 @@
         </div>
     </form>
 </div>
-</body>
-</html>

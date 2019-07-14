@@ -8,33 +8,7 @@ if (!isset($_SESSION['rol'])){
 }
 require 'header.php'; ?>
 
-<!DOCTYPE html>
-<html>
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-        * {box-sizing: border-box}
-        body {font-family: "Lato", sans-serif;}
-
-    </style>
-    <script>
-        function agregarProducto(id) {
-            var confirmacion = confirm("Estas seguro de borrar este item?");
-
-            if (confirmacion) {
-                $.ajax({ url: 'borrar_producto_carrito.php',
-                    data: {id: id},
-                    type: 'post',
-                    success: function(data) {
-                        alert("Producto eliminado");
-                        location.reload();
-                    }
-                });
-            }
-        }
-    </script>
-</head>
-<body>
+<div>
 <div class="container">
     <h2>Productos en Carrito</h2>
     <table class="table">
@@ -44,6 +18,7 @@ require 'header.php'; ?>
             <th>Descripcion</th>
             <th>Precio</th>
             <th>Cantidad</th>
+            <td>subtotal</td>
             <th> </th>
         </tr>
         </thead>
@@ -55,7 +30,7 @@ require 'header.php'; ?>
         $db = mysqli_connect("localhost", "root", "", "tp_pw");
         $result = mysqli_query($db, "SELECT * FROM carrito where id_usuario=".$_SESSION['user_id']);
 
-
+$sumador=null;
         while ($row = mysqli_fetch_array($result)) {
             $resultImage = mysqli_fetch_array(mysqli_query($db, "SELECT * FROM item where id='$row[id_item]'"));
             echo "
@@ -64,14 +39,21 @@ require 'header.php'; ?>
     <td>".$resultImage['descripcion']."</td>
     <td>$ ".$resultImage['precio']."</td>
     <td><input type='number' value='" . $row['cantidad'] . "'></td>
-    <td><button type='button' onclick='agregarProducto(".$row['id'].")'  class='btn btn-danger'>Borrar</button></td>
+    <td>$  ". $subtotal=$row['cantidad']*$resultImage['precio']    ."         </td>
+    <td><button type='button' onclick='borrarProducto(".$row['id'].")'  class='btn btn-danger'>Borrar</button></td>
 </tr>";
+            $sumador=$sumador+$subtotal;
         }
+
+
         ?>
         </tbody>
+
     </table>
-    <button type="button" class="btn btn-success" style="margin-left: 25%; width: 50%;margin-top: 5%">Finalizar compra</button>
+    <?php  echo "<h4>el total de sucompra es: ".$sumador."$</h4>"; ?>
+    <a href="pasocompra.php"><button type="submit" style="margin-left: 25%; width: 50%;margin-top: 5%" class="primary-btn order-submit" >Continuar con la compra</button></a>
+</div>
 </div>
 
-</body>
-</html>
+
+<?php include 'footer.php'; ?>

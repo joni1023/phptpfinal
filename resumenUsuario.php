@@ -4,22 +4,19 @@ session_start();
 if (!isset($_SESSION['rol'])){
     header("location:index.php");
 }
-require 'header.php'; ?>
 
-<!DOCTYPE html>
-<html>
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+ ?>
     <style>
         * {box-sizing: border-box}
         body {font-family: "Lato", sans-serif;}
 
         /* Style the tab */
         .tab {
-            float: left;
+
             background-color: #ffffff;
             width: 15%;
-            height: 300px;
+            height: 100%;
         }
 
         /* Style the buttons inside the tab */
@@ -49,11 +46,10 @@ require 'header.php'; ?>
 
         /* Style the tab content */
         .tabcontent {
-            float: left;
             padding: 0px 12px;
-            width: 80%;
+            width: 100%;
             border-left: none;
-            height: 300px;
+
         }
     </style>
     <script>
@@ -68,32 +64,44 @@ require 'header.php'; ?>
             });
         }
     </script>
-</head>
-<body>
-<div class="tab">
+
+<?php require 'header.php';?>
+<div class="row">
+<div class="col-lg-2 tab">
     <button class="tablinks" onclick="openTab(event, 'Publicar')" id="defaultOpen">Publicar</button>
     <button class="tablinks" onclick="openTab(event, 'Misventas')">Mis ventas</button>
+    <button class="tablinks" onclick="openTab(event, 'preguntasV')">preguntas</button>
     <button class="tablinks" onclick="openTab(event, 'Miscompras')">Mis compras</button>
+    <button class="tablinks" onclick="openTab(event, 'preguntasC')">preguntas</button>
 </div>
 
-<div id="Publicar" class="tabcontent">
+<div id="Publicar" class="col-lg-10 tabcontent">
     <?php
     require 'publicar.php';
     ?>
 </div>
 
-<div id="Misventas" class="tabcontent">
+<div id="Misventas" class="col-lg-10 tabcontent">
     <?php
     require 'ventas.php';
     ?>
 </div>
-
-<div id="Miscompras" class="tabcontent">
+    <div id="preguntasV" class="col-lg-10 tabcontent">
+        <?php
+        require 'preguntaVenta.php';
+        ?>
+    </div>
+<div id="Miscompras" class="col-lg-10 tabcontent">
     <?php
     require 'compras.php';
     ?>
 </div>
-
+<div id="preguntasC" class="col-lg-10 tabcontent">
+    <?php
+    require 'preguntaCompra.php';
+    ?>
+</div>
+</div>
 <script>
     function openTab(evt, Name) {
         var i, tabcontent, tablinks;
@@ -113,5 +121,6 @@ require 'header.php'; ?>
     document.getElementById("defaultOpen").click();
 </script>
 
-</body>
-</html> 
+
+
+<?php require 'footer.php'; ?>
