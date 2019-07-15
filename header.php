@@ -80,43 +80,44 @@ while ($row=mysqli_fetch_array($consult)){
             <ul class="header-links pull-right">
                 <li>
 
-<?php
-                        if (!isset($_SESSION)) session_start();
-                        if(isset($_SESSION['username'])){
-                            $nombre=$_SESSION['username'];
-                            $carrito=$_SESSION['carrito'];
-                            $user_id=$_SESSION['user_id'];?>
-                            <li><a href='resumenUsuario.php'><i class="fa fa-envelope-o" aria-hidden="true"></i><span>Mensajes <?php
+                    <?php
+                    if (!isset($_SESSION)) session_start();
+                    if(isset($_SESSION['username'])){
+                    $nombre=$_SESSION['username'];
+                    $carrito=$_SESSION['carrito'];
+                    $user_id=$_SESSION['user_id'];?>
+                <li><a href='resumenUsuario.php'><i class="fa fa-envelope-o" aria-hidden="true"></i><span>Mensajes <?php
                             if($mensajesNLeidos=mysqli_query($conexion,"select * from mensaje inner join item on mensaje.id_item=item.id where leido is null and item.id_usuario='$user_id' and id_respuesta is null ;")){
                                 $contadorM=mysqli_num_rows($mensajesNLeidos);
                                 echo $contadorM;
                             }
                             ?></span></a></li>
-                       <?php     echo"<li class='dropdown' >
+                <?php     echo"<li class='dropdown' >
     <a href='#' class='dropdown-toggle' data-toggle='dropdown' role='button' aria-haspopup='true' aria-expanded='false'><i class='fa fa-user-o'></i> ".$nombre."<span class='caret'></span></a>
     <ul class='dropdown-menu' style='background-color: #1E1F29'>
         <li style='width: 100%;'><a class='dropdown-item' href='resumenUsuario.php'>Publicaciones</a></li>
         <li><a href='resumenUsuario.php'>Ventas</a></li>
         <li><a href='resumenUsuario.php'>Compras</a></li>
         <li><a href='modificar.php'>Mis datos</a></li>";
-                        if(isset($_SESSION)){
-                            if (isset($_SESSION['rol'])){
-                                if($_SESSION['rol']=="admin"){
-                                    echo "<li role='separator' class='divider'></li>
+                if(isset($_SESSION)){
+                    if (isset($_SESSION['rol'])){
+                        if($_SESSION['rol']=="admin"){
+                            echo "
+                                        <li><a href='resumenUsuario.php'>Estadisticas</a></li>
+                                        <li role='separator' class='divider'></li>
+                                        <li><a href='admin.php'>Configuracion</a></li>";
+                        }}
+                };
+                echo"</ul></li>";
 
-                                          <li><a href='admin.php'>Configuracion</a></li>";
-                                    }}
-                            };
-                            echo"</ul></li>";
+                echo "<li><a href='salir.php'>salir</a></li>";
+                }else{
+                    echo "<li><a href='registrar.php'>Registrate</a> </li>";
+                    echo "<li><a href='login.php'>Ingresá</a></li>";
+                }
 
-                            echo "<li><a href='salir.php'>salir</a></li>";
-                        }else{
-                            echo "<li><a href='registrar.php'>Registrate</a> </li>";
-                            echo "<li><a href='login.php'>Ingresá</a></li>";
-                        }
-
-                        ?>
-                    </li>
+                ?>
+                </li>
             </ul>
         </div>
     </div>
@@ -252,6 +253,5 @@ while ($row=mysqli_fetch_array($consult)){
     <!-- /container -->
 </nav>
 <!-- /NAVIGATION -->
-
 
 

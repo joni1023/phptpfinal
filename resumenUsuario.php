@@ -75,6 +75,7 @@ if (!isset($_SESSION['rol'])){
     <button class="tablinks" onclick="openTab(event, 'MisPedidos')">Mis Pedidos</button>
     <button class="tablinks" onclick="openTab(event, 'Miscompras')">Mis compras</button>
     <button class="tablinks" onclick="openTab(event, 'preguntasC')">Preguntas de Compras</button>
+    <button class="tablinks" onclick="openTab(event, 'Estadisticas')">Estadisticas</button>
 </div>
 
 <div id="Publicar" class="col-lg-10 tabcontent">
@@ -114,6 +115,11 @@ if (!isset($_SESSION['rol'])){
     require 'preguntaCompra.php';
     ?>
 </div>
+    <div id="Estadisticas" class="col-lg-10 tabcontent">
+        <?php
+        require 'Estadisticas.php';
+        ?>
+    </div>
 </div>
 <script>
     function openTab(evt, Name) {
