@@ -27,12 +27,12 @@ if (isset($_POST['publicar'])) {
     $fecha = date('Y-m-j');
     $nuevafecha = strtotime ( '+2 day' , strtotime ( $fecha ) ) ;
     $nuevafecha = date ( 'Y-m-j' , $nuevafecha );
-    $id_usuario=mysqli_real_escape_string($db, $_POST['id_usuario']);
-
-
+	if (!isset($_SESSION)) session_start();
+    $id_usuario=$_SESSION['user_id'];
+    
     $sql = "INSERT INTO item (id_usuario,nombre,descripcion,categoria,estado,precio,vencimiento,tipo_entrega) VALUES ('$id_usuario','$nombre','$descripcion','$categoria','activo','$precio','$nuevafecha','$entrega');";
-    $file1 = addslashes(file_get_contents($_FILES["image1"]["tmp_name"]));
     mysqli_query($db, $sql);
+	$file1 = addslashes(file_get_contents($_FILES["image1"]["tmp_name"]));
     $last_id = mysqli_insert_id($db);
     $query = "INSERT INTO imagen_item(imagen,principal,id_item) VALUES ('$file1',1,'$last_id')";
         // execute query

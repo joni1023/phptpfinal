@@ -1,4 +1,74 @@
 
+
+
+<h3>Publicar Producto</h3>
+<div id="content">
+    <div style="display:-webkit-box;">
+        <div>
+            <img id="image1" name="image1" onclick="newfile(1)" src='img/emptyproduct.png' style='width:120px; height: 150px; cursor: pointer;'>
+            <div>Imagen principal</div>
+        </div>
+        <div style="margin-left: 0.4rem;     display: list-item;">
+            <img id="image2" name="image2" onclick="newfile(2)"  src='img/emptyproduct.png' style='width:120px; height: 150px; cursor: pointer;'>
+            <img id="image3" name="image3" onclick="newfile(3)" src='img/emptyproduct.png' style='width:120px; height: 150px; cursor: pointer;'>
+            <img id="image4" name="image4" onclick="newfile(4)" src='img/emptyproduct.png' style='width:120px; height: 150px; cursor: pointer;'>
+            <img id="image5" name="image5" onclick="newfile(5)" src='img/emptyproduct.png' style='width:120px; height: 150px; cursor: pointer;'>
+            <img id="image6" name="image6" onclick="newfile(6)" src='img/emptyproduct.png' style='width:120px; height: 150px; cursor: pointer;'>
+            <img id="image7" name="image7" onclick="newfile(7)" src='img/emptyproduct.png' style='width:120px; height: 150px; cursor: pointer;'>
+            <img id="image8" name="image8" onclick="newfile(8)" src='img/emptyproduct.png' style='width:120px; height: 150px; cursor: pointer;'>
+            <img id="image9" name="image9" onclick="newfile(9)" src='img/emptyproduct.png' style='width:120px; height: 150px; cursor: pointer;'>
+            <img id="image10" name="image10" onclick="newfile(10)" src='img/emptyproduct.png' style='width:120px; height: 150px; cursor: pointer;'>
+        </div>
+
+    </div>
+    <form method="POST" action="insertarpublicacion.php" enctype="multipart/form-data" style="margin-top: 2rem">
+
+        <div id="filediv1"><input name="image1" type="file" id="file1" style="display: none"/></div>
+        <div id="filediv2"><input name="image2" type="file" id="file2" style="display: none"/></div>
+        <div id="filediv3"><input name="image3" type="file" id="file3" style="display: none"/></div>
+        <div id="filediv4"><input name="image4" type="file" id="file4" style="display: none"/></div>
+        <div id="filediv5"><input name="image5" type="file" id="file5" style="display: none"/></div>
+        <div id="filediv6"><input name="image6" type="file" id="file6" style="display: none"/></div>
+        <div id="filediv7"><input name="image7" type="file" id="file7" style="display: none"/></div>
+        <div id="filediv8"><input name="image8" type="file" id="file8" style="display: none"/></div>
+        <div id="filediv9"><input name="image9" type="file" id="file9" style="display: none"/></div>
+        <div id="filediv10"><input name="image10" type="file" id="file10" style="display: none"/></div>
+        <div>
+            <p>Nombre</p>
+            <input type="text" required name="nombre">
+            <p>Descripcion</p>
+            <textarea maxlength="150" required name="descripcion" id="descripcion">
+            </textarea>
+            <p>Categoria</p>
+            <select name="categoria" required>
+                <?php require 'database.php';
+            $result=mysqli_query($conexion,"SELECT nombre FROM categorias");
+            while ($row = mysqli_fetch_array($result)) {
+                echo"<option value='". $row['nombre'] . "'>". $row['nombre'] . "</option>";
+            } ?>
+            </select>
+            <p>Precio</p>
+            <input type="number" required name="precio">
+            <br>
+            <br>
+            <label for="fader">Dias de publicacion</label>
+            <input type="range" min="0" max="100" style="width: 50%" name="dias" value="50" id="fader"
+                   step="1" oninput="outputUpdate(value)">
+            <output for="fader" id="dias">50 Dias</output>
+            <br>
+            <p>Metodo de Entrega:</p>
+            <input type="radio" name="entrega" value="domicilio" checked> A domicilio
+            <input type="radio" name="entrega"value="coordinar"> A coordinar de forma privada
+        </div>
+        <div>
+            <br>
+            <button type="submit" id="publicar" name="publicar" class="btn btn-success">Guardar</button>
+        </div>
+    </form>
+</div>
+<!-- jQuery Plugins -->
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
     <script>
         var value=1;
         $('body').on('change', '#file1', function ()
@@ -186,70 +256,3 @@
             document.querySelector('#dias').value = vol+' Dias';
         }
     </script>
-
-
-<h3>Publicar Producto</h3>
-<div id="content">
-    <div style="display:-webkit-box;">
-        <div>
-            <img id="image1" name="image1" onclick="newfile(1)" src='img/emptyproduct.png' style='width:120px; height: 150px; cursor: pointer;'>
-            <div>Imagen principal</div>
-        </div>
-        <div style="margin-left: 0.4rem;     display: list-item;">
-            <img id="image2" name="image2" onclick="newfile(2)"  src='img/emptyproduct.png' style='width:120px; height: 150px; cursor: pointer;'>
-            <img id="image3" name="image3" onclick="newfile(3)" src='img/emptyproduct.png' style='width:120px; height: 150px; cursor: pointer;'>
-            <img id="image4" name="image4" onclick="newfile(4)" src='img/emptyproduct.png' style='width:120px; height: 150px; cursor: pointer;'>
-            <img id="image5" name="image5" onclick="newfile(5)" src='img/emptyproduct.png' style='width:120px; height: 150px; cursor: pointer;'>
-            <img id="image6" name="image6" onclick="newfile(6)" src='img/emptyproduct.png' style='width:120px; height: 150px; cursor: pointer;'>
-            <img id="image7" name="image7" onclick="newfile(7)" src='img/emptyproduct.png' style='width:120px; height: 150px; cursor: pointer;'>
-            <img id="image8" name="image8" onclick="newfile(8)" src='img/emptyproduct.png' style='width:120px; height: 150px; cursor: pointer;'>
-            <img id="image9" name="image9" onclick="newfile(9)" src='img/emptyproduct.png' style='width:120px; height: 150px; cursor: pointer;'>
-            <img id="image10" name="image10" onclick="newfile(10)" src='img/emptyproduct.png' style='width:120px; height: 150px; cursor: pointer;'>
-        </div>
-
-    </div>
-    <form method="POST" action="insertarpublicacion.php" enctype="multipart/form-data" style="margin-top: 2rem">
-
-        <div id="filediv1"><input name="image1" type="file" id="file1" style="display: none"/></div>
-        <div id="filediv2"><input name="image2" type="file" id="file2" style="display: none"/></div>
-        <div id="filediv3"><input name="image3" type="file" id="file3" style="display: none"/></div>
-        <div id="filediv4"><input name="image4" type="file" id="file4" style="display: none"/></div>
-        <div id="filediv5"><input name="image5" type="file" id="file5" style="display: none"/></div>
-        <div id="filediv6"><input name="image6" type="file" id="file6" style="display: none"/></div>
-        <div id="filediv7"><input name="image7" type="file" id="file7" style="display: none"/></div>
-        <div id="filediv8"><input name="image8" type="file" id="file8" style="display: none"/></div>
-        <div id="filediv9"><input name="image9" type="file" id="file9" style="display: none"/></div>
-        <div id="filediv10"><input name="image10" type="file" id="file10" style="display: none"/></div>
-        <div>
-            <p>Nombre</p>
-            <input type="text" required name="nombre">
-            <p>Descripcion</p>
-            <textarea maxlength="150" required name="descripcion" id="descripcion">
-            </textarea>
-            <p>Categoria</p>
-            <select name="categoria" required>
-                <?php require 'database.php';
-            $result=mysqli_query($conexion,"SELECT nombre FROM categorias");
-            while ($row = mysqli_fetch_array($result)) {
-                echo"<option value='". $row['nombre'] . "'>". $row['nombre'] . "</option>";
-            } ?>
-            </select>
-            <p>Precio</p>
-            <input type="number" required name="precio">
-            <br>
-            <br>
-            <label for="fader">Dias de publicacion</label>
-            <input type="range" min="0" max="100" style="width: 50%" name="dias" value="50" id="fader"
-                   step="1" oninput="outputUpdate(value)">
-            <output for="fader" id="dias">50 Dias</output>
-            <br>
-            <p>Metodo de Entrega:</p>
-            <input type="radio" name="entrega" value="domicilio" checked> A domicilio
-            <input type="radio" name="entrega"value="coordinar"> A coordinar de forma privada
-        </div>
-        <div>
-            <br>
-            <button type="submit" id="publicar" name="publicar" class="btn btn-success">Guardar</button>
-        </div>
-    </form>
-</div>
