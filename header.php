@@ -102,9 +102,10 @@ while ($row=mysqli_fetch_array($consult)){
                 if(isset($_SESSION)){
                     if (isset($_SESSION['rol'])){
                         if($_SESSION['rol']=="admin"){
-                            echo "<li role='separator' class='divider'></li>
-
-                                          <li><a href='admin.php'>Configuracion</a></li>";
+                            echo "
+                                        <li><a href='resumenUsuario.php'>Estadisticas</a></li>
+                                        <li role='separator' class='divider'></li>
+                                        <li><a href='admin.php'>Configuracion</a></li>";
                         }}
                 };
                 echo"</ul></li>";
