@@ -122,9 +122,7 @@ primary key (id),
 foreign key (id_usuario) references usuario(id),
 foreign key (id_item) references item(id)
 );
-<<<<<<< HEAD
 
-=======
 create table estadisticas(
 id int auto_increment,
 accion varchar(50),
@@ -135,4 +133,3 @@ fecha datetime,
 primary key (id),
 foreign key (id_usuario) references usuario(id)
 );
->>>>>>> c9c4eb5a0a8a11099a9a5a73f8b37d1d78894d1f

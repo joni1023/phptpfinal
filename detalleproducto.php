@@ -141,10 +141,10 @@ echo"
                 <div id='product-tab'>
                     <!-- product tab nav -->
                     <ul class='tab-nav'>
-                    <li class='active'><a data-toggle='tab' href='#tab4'>Mensajea(3)</a></li>
+                    <li><a data-toggle='tab' href='#tab4'>Mensajea(3)</a></li>
                         <li ><a data-toggle='tab' href='#tab1'>Description</a></li>
                         <li><a data-toggle='tab' href='#tab2'>Details</a></li>
-                        <li><a data-toggle='tab' href='#tab3'>Ubicación del Producto</a></li>
+                        <li class='active'><a data-toggle='tab' href='#tab3'>Ubicación del Producto</a></li>
                         
                     </ul>
                     <!-- /product tab nav -->
@@ -172,21 +172,11 @@ echo"
                         <!-- /tab2  -->
 
                         <!-- tab3  -->
-                        <div id='tab3' class='tab-pane fade in'>
-                            <div class='row'>
-                                <!-- Rating -->
-                                
-                                <!-- /Rating -->
-
-                                <!-- Reviews -->
-                                    <div class=\"col-lg-6\" >
-                                    <div id='mapa'>
-                                    <?php
-                                        require 'ubicacionProducto.php';
-                                       
-                                     ?>  
-                                         </div>
-                                    </div>
+                        <div id='tab3' class='tab-pane fade in active'>
+                            <div class='col-lg-12' style='height:200px;'>";?>
+                                    <div id="mapa" style="height:200px;"></div>
+                                     <?php
+                                     echo"                                  
                                 <!-- /Reviews -->
                                         <div class=\"col-lg-6\" >
                                         <div id = 'map'>
@@ -202,7 +192,7 @@ echo"
                         </div>
                         <!-- /tab3  -->
                         <!-- tab4  -->
-                        <div id='tab4' class='tab-pane fade in active'>
+                        <div id='tab4' class='tab-pane fade in '>
                             <div class='row'>
                                 <!-- Reviews -->
                                 <div class='col-md-6'>
@@ -314,7 +304,20 @@ echo"<!-- product -->
 <!-- /Section -->
 ";
 
-
+$vendedorLtLon=mysqli_fetch_array(mysqli_query($conexion,"SELECT latitud,longitud from usuario inner join item on usuario.id=item.id_usuario where item.id=".$product_id." ;"));
 
                     require 'footer.php';?>
+<script>
+
+    var map = L.map('mapa').
+    setView([<?php echo $vendedorLtLon['latitud'];?>,<?php echo $vendedorLtLon['longitud']; ?> ],14);
+
+    L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 18
+    }).addTo(map);
+
+    L.control.scale().addTo(map);
+    L.marker([<?php echo $vendedorLtLon['latitud'];?>,<?php echo $vendedorLtLon['longitud']; ?>]).addTo(map);
+
+</script>
 
