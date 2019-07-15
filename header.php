@@ -1,5 +1,6 @@
 <?php
 require 'database.php';
+session_start();
 $q="select * from item";
 $consult=mysqli_query($conexion,$q);
 $array=array();
@@ -53,11 +54,47 @@ while ($row=mysqli_fetch_array($consult)){
     </style>
 
     <script src="https://unpkg.com/leaflet@1.0.2/dist/leaflet.js"></script>
-    <script >        function vermsj(e) {
+    <script > function vermsj(e) {
 
             $("#vermensaje"+ e ).toggle("slow");
         }
     </script >
+    <script>
+        function agregarProducto(item_id) {
+            var cantidad = document.getElementById('cantidad').value;
+            var sessionActive='<?php  if(isset($_SESSION['rol'])){echo "true";}else{echo"false";};?>';
+            if(sessionActive==='true'){
+                $.ajax({ url: 'agregar_producto_carrito.php',
+                    data: {id: item_id,cantidad:cantidad},
+                    type: 'post',
+                    success: function(data ) {
+                        location.reload();
+                    }
+                });
+            }
+            else {
+                alert("Debe iniciar sesion para agregar productos al carrito!");
+            }
+        }
+    </script>
+
+    <!-- script del carrito-->
+    <script>
+        function borrarProducto(id) {
+            var confirmacion = confirm("Estas seguro de borrar este item?");
+
+            if (confirmacion) {
+                $.ajax({ url: 'borrar_producto_carrito.php',
+                    data: {id: id},
+                    type: 'post',
+                    success: function(data) {
+                        alert("Producto eliminado");
+                        location.reload();
+                    }
+                });
+            }
+        }
+    </script>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.2/dist/leaflet.css" />
 
 

@@ -156,23 +156,24 @@ require 'header.php';
                 <div class="row">
                     <!-- product -->
                     <?php
+                    $contadordesep=1;
                     while ($row = mysqli_fetch_array($consulta)) {
                         $resultImage = mysqli_fetch_array(mysqli_query($conexion, "SELECT imagen FROM imagen_item where id_item='$row[id]' and principal=1"));
 
                         echo "<div class='col-md-4 col-xs-6'>
-                            <div class='product'>
+                          <a href='detalleproducto.php?id=".$row['id']."'>  <div class='product'>
                                 <div class='product-img'>";
                         if(empty($resultImage['imagen'])){
                             echo " <img src='./img/nodisponible.jpg' alt=''>";
                         }else{
-                            echo " <img src='data:image/jpeg;base64,".base64_encode($resultImage['imagen'] )."' alt=''>";
+                            echo " <img src='data:image/jpeg;base64,".base64_encode($resultImage['imagen'] )."'>";
                         }
 
                         echo "<div class='product-label'>
                                         <span class='sale'>-30%</span>
                                         <span class='new'>nuevo</span>
                                     </div>
-                                </div>
+                                </div></a>
                                 <div class='product-body'>
                                     <p class='product-category'>".$row['categoria']."</p>
                                     <h3 class='product-name'><a href=''>". $row['nombre'] . "</a></h3>
@@ -191,14 +192,21 @@ require 'header.php';
                                     </div>
                                 </div>
                                 <div class='add-to-cart'>
-                                    <button class='add-to-cart-btn'><i class='fa fa-shopping-cart'></i> Añadir </button>
+                                <input type='hidden' value='1' id='cantidad'>
+                                    <button class='add-to-cart-btn' onclick='agregarProducto(".$row['id'].")'><i class='fa fa-shopping-cart'></i> Añadir </button>
                                 </div>
                             </div>
                         </div>";
+                        if($contadordesep%3==0){
+                            echo "<div class='clearfix visible-lg visible-md visible-sm visible-xs'></div>";
+                        }
+                        $contadordesep++;
                     }
+
                     ?>
                     <!-- /product -->
                 </div>
+
                 <!-- /store products -->
 
                 <!-- store bottom filter -->

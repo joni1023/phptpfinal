@@ -132,47 +132,7 @@
         crossorigin="anonymous"></script>
 <script type="text/javascript" src="js/buscar.js"></script>
 <!--// main siempre ultimo-->
-<script>
-    function agregarProducto(item_id) {
-        var cantidad = document.getElementById('cantidad').value;
-        var sessionActive='<?php  if(isset($_SESSION['rol'])){echo "true";}else{echo"false";};?>';
-        if(sessionActive==='true'){
-            $.ajax({ url: 'agregar_producto_carrito.php',
-                data: {id: item_id,cantidad:cantidad},
-                type: 'post',
-                success: function(data ) {
-                    location.reload();
-                }
-            });
-        }
-        else {
-            alert("Debe iniciar sesion para agregar productos al carrito!");
-        }
-    }
-</script>
 
-
-
-
-
-
-<!-- script del carrito-->
-<script>
-    function borrarProducto(id) {
-        var confirmacion = confirm("Estas seguro de borrar este item?");
-
-        if (confirmacion) {
-            $.ajax({ url: 'borrar_producto_carrito.php',
-                data: {id: id},
-                type: 'post',
-                success: function(data) {
-                    alert("Producto eliminado");
-                    location.reload();
-                }
-            });
-        }
-    }
-</script>
 <script src="js/mensajeria.js"></script>
 <script src="js/main.js"></script>
 <!-- validar login -->
