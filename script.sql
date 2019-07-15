@@ -146,3 +146,5 @@ foreign key(id_pedido) references pedido(id),
 foreign key(id_item) references item(id),
 foreign key(id_usuarioVendedor) references usuario(id)
 );
+
+ALTER TABLE imagen_item CHANGE imagen imagen LONGBLOB NOT NULL;
