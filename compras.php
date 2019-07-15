@@ -9,7 +9,7 @@ inner join pedido on pedido_item.id_pedido=pedido.id where pedido.id_usuario=".$
         .product-widgetC {
             position: relative;
             border: 1px solid #E4E7ED;
-            width: 45%;
+            width: 55%;
             left: 200px;
         }
 
@@ -73,8 +73,13 @@ while ($items=mysqli_fetch_array($itemComprados)){
                                 <h3 class="product-name"><a href="detalleproducto.php?id=<?php echo $items['id'];?>"><?php echo $items['nombre']?></a></h3>
                                 <div><p class="product-old-price"></p></div>
                                 <div class="row">
-                                    <div class="col-lg-5"><p>precio unitario: <?php echo $items['precio']?></p><p>cantidad: <?php echo $items['cantidad']?> </p></div>
-                                    <div class="col-lg-7"><p>N° de pedido: <?php echo $items['id_pedido']?></p><p>fecha de compra:<?php echo $items['fecha']?> </p></div>
+                                    <div class="col-lg-5"><p>precio unitario: <?php echo $items['precio']?></p><p>cantidad: <?php echo $items['cantidad']?> </p>
+                                    <h6>Vendedor: <?php echo $items['id_usuario'];?></h6></div>
+                                    <div class="col-lg-7"><p>N° de pedido: <?php echo $items['id_pedido']?></p><p>fecha de compra:<?php echo $items['fecha']?> </p>
+                                    <form>
+                                        <button type="submit" class="primary-btn">Calificar</button>
+                                    </form>
+                                    </div>
                                 </div>
                             </div>
                         </div>
