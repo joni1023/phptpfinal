@@ -48,6 +48,8 @@ while ($row=mysqli_fetch_array($consult)){
             width: 500px;
             height: 300px;
         }
+
+
     </style>
 
     <script src="https://unpkg.com/leaflet@1.0.2/dist/leaflet.js"></script>
@@ -57,6 +59,11 @@ while ($row=mysqli_fetch_array($consult)){
         }
     </script >
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.2/dist/leaflet.css" />
+
+
+
+
+
 
 </head>
 <body>

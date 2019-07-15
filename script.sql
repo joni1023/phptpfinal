@@ -121,3 +121,4 @@ primary key (id),
 foreign key (id_usuario) references usuario(id),
 foreign key (id_item) references item(id)
 );
+

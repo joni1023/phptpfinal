@@ -151,7 +151,7 @@
     }
 </script>
 <!--map-->
-<script>
+    <script>
     var feature;
     var map = L.map('map').setView([-34.603518, -58.381613], 15);
     // map.dragging.disable();
@@ -284,6 +284,11 @@
 
     }
 </script>
+
+
+
+
+
 <!-- script del carrito-->
 <script>
     function borrarProducto(id) {
