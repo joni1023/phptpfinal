@@ -71,10 +71,10 @@ if (!isset($_SESSION['rol'])){
     <button class="tablinks" onclick="openTab(event, 'Publicar')" id="defaultOpen">Publicar</button>
     <button class="tablinks" onclick="openTab(event, 'MisPublicaciones')">Mis Publicaciones</button>
     <button class="tablinks" onclick="openTab(event, 'Misventas')">Mis ventas</button>
-    <button class="tablinks" onclick="openTab(event, 'preguntasV')">preguntas</button>
+    <button class="tablinks" onclick="openTab(event, 'preguntasV')">Preguntas de Ventas</button>
     <button class="tablinks" onclick="openTab(event, 'MisPedidos')">Mis Pedidos</button>
     <button class="tablinks" onclick="openTab(event, 'Miscompras')">Mis compras</button>
-    <button class="tablinks" onclick="openTab(event, 'preguntasC')">preguntas</button>
+    <button class="tablinks" onclick="openTab(event, 'preguntasC')">Preguntas de Compras</button>
 </div>
 
 <div id="Publicar" class="col-lg-10 tabcontent">
