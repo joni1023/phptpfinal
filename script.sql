@@ -133,3 +133,16 @@ fecha datetime,
 primary key (id),
 foreign key (id_usuario) references usuario(id)
 );
+
+create table valoracion(
+id int auto_increment,
+id_pedido int,
+id_item int,
+id_usuarioVendedor int,
+comentario varchar(150),
+valoracion int,
+primary key(id),
+foreign key(id_pedido) references pedido(id),
+foreign key(id_item) references item(id),
+foreign key(id_usuarioVendedor) references usuario(id)
+);
