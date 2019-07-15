@@ -109,6 +109,7 @@ foreign key (id_usuario) references usuario(id)
  foreign key (id_item) references item(id),
  foreign key (id_pedido) references pedido(id)
  );
+ drop table item_compra;
  create table item_compra(
 id int auto_increment,
 id_usuario int,
@@ -121,4 +122,17 @@ primary key (id),
 foreign key (id_usuario) references usuario(id),
 foreign key (id_item) references item(id)
 );
+<<<<<<< HEAD
 
+=======
+create table estadisticas(
+id int auto_increment,
+accion varchar(50),
+id_usuario int,
+id_item int null,
+busqueda varchar(150),
+fecha datetime,
+primary key (id),
+foreign key (id_usuario) references usuario(id)
+);
+>>>>>>> c9c4eb5a0a8a11099a9a5a73f8b37d1d78894d1f

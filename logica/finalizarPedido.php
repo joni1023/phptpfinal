@@ -4,7 +4,11 @@ require '../database.php';
 session_start();
 $usuarioid=$_SESSION['user_id'];
 // guardar pedido
-mysqli_query($conexion,"insert into pedido (id_usuario) values ('$usuarioid')");
+$total=$_POST['total'];
+$direccion=$_POST['direccion'];
+date_default_timezone_set('America/Argentina/Buenos_Aires');
+$fecha=date("Y-m-d H:i:s");
+mysqli_query($conexion,"insert into pedido (id_usuario,direccion,total,fecha) values ('$usuarioid','$direccion','$total','$fecha')");
 // traigo id del pedido el ultimo
 $pedido=mysqli_query($conexion,"SELECT MAX(id) as id FROM pedido where id_usuario=".$usuarioid." ; ");
 $pedi=mysqli_fetch_array($pedido);
@@ -17,9 +21,15 @@ while ($row=mysqli_fetch_array($result)){
     $cantidad=$row['cantidad'];
     mysqli_query($conexion,"insert into pedido_item (id_pedido,id_item,cantidad) values ('$id_Pedido','$id_item','$cantidad')");
     // descontar cantidad del item
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> c9c4eb5a0a8a11099a9a5a73f8b37d1d78894d1f
 
+    $cantidadItemCargado=mysqli_fetch_array(mysqli_query($conexion,"select cantidad from item "));
+    $nuevaCantidad=$cantidadItemCargado['cantidad']-$cantidad;
+    mysqli_query($conexion,"update item set cantidad=".$nuevaCantidad." where id=".$id_item."");
 }
 
 

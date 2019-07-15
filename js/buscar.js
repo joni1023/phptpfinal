@@ -1,9 +1,8 @@
-
 $(document).ready(function () {
     console.log('Script cargado');
     $("#buscar").keyup(function () {
-       let buscar=$("#buscar").val();
-       let buscarpor=$("#buscarpor").val();
+        let buscar=$("#buscar").val();
+        let buscarpor=$("#buscarpor").val();
         console.log(buscar);
         $.ajax({
             url:"buscarbase.php",
@@ -26,27 +25,27 @@ $(document).ready(function () {
                 $('#buscados').html(template);
 
             }
-                })
+        })
 
-        });
-    
+    });
+
     function listarmensajes() {
 
-        
+
     }
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+});

@@ -69,10 +69,12 @@ if (!isset($_SESSION['rol'])){
 <div class="row">
 <div class="col-lg-2 tab">
     <button class="tablinks" onclick="openTab(event, 'Publicar')" id="defaultOpen">Publicar</button>
+    <button class="tablinks" onclick="openTab(event, 'MisPublicaciones')">Mis Publicaciones</button>
     <button class="tablinks" onclick="openTab(event, 'Misventas')">Mis ventas</button>
-    <button class="tablinks" onclick="openTab(event, 'preguntasV')">preguntas</button>
+    <button class="tablinks" onclick="openTab(event, 'preguntasV')">Preguntas de Ventas</button>
+    <button class="tablinks" onclick="openTab(event, 'MisPedidos')">Mis Pedidos</button>
     <button class="tablinks" onclick="openTab(event, 'Miscompras')">Mis compras</button>
-    <button class="tablinks" onclick="openTab(event, 'preguntasC')">preguntas</button>
+    <button class="tablinks" onclick="openTab(event, 'preguntasC')">Preguntas de Compras</button>
 </div>
 
 <div id="Publicar" class="col-lg-10 tabcontent">
@@ -81,16 +83,27 @@ if (!isset($_SESSION['rol'])){
     ?>
 </div>
 
-<div id="Misventas" class="col-lg-10 tabcontent">
+<div  id="MisPublicaciones" class="col-lg-10 tabcontent">
     <?php
-    require 'ventas.php';
+    require 'publicaciones.php';
     ?>
 </div>
+    <div id="Misventas" class="col-lg-10 tabcontent">
+        <?php
+        require 'misVentas.php';
+        ?>
+    </div>
+
     <div id="preguntasV" class="col-lg-10 tabcontent">
         <?php
         require 'preguntaVenta.php';
         ?>
     </div>
+<div id="MisPedidos" class="col-lg-10 tabcontent">
+        <?php
+        require 'misPedidos.php';
+        ?>
+</div>
 <div id="Miscompras" class="col-lg-10 tabcontent">
     <?php
     require 'compras.php';
