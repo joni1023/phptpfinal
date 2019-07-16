@@ -1,6 +1,6 @@
 <?php
 require 'database.php';
-session_start();
+if (!isset($_SESSION)) session_start();
 $q="select * from item";
 $consult=mysqli_query($conexion,$q);
 $array=array();
