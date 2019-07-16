@@ -143,3 +143,4 @@ if (!isset($_SESSION['rol'])){
 
 
 <?php require 'footer.php'; ?>
+<script src="js/main.js"></script>
