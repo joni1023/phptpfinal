@@ -14,7 +14,10 @@ if(mysqli_num_rows($consulta)){
         echo "<script>window.location.href='login.php';alert('There are no fields to generate a report');</script>";
     }
     else{
-        session_start();
+		if (!isset($_SESSION)) session_start();
+			$usuarioid=$array[id];
+			$query_estadistica="INSERT INTO estadisticas (accion,id_usuario,id_item,busqueda,fecha) value ('login',$usuarioid,null,'',now())";
+			mysqli_query($conexion,$query_estadistica);
         if($array[rol]== "admin"){
 //       usario administrador
             $_SESSION['rol']=$array[rol];

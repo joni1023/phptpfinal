@@ -1,6 +1,6 @@
 <?php
 require 'database.php';
-session_start();
+if (!isset($_SESSION)) session_start();
 $q="select * from item";
 $consult=mysqli_query($conexion,$q);
 $array=array();
@@ -123,6 +123,18 @@ while ($row=mysqli_fetch_array($consult)){
                     $nombre=$_SESSION['username'];
                     $carrito=$_SESSION['carrito'];
                     $user_id=$_SESSION['user_id'];?>
+				<li><a href='comision.php'>$ <?php
+				$total = mysqli_fetch_array(mysqli_query($conexion,"SELECT SUM(total_comision) AS total_comision FROM comision where id_usuario='$user_id';"));
+				$comision_total=$total['total_comision'];
+				if($comision_total==null){
+					echo"0";
+				}
+				else{
+				echo "-".number_format($comision_total, 0, '', '');
+				}
+				
+				
+				?> </a></li>
                 <li><a href='resumenUsuario.php'><i class="fa fa-envelope-o" aria-hidden="true"></i><span>Mensajes <?php
                             if($mensajesNLeidos=mysqli_query($conexion,"select * from mensaje inner join item on mensaje.id_item=item.id where leido is null and item.id_usuario='$user_id' and id_respuesta is null ;")){
                                 $contadorM=mysqli_num_rows($mensajesNLeidos);

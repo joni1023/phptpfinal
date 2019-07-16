@@ -30,7 +30,7 @@ require 'header.php'; ?>
         $db = mysqli_connect("localhost", "root", "", "tp_pw");
         $result = mysqli_query($db, "SELECT * FROM carrito where id_usuario=".$_SESSION['user_id']);
 
-$sumador=null;
+$sumador=0;
         while ($row = mysqli_fetch_array($result)) {
             $resultImage = mysqli_fetch_array(mysqli_query($db, "SELECT * FROM item where id='$row[id_item]'"));
             echo "
