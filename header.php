@@ -218,7 +218,7 @@ while ($row=mysqli_fetch_array($consult)){
                         <!-- Cart -->
                         <?php if(isset($_SESSION['username'])){
                             echo "<div class='dropdown'>
-                            <a class='dropdown-toggle' data-toggle='dropdown' aria-expanded='true'>
+                            <a class='dropdown-toggle' href='vercarrito.php' aria-expanded='true'>
                                 <i class='fa fa-shopping-cart'></i>
                                 <span>Mi Carrito</span>
                                 <div class='qty'>".$carrito."</div>

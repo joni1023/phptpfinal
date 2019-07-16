@@ -7,45 +7,102 @@ if($_SESSION['rol']!= "admin"){
     header("location:index.php");
 }
 ?>
-<!DOCTYPE html>
-<html lang="es">
+    <style>
+        * {box-sizing: border-box}
+        body {font-family: "Lato", sans-serif;}
+
+        /* Style the tab */
+        .tab {
+
+            background-color: #ffffff;
+            width: 15%;
+            height: 100%;
+        }
+
+        /* Style the buttons inside the tab */
+        .tab button {
+            display: block;
+            background-color: inherit;
+            color: black;
+            padding: 22px 16px;
+            width: 100%;
+            border: none;
+            outline: none;
+            text-align: left;
+            cursor: pointer;
+            transition: 0.3s;
+            font-size: 17px;
+        }
+
+        /* Change background color of buttons on hover */
+        .tab button:hover {
+            background-color: #dee3ea;
+        }
+
+        /* Create an active/current "tab button" class */
+        .tab button.active {
+            background-color: #d8deea;
+        }
+
+        /* Style the tab content */
+        .tabcontent {
+            padding: 0px 12px;
+            width: 100%;
+            border-left: none;
+
+        }
+    </style>
 <title>Registro de Usuarios</title>
 <?php
 require 'header.php';
 ?>
 
-<body>
-<div class="container">
-    <div class="row">
-        <div class="col-lg-4"></div>
-        <div class="col-lg-4"></div>
-    </div>
-    <div class="row">
 
-        <div class="col-lg-3"></div>
-        <div class="col-lg-6 " >
-            <form class="form form-inline " action="admin.php" method="post">
-                <div class="form-group">
-                    <label class="control-label">Buscar el Usuario:</label>
-                    <input type="text" class="form-control" name="usuariobuscado" placeholder="ingrese nombre del usuario" required">
+
+<div class="row">
+    <div class="col-lg-2 tab">
+        <button class="tablinks" onclick="openTab(event, 'Usuarios')" id="defaultOpen">Usuarios</button>
+<!--        <button class="tablinks" onclick="openTab(event, 'MisPublicaciones')">Mis Publicaciones</button>-->
+        <?php
+        if (!isset($_SESSION)) session_start();
+        if($_SESSION['rol']== "admin"){
+            echo"    <button class='tablinks' onclick=\"openTab(event, 'Estadisticas')\">Estadisticas</button>";
+        }
+        ?>
+    </div>
+
+    <div id="Usuarios" class="col-lg-10 tabcontent">
+        <div class="container" style="padding-top: 50px;">
+            <div class="row">
+                <div class="col-lg-4"></div>
+                <div class="col-lg-4"></div>
+            </div>
+            <div class="row">
+
+                <div class="col-lg-3"></div>
+                <div class="col-lg-6 " >
+                    <form class="form form-inline " action="admin.php" method="post">
+                        <div class="form-group">
+                            <label class="control-label">Buscar el Usuario:</label>
+                            <input type="text" class="form-control" name="usuariobuscado" placeholder="ingrese nombre del usuario" required">
+                        </div>
+                        <input type="submit" value="Buscar" class="btn btn-success">
+
+                    </form>
                 </div>
-                <input type="submit" value="Buscar" class="btn btn-success">
+            </div>
+            <div class="col-lg-3"></div>
 
-            </form>
-        </div>
-    </div>
-    <div class="col-lg-3"></div>
-
-    <?php
-    require 'database.php';
-    if(isset($_POST['usuariobuscado'])){
-        $buscado=$_POST['usuariobuscado'];
-        $q="select * from usuario where nick='$buscado'; ";
-        $consulta=mysqli_query($conexion,$q);
-        $array= mysqli_fetch_array($consulta);
-        if(isset($array)){
-            echo "<h2>Resultado</h2>";
-            echo "<table class='table'>
+            <?php
+            require 'database.php';
+            if(isset($_POST['usuariobuscado'])){
+                $buscado=$_POST['usuariobuscado'];
+                $q="select * from usuario where nick='$buscado'; ";
+                $consulta=mysqli_query($conexion,$q);
+                $array= mysqli_fetch_array($consulta);
+                if(isset($array)){
+                    echo "<h2>Resultado</h2>";
+                    echo "<table class='table'>
         <thead>
                 <tr>
                   <th scope='col'>Nombre</th>
@@ -60,7 +117,7 @@ require 'header.php';
                   <th scope='col'></th>
                 </tr>
               </thead>";
-            echo " <tbody>
+                    echo " <tbody>
                 <tr>
                   <td>".$array["nombre"]."</td>
                   <td>".$array["apellido"]."</td>
@@ -72,8 +129,8 @@ require 'header.php';
                   <td>".$array["altura"]."</td>
                   <td>".$array["localidad"]."</td>
                   <td>";
-            if(isset($_SESSION['username'])){
-                echo " <form  action='opciones.php' method='post'>
+                    if(isset($_SESSION['username'])){
+                        echo " <form  action='opciones.php' method='post'>
                     <input type='hidden' name='id' value='".$array['id']."'>
                     <input type='hidden' name='nombre' value='" . $array['nombre'] . "'>
                     <input type='hidden' name='apellido' value='" . $array['apellido'] . "'>
@@ -89,14 +146,14 @@ require 'header.php';
                   </form> ";}
 
 
-            echo "</td></tr></tbody></table>";
-        }else{
-            echo "<p>Usuario no encontrado</p>";
-            echo "<h2>Lista de Usuarios</h2>";
-            $q="select * from usuario ";
-            $consulta=mysqli_query($conexion,$q);
-            $colum = mysqli_fetch_array($consulta);
-            echo " <table class='table'>
+                    echo "</td></tr></tbody></table>";
+                }else{
+                    echo "<p>Usuario no encontrado</p>";
+                    echo "<h2>Lista de Usuarios</h2>";
+                    $q="select * from usuario ";
+                    $consulta=mysqli_query($conexion,$q);
+                    $colum = mysqli_fetch_array($consulta);
+                    echo " <table class='table'>
               <thead>
                 <tr>
                   <th scope='col'>Id</th>
@@ -112,9 +169,9 @@ require 'header.php';
                   <th scope='col'></th>
                 </tr>
               </thead>";
-            if(isset($colum)){
-                do{
-                    echo " <tbody>
+                    if(isset($colum)){
+                        do{
+                            echo " <tbody>
                 <tr>
                   <th scope='row'>".$colum["id"]."</th>
                   <td>".$colum["nombre"]."</td>
@@ -123,8 +180,8 @@ require 'header.php';
                   <td>".$colum["nick"]."</td>
                   
                   <td>";
-                    if(isset($_SESSION['username'])){
-                        echo " <form  action='opciones.php' method='post'>
+                            if(isset($_SESSION['username'])){
+                                echo " <form  action='opciones.php' method='post'>
                     <input type='hidden' name='id' value='".$colum['id']."'>
                     <input type='hidden' name='nombre' value='" . $colum['nombre'] . "'>
                     <input type='hidden' name='apellido' value='" . $colum['apellido'] . "'>
@@ -138,24 +195,24 @@ require 'header.php';
                     <input type='submit' class='btn btn-danger' name='botone' value='Bloquear'>
                     <input type='submit' class='btn btn-primary' formaction='modificar.php' value='Desbloquear'>
                   </form> ";
-                    }
+                            }
 
 
-                }while($colum=mysqli_fetch_array($consulta));
-                echo "</td>
+                        }while($colum=mysqli_fetch_array($consulta));
+                        echo "</td>
                 </tr>
               </tbody>
             </table>";
 
-            }
-        }
+                    }
+                }
 
-    }else{
-        echo "<h2>Lista de Usuarios</h2>";
-        $q="select * from usuario ";
-        $consulta=mysqli_query($conexion,$q);
-        $colum = mysqli_fetch_array($consulta);
-        echo " <table class='table'>
+            }else{
+                echo "<h2>Lista de Usuarios2</h2>";
+                $q="select * from usuario where rol!='admin'";
+                $consulta=mysqli_query($conexion,$q);
+                $colum = mysqli_fetch_array($consulta);
+                echo " <table class='table'>
               <thead>
                 <tr>
                   <th scope='col'>Nombre</th>
@@ -171,9 +228,9 @@ require 'header.php';
                 </tr>
               </thead>";
 
-        if(isset($colum)) {
-            do {
-                echo " <tbody>
+                if(isset($colum)) {
+                    do {
+                        echo " <tbody>
                 <tr>
                   <td>" . $colum["nombre"] . "</td>
                   <td>" . $colum["apellido"] . "</td>
@@ -186,8 +243,8 @@ require 'header.php';
                   <td>" . $colum["localidad"] . "</td>
                   
                   <td>";
-                if (isset($_SESSION['username'])) {
-                    echo " <form  action='opciones.php' method='post'>
+                        if (isset($_SESSION['username'])) {
+                            echo " <form  action='opciones.php' method='post'>
                     <input type='hidden' name='id' value='" . $colum['id'] . "'>
                     <input type='hidden' name='nombre' value='" . $colum['nombre'] . "'>
                     <input type='hidden' name='apellido' value='" . $colum['apellido'] . "'>
@@ -201,33 +258,65 @@ require 'header.php';
                     <input type='submit' class='btn btn-danger' name='botone' value='Bloquear'>
                     <input type='submit' class='btn btn-primary'  formaction='desbloqueo.php' name='envio' value='Desbloquear'>
                   </form> ";
-                }
+                        }
 
 
-            } while ($colum = mysqli_fetch_array($consulta));
+                    } while ($colum = mysqli_fetch_array($consulta));
 
-            echo "</td>
+                    echo "</td>
                 </tr>
               </tbody>
             </table>";
+                }
+            }
+
+            ?>
+        </div>
+
+    </div>
+
+    <div  id="MisPublicaciones" class="col-lg-10 tabcontent">
+
+    </div>
+    <div id="Misventas" class="col-lg-10 tabcontent">
+
+    </div>
+
+    <div id="preguntasV" class="col-lg-10 tabcontent">
+
+    </div>
+    <div id="MisPedidos" class="col-lg-10 tabcontent">
+
+    </div>
+    <div id="Miscompras" class="col-lg-10 tabcontent">
+
+    </div>
+    <div id="preguntasC" class="col-lg-10 tabcontent">
+
+    </div>
+    <div id='Estadisticas' class='col-lg-10 tabcontent'>
+        <?PHP require 'Estadisticas.php';?>
+    </div>
+
+</div>
+<script>
+    function openTab(evt, Name) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
         }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(Name).style.display = "block";
+        evt.currentTarget.className += " active";
     }
 
-    ?>
-</div>
-</body>
-<!-- jQuery Plugins -->
-<script src="js/jquery.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/slick.min.js"></script>
-<script src="js/nouislider.min.js"></script>
-<script src="js/jquery.zoom.min.js"></script>
-<!--//funciona pra el buscador-->
-<script
-        src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"
-        integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E="
-        crossorigin="anonymous"></script>
-<script type="text/javascript" src="js/buscar.js"></script>
-<script src="js/main.js"></script>
+    // Get the element with id="defaultOpen" and click on it
+    document.getElementById("defaultOpen").click();
+</script>
 
 
+<?php require 'footer.php';?>

@@ -75,6 +75,7 @@ if (!isset($_SESSION['rol'])){
     <button class="tablinks" onclick="openTab(event, 'MisPedidos')">Mis Pedidos</button>
     <button class="tablinks" onclick="openTab(event, 'Miscompras')">Mis compras</button>
     <button class="tablinks" onclick="openTab(event, 'preguntasC')">Preguntas de Compras</button>
+    <button class="tablinks" onclick="openTab(event, 'misDatos')">Mis datos</button>
     	<?php
  if (!isset($_SESSION)) session_start();
 if($_SESSION['rol']== "admin"){
@@ -120,6 +121,11 @@ if($_SESSION['rol']== "admin"){
     require 'preguntaCompra.php';
     ?>
 </div>
+    <div id="misDatos" class="col-lg-10 tabcontent">
+        <?php
+        require 'modificar.php';
+        ?>
+    </div>
 	<?php
  if (!isset($_SESSION)) session_start();
 if($_SESSION['rol']== "admin"){

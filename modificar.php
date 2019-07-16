@@ -1,26 +1,12 @@
 <?php
-session_start();
+
 if (!isset($_SESSION['rol'])){
     header("location:index.php");
 }
 if($_SESSION['rol']!="normal"){
     header("location:index.php");
 }
-include 'header.php';
 
-
-if(isset($_SESSION['username'])){
-   /* $id=$_POST['id'];
-    $nombre=$_POST['nombre'];
-    $apellido=$_POST['apellido'];
-    $sexo=$_POST['sexo'];
-    $cuil=$_POST['cuil'];
-    $nick=$_POST['nick'];
-    $email=$_POST['email'];
-    $calle=$_POST['calle'];
-    $altura=$_POST['altura'];
-    $localidad=$_POST['localidad'];
-*/
     include_once 'database.php';
     $id=$_SESSION['user_id'];
     $s="select * from usuario where id=$id";
@@ -44,25 +30,13 @@ if(isset($_SESSION['username'])){
             <input type='text' name='apellido' value='$row[apellido]' required >
         </div>
     </div>
-    <label class='control-label col-sm-2'>Sexo:</label>";
-    if($sexo=='hombre'){
-        echo "    <div class='form-group'>
-        
-        <input type='radio' name='sexo' value='mujer'>
-        <label for='mujer' >Mujer</label>
-        <input type='radio' name='sexo' value='hombre' checked>
-        <label for='hombre'>Hombre</label>
+    <div class='form-group'>
+        <label class='control-label col-sm-2'>Sexo:</label>
+        <div class='col-sm-10'>
+            <input type='text' name='' value='$row[sexo]' disabled >
+        </div>
     </div>";
-    }
-    else{
-        echo "    <div class='form-group'>
-        
-        <input type='radio' name='sexo' checked>
-        <label for='mujer'>Mujer</label>
-        <input type='radio' name='sexo' value='hombre'>
-        <label for='hombre' >Hombre</label>
-    </div>";
-    }
+
     echo "
     <div class='form-group'>
         <label class='control-label col-sm-2'>Cuil:</label>
@@ -100,6 +74,12 @@ if(isset($_SESSION['username'])){
             <input type='text' name='localidad' value='$row[localidad]' required >
         </div>
     </div>
+    <div class='form-group'>
+        <label class='control-label col-sm-2'>nueva clave:</label>
+        <div class='col-sm-10'>
+            <input type='password' name='pass'  required >
+        </div>
+    </div>
     <div class='col-sm-offset-2 col-sm-12'>
     <input type='submit' class='btn btn-success' value='modificar'>
     </div>
@@ -108,5 +88,3 @@ if(isset($_SESSION['username'])){
 </div>
 </div>
 ";
-
-}
