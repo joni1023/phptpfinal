@@ -135,3 +135,16 @@ foreign key(id_usuarioVendedor) references usuario(id)
 );
 
 ALTER TABLE imagen_item CHANGE imagen imagen LONGBLOB NOT NULL;
+
+ create table comision(
+id int auto_increment,
+id_usuario int,
+id_item int,
+cantidad_item int,
+total_venta double,
+total_comision double,
+fecha datetime,
+primary key (id),
+foreign key (id_usuario) references usuario(id),
+foreign key (id_item) references item(id)
+);
