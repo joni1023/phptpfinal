@@ -6,6 +6,13 @@ $product_id = $_GET['id'];
 $result = mysqli_query($conexion, "SELECT * FROM imagen_item where id_item='$product_id'");
 $resultslider = mysqli_query($conexion, "SELECT * FROM imagen_item where id_item='$product_id'");
 $productdetail= mysqli_fetch_array(mysqli_query($conexion, "SELECT * FROM item where id='$product_id'"));
+
+$consulta=mysqli_query($conexion,"select comentario,valoracion,usuario.nick as comprador from valoracion inner join item on valoracion.id_item=item.id inner join pedido on valoracion.id_pedido=pedido.id inner join usuario on usuario.id=pedido.id_usuario where item.id='$product_id';");
+
+
+
+
+
 echo"
 <input id='iditemM' name='iditem' value='".$product_id."' hidden>
 <!-- BREADCRUMB -->
@@ -72,11 +79,8 @@ echo"
                     <h2 class='product-name'>".$productdetail['nombre']."</h2>
                     <div>
                         <div class='product-rating'>
-                            <i class='fa fa-star'></i>
-                            <i class='fa fa-star'></i>
-                            <i class='fa fa-star'></i>
-                            <i class='fa fa-star'></i>
-                            <i class='fa fa-star-o'></i>
+                            "; require 'tipodeusuario.php';
+                            echo "
                         </div>
                         <a class='review-link' href='#'>10 Calificaciones</a>
                     </div>
@@ -154,8 +158,8 @@ echo"
                     <!-- product tab nav -->
                     <ul class='tab-nav'>
                     <li><a data-toggle='tab' href='#tab4'>Mensajes</a></li>
-                        <li ><a data-toggle='tab' href='#tab1'>Description</a></li>
-                        <li><a data-toggle='tab' href='#tab2'>Details</a></li>
+                        <li ><a data-toggle='tab' href='#tab1'>Descripcion</a></li>
+                        <li><a data-toggle='tab' href='#tab2'>Opiniones sobre el Vendedor</a></li>
                         <li class='active'><a data-toggle='tab' href='#tab3'>Ubicación del Producto</a></li>
                         
                     </ul>
@@ -172,13 +176,16 @@ echo"
                             </div>
                         </div>
                         <!-- /tab1  -->
-
+                        
                         <!-- tab2  -->
                         <div id='tab2' class='tab-pane fade in'>
                             <div class='row'>
-                                <div class='col-md-12'>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                </div>
+                                <div class='col-md-12'>";
+                                   while($consulta2=mysqli_fetch_array($consulta)){
+                                   echo"Comprador:  ".$consulta2['comprador'];
+                                   echo "   <p> ".$consulta2['comentario']."</p>";
+                                   }
+                              echo" </div>
                             </div>
                         </div>
                         <!-- /tab2  -->
@@ -233,7 +240,7 @@ echo"
                                     <div id='review-form'>
                                     <form class='review-form' id='form-mensaje'>
                                                 <div class=''>
-                                                <span>Enivar mensaje como </span>
+                                                <span>Enviar mensaje como </span>
                                                 <div class=''>
                                                     <input id='metodomensaje' name='metodomensaje' value='publico' type='radio' checked>
                                                     <label>Publico</label>
