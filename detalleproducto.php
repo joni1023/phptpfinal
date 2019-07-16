@@ -90,20 +90,7 @@ echo"
                     </div>
                     <p> ".$productdetail['descripcion']."</p>
 
-                    <div class='product-options'>
-                        <label>
-                            Tamaño
-                            <select class='input-select'>
-                                <option value='0'>X</option>
-                            </select>
-                        </label>
-                        <label>
-                            Color
-                            <select class='input-select'>
-                                <option value='0'>Red</option>
-                            </select>
-                        </label>
-                    </div>
+
 
                     <div class='add-to-cart'>
                         <div class='qty-label'>

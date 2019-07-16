@@ -290,7 +290,6 @@ while ($row=mysqli_fetch_array($consult)){
             <!-- NAV -->
             <ul class="main-nav nav navbar-nav">
                 <li class="active"><a href="index.php">Inicio</a></li>
-                <li><a href='vercategorias.php?cat=Ofertas'>Ofertas</a></li>
                 <li><a href='vercategorias.php?cat=Todas'>Todas las Categorias</a></li>
                 <?php
                 require 'categorias.php'; ?>

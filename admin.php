@@ -60,16 +60,7 @@ require 'header.php';
 
 
 <div class="row">
-    <div class="col-lg-2 tab">
-        <button class="tablinks" onclick="openTab(event, 'Usuarios')" id="defaultOpen">Usuarios</button>
-<!--        <button class="tablinks" onclick="openTab(event, 'MisPublicaciones')">Mis Publicaciones</button>-->
-        <?php
-        if (!isset($_SESSION)) session_start();
-        if($_SESSION['rol']== "admin"){
-            echo"    <button class='tablinks' onclick=\"openTab(event, 'Estadisticas')\">Estadisticas</button>";
-        }
-        ?>
-    </div>
+
 
     <div id="Usuarios" class="col-lg-10 tabcontent">
         <div class="container" style="padding-top: 50px;">
@@ -275,28 +266,7 @@ require 'header.php';
 
     </div>
 
-    <div  id="MisPublicaciones" class="col-lg-10 tabcontent">
-
-    </div>
-    <div id="Misventas" class="col-lg-10 tabcontent">
-
-    </div>
-
-    <div id="preguntasV" class="col-lg-10 tabcontent">
-
-    </div>
-    <div id="MisPedidos" class="col-lg-10 tabcontent">
-
-    </div>
-    <div id="Miscompras" class="col-lg-10 tabcontent">
-
-    </div>
-    <div id="preguntasC" class="col-lg-10 tabcontent">
-
-    </div>
-    <div id='Estadisticas' class='col-lg-10 tabcontent'>
-        <?PHP require 'Estadisticas.php';?>
-    </div>
+  
 
 </div>
 <script>
