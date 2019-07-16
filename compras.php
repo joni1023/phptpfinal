@@ -80,6 +80,7 @@ while ($items=mysqli_fetch_array($itemComprados)){
                                         <input type="hidden" name="producto_id" value="<?php echo $items['id'];?>">
                                             <input type="hidden" name="pedido_id" value="<?php echo $items['id_pedido'];?>">
                                        <button type="submit" class="primary-btn">Calificar</button>
+
                                     </form>
                                     </div>
                                 </div>

@@ -149,3 +149,4 @@ if($_SESSION['rol']== "admin"){
 
 
 <?php require 'footer.php'; ?>
+<script src="js/main.js"></script>
