@@ -12,11 +12,11 @@ if(isset($_SESSION['username'])){
             $q = "UPDATE usuario SET  estado='Disponible' where id=$id";
 
             if (mysqli_query($conexion, $q)) {
-                header("location:index.php");
+                header("location:admin.php");
             }
 
         }else{
-            echo "no se pudo cambiar estado";
+            header("location:admin.php");
         }
 
 }
