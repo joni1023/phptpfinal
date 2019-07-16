@@ -6,7 +6,7 @@
     <div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Collapsible Group 1</a>
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Compras y Ventas</a>
         </h4>
       </div>
       <div id="collapse1" class="panel-collapse collapse in">
@@ -16,13 +16,11 @@
     <div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Collapsible Group 2</a>
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Visitas</a>
         </h4>
       </div>
       <div id="collapse2" class="panel-collapse collapse">
-        <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+        <div id="container2" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
       </div>
     </div>
     <div class="panel panel-default">
@@ -65,34 +63,53 @@
                     }
                 },
                 series: [{
-                    name: 'Brands',
+                    name: 'Compras y Ventas',
+                    colorByPoint: true,
+                    data: <?php require 'logica/Estadisticas/comprasyventas.php'; ?> 
+                }]
+            });
+			Highcharts.chart('container2', {
+                chart: {
+                    plotBackgroundColor: null,
+                    plotBorderWidth: null,
+                    plotShadow: false,
+                    type: 'areaspline'
+                },
+                title: {
+                    text: 'Estadisticas'
+                },
+                tooltip: {
+                    pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+                },
+                plotOptions: {
+                    pie: {
+                        allowPointSelect: true,
+                        cursor: 'pointer',
+                        dataLabels: {
+                            enabled: false
+                        },
+                        showInLegend: true
+                    }
+                },
+                series: [{
+                    name: 'Compras y Ventas',
                     colorByPoint: true,
                     data: [{
-                        name: 'Chrome',
-                        y: 61.41,
+                        name: 'Ventas',
+                        y:1,
                         sliced: true,
                         selected: true
                     }, {
-                        name: 'Internet Explorer',
-                        y: 11.84
-                    }, {
-                        name: 'Firefox',
-                        y: 10.85
-                    }, {
-                        name: 'Edge',
-                        y: 4.67
-                    }, {
-                        name: 'Safari',
-                        y: 4.18
-                    }, {
-                        name: 'Other',
-                        y: 7.05
+                        name: 'Compras- Entrega a domicilio',
+                        y: 2
+                    },{
+                        name: 'Compras- Retira del domicilio',
+                        y: 3
                     }]
                 }]
             });
         });
 
     });
-    //]]>
 
 </script>

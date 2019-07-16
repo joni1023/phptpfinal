@@ -1,6 +1,7 @@
 <?php
 require 'header.php';
 require  'database.php';
+$_SESSION['carrito']=0;
 $valorPedido=$_POST['totalPedido'];
 $valorFlete=180;
 ?>
@@ -35,7 +36,11 @@ $valorFlete=180;
         </div>  <form action="pasocompra2.php" method="post">
 
             <input type="hidden" name="totalConEnvio" value="<?php echo $valorFlete+$valorPedido;?>">
-            <button type="submit" class="primary-btn order-submit"  style="margin-left: 25%; width: 50%;margin-top: 5%">Continuar con la compra</button>
+			 <select class="input-select" name="tipoEntrega" style="margin-left: 25%; width: 50%;margin-top: 5%">
+                                    <option value="0">Retiro en la Direccion del vendedor</option>
+                                    <option value="1">Envio a domicilio</option>
+             </select>
+            <button type="submit" class="primary-btn order-submit" disable  style="margin-left: 25%; width: 50%;margin-top: 5%">Continuar con la compra</button>
         </form>
 
 
