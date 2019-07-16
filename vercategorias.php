@@ -191,10 +191,20 @@ require 'header.php';
                                         <button class='quick-view'><i class='fa fa-eye'></i><span class='tooltipp'>quick view</span></button>
                                     </div>
                                 </div>
-                                <div class='add-to-cart'>
-                                <input type='hidden' value='1' id='cantidad'>
-                                    <button class='add-to-cart-btn' onclick='agregarProducto(".$row['id'].")'><i class='fa fa-shopping-cart'></i> Añadir </button>
-                                </div>
+                                <div class='add-to-cart'>";
+                        if (!isset($_SESSION)) session_start();
+                        if (isset($_SESSION['user_id'])){
+                            if ($row['id_usuario']!=$_SESSION['user_id']){
+                                echo "<input type='hidden' value='1' id='cantidad'>
+                                    <button class='add-to-cart-btn' onclick='agregarProducto(".$row['id'].")'><i class='fa fa-shopping-cart'></i> Añadir </button>";
+                            }else{
+                                echo "<a href='resumenUsuario.php' class='primary-btn'>Editar publicacion</a>";
+                            }
+                        }else{
+                           echo"<input type='hidden' value='1' id='cantidad'>
+                                    <button class='add-to-cart-btn' onclick='agregarProducto(".$row['id'].")'><i class='fa fa-shopping-cart'></i> Añadir </button>";
+                        }
+                             echo"</div>
                             </div>
                         </div>";
                         if($contadordesep%3==0){

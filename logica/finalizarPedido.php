@@ -6,6 +6,10 @@ $usuarioid=$_SESSION['user_id'];
 // guardar pedido
 $total=$_POST['total'];
 $direccion=$_POST['direccion'];
+$tipoEntrega=$_POST['tipoEntrega'];
+if($tipoEntrega==1){
+$direccion="Envio a domicilio";
+}
 date_default_timezone_set('America/Argentina/Buenos_Aires');
 $fecha=date("Y-m-d H:i:s");
 mysqli_query($conexion,"insert into pedido (id_usuario,direccion,total,fecha) values ('$usuarioid','$direccion','$total','$fecha')");

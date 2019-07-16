@@ -36,7 +36,7 @@ estado varchar(25), -- indicara activo, finalizado , pausado
 precio double,
 vencimiento date,
 tipo_entrega varchar(25), 
-canitdad int,
+cantidad int,
 -- decidir si se va a subir a la carpeta del servidor o a la base de datos 
 -- si es asi cambia el tipo , se probara con una sola imagen y despues se cargaran las 10 
 primary key (id),
@@ -54,7 +54,7 @@ primary key (id)
 create table imagen_item(
 -- imagenes a la venta o publicado por el usuario por cada item
 id int auto_increment,
-imagen  blob NOT NULL,
+imagen  longblob NOT NULL,
 principal bit NOT NULL,
 id_item int NOT NULL,
 primary key (id),
@@ -109,19 +109,7 @@ foreign key (id_usuario) references usuario(id)
  foreign key (id_item) references item(id),
  foreign key (id_pedido) references pedido(id)
  );
-#  drop table item_compra;
-#  create table item_compra(
-# id int auto_increment,
-# id_usuario int,
-# id_item int,
-# id_pedido int,
-# cantidad int,
-# fecha date,
-# foreign key (id_pedido) references pedido (id),
-# primary key (id),
-# foreign key (id_usuario) references usuario(id),
-# foreign key (id_item) references item(id)
-# );
+
 
 create table estadisticas(
 id int auto_increment,
@@ -147,4 +135,17 @@ foreign key(id_item) references item(id),
 foreign key(id_usuarioVendedor) references usuario(id)
 );
 
-ALTER TABLE imagen_item CHANGE imagen imagen LONGBLOB NOT NULL;
+
+
+ create table comision(
+id int auto_increment,
+id_usuario int,
+id_item int,
+cantidad_item int,
+total_venta double,
+total_comision double,
+fecha datetime,
+primary key (id),
+foreign key (id_usuario) references usuario(id),
+foreign key (id_item) references item(id)
+);

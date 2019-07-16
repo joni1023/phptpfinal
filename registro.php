@@ -47,7 +47,6 @@ if (isset($_POST['submit'])) {
                     }    else {
                         echo "Error: " . $q . "<br>" . mysqli_error($conexion);
                     }
-
 //                   header("location:index.php");
                 } else {
                     echo "introduzca contraseñas iguales";

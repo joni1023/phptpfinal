@@ -60,6 +60,7 @@ require  'database.php';
             <form action="logica/finalizarPedido.php" method="post">
                 <input type="text" name="direccion" value="<?php  echo $_POST['direccion'];?>">
                 <input type="hidden" name="total" value="<?php  echo $_POST['totalConEnvio'];?>">
+				<input type="hidden" name="tipoEntrega" value="<?php  echo $_POST['tipoEntrega'];?>">
             <button type="submit" style="margin-left: 25%; width: 50%;margin-top: 5%" class="primary-btn order-submit" >finalizar la compra</button>
             </form>
         </div>
