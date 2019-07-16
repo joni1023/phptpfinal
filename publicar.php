@@ -51,6 +51,9 @@
             <input type="number" required name="precio">
             <br>
             <br>
+            <label>cantidad:</label>
+            <input type="number" name="cantidad" required>
+            <br>
             <label for="fader">Dias de publicacion</label>
             <input type="range" min="0" max="100" style="width: 50%" name="dias" value="50" id="fader"
                    step="1" oninput="outputUpdate(value)">

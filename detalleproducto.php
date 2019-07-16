@@ -110,8 +110,20 @@ echo"
                                 <span class='qty-down'>-</span>
                             </div>
                         </div>
-                        <button onclick='agregarProducto(".$productdetail['id'].")' class='add-to-cart-btn'><i class='fa fa-shopping-cart'></i> Agregar al carrito</button>
-                    </div>
+                        ";
+                    if (!isset($_SESSION)) session_start();
+                    if (isset($_SESSION['user_id'])){
+                    if ($productdetail['id_usuario']!=$_SESSION['user_id']){
+                      echo "<button onclick='agregarProducto(".$productdetail['id'].")' class='add-to-cart-btn'><i class='fa fa-shopping-cart'></i> Agregar al carrito</button>";
+
+                    }else{
+                        echo "<a href='resumenUsuario.php' class='primary-btn'>Editar publicacion</a>";
+                    }
+                    }else{
+                        echo "<button onclick='agregarProducto(".$productdetail['id'].")' class='add-to-cart-btn'><i class='fa fa-shopping-cart'></i> Agregar al carrito</button>";
+
+                    }
+                    echo "</div>
 
                     <ul class='product-btns'>
                         <li><a href='#'><i class='fa fa-heart-o'></i> Agregar a favoritos</a></li>
@@ -141,7 +153,7 @@ echo"
                 <div id='product-tab'>
                     <!-- product tab nav -->
                     <ul class='tab-nav'>
-                    <li><a data-toggle='tab' href='#tab4'>Mensajea(3)</a></li>
+                    <li><a data-toggle='tab' href='#tab4'>Mensajes</a></li>
                         <li ><a data-toggle='tab' href='#tab1'>Description</a></li>
                         <li><a data-toggle='tab' href='#tab2'>Details</a></li>
                         <li class='active'><a data-toggle='tab' href='#tab3'>Ubicación del Producto</a></li>
