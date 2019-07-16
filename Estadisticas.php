@@ -1,7 +1,7 @@
 <?php
  
 require 'logica/Estadisticas/visitas.php';
- 
+ require 'logica/Estadisticas/barradebusqueda.php';
 ?>
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script src="https://code.highcharts.com/highcharts.js"></script>
@@ -26,18 +26,6 @@ require 'logica/Estadisticas/visitas.php';
       </div>
       <div id="collapse2" class="panel-collapse collapse">
 		<div id="chartContainer" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
-      </div>
-    </div>
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">Collapsible Group 3</a>
-        </h4>
-      </div>
-      <div id="collapse3" class="panel-collapse collapse">
-        <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
       </div>
     </div>
   </div> 
@@ -114,10 +102,10 @@ window.onload = function () {
  
 var chart = new CanvasJS.Chart("chartContainer", {
 	title: {
-		text: "Push-ups Over a Week"
+		text: "Dias"
 	},
 	axisY: {
-		title: "Number of Push-ups"
+		title: "Visitas"
 	},	
 	data: [{
 		type: "line",
@@ -125,6 +113,7 @@ var chart = new CanvasJS.Chart("chartContainer", {
 	}]
 });
 chart.render();
- 
+
+
 }
 </script>
