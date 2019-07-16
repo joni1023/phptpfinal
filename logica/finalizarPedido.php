@@ -36,5 +36,8 @@ while ($row=mysqli_fetch_array($result)){
 // borro la tabla carrito
 $sql = "DELETE FROM carrito WHERE id_usuario='$usuarioid';";
 mysqli_query($conexion, $sql);
-
+//comision 4%
+$comision=$total*0.04;
+$querycomision = "INSERT INTO comision(id_usuario,id_item,cantidad_item,total_venta,total_comision,fecha) VALUES ('$usuarioid','$id_item','$cantidad','$total','$comision',now())";
+mysqli_query($conexion, $querycomision);
 header("location:../resumenUsuario.php");
