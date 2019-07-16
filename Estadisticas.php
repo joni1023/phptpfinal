@@ -1,3 +1,8 @@
+<?php
+ 
+require 'logica/Estadisticas/visitas.php';
+ 
+?>
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script src="https://code.highcharts.com/highcharts.js"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
@@ -20,7 +25,7 @@
         </h4>
       </div>
       <div id="collapse2" class="panel-collapse collapse">
-        <div id="container2" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
+		<div id="chartContainer" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
       </div>
     </div>
     <div class="panel panel-default">
@@ -36,6 +41,8 @@
       </div>
     </div>
   </div> 
+  <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
 <script type='text/javascript'>
     $(function () {
         $(document).ready(function() {
@@ -94,22 +101,30 @@
                 series: [{
                     name: 'Compras y Ventas',
                     colorByPoint: true,
-                    data: [{
-                        name: 'Ventas',
-                        y:1,
-                        sliced: true,
-                        selected: true
-                    }, {
-                        name: 'Compras- Entrega a domicilio',
-                        y: 2
-                    },{
-                        name: 'Compras- Retira del domicilio',
-                        y: 3
-                    }]
+                    data: <?php require 'logica/Estadisticas/comprasyventas.php'; ?> 
                 }]
             });
         });
 
     });
 
+</script>
+<script>
+window.onload = function () {
+ 
+var chart = new CanvasJS.Chart("chartContainer", {
+	title: {
+		text: "Push-ups Over a Week"
+	},
+	axisY: {
+		title: "Number of Push-ups"
+	},	
+	data: [{
+		type: "line",
+		dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
+	}]
+});
+chart.render();
+ 
+}
 </script>
