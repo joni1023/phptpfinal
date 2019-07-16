@@ -39,7 +39,7 @@ if (isset($_POST['submit'])) {
                 if ($pass === $repass) {
                     require 'database.php';
                     $pass = sha1($pass);
-                    $q="INSERT INTO usuario (nombre,apellido,cuil,email,rol,nick,pass,calle,altura,localidad,latitud,longitud) VALUES ('$nombre','$apellido','$cuil','$email','normal','$nick','$pass','$calle','$altura','$localidad','$lat','$long'); ";
+                    $q="INSERT INTO usuario (nombre,apellido,cuil,email,rol,nick,pass,calle,altura,localidad,latitud,longitud,estado) VALUES ('$nombre','$apellido','$cuil','$email','normal','$nick','$pass','$calle','$altura','$localidad','$lat','$long','desbloqueado'); ";
 //para ver los errores de la consulta
                     if (mysqli_query($conexion, $q)) {
                         echo "New record created successfully";

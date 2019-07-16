@@ -82,7 +82,7 @@ echo"
                             "; require 'tipodeusuario.php';
                             echo "
                         </div>
-                        <a class='review-link' href='#'>10 Calificaciones</a>
+                        
                     </div>
                     <div>
                         <h3 class='product-price'>$".$productdetail['precio']." </h3>

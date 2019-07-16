@@ -34,7 +34,7 @@
                 </div>
             <div class="form-group">
             <label>CUIL</label>
-            <input type="text" name="cuil" required placeholder="20-17458521-1">
+            <input type="text" name="cuil" required placeholder="20174585211">
                 </div>
             </div>
          <div class="col-lg-6" >

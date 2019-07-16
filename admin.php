@@ -199,7 +199,7 @@ require 'header.php';
                 }
 
             }else{
-                echo "<h2>Lista de Usuarios2</h2>";
+                echo "<h2>Lista de Usuarios</h2>";
                 $q="select * from usuario where rol!='admin'";
                 $consulta=mysqli_query($conexion,$q);
                 $colum = mysqli_fetch_array($consulta);
@@ -246,8 +246,14 @@ require 'header.php';
                     <input type='hidden' name='calle' value='" . $colum['calle'] . "'>
                     <input type='hidden' name='altura' value='" . $colum['altura'] . "'>
                     <input type='hidden' name='localidad' value='" . $colum['localidad'] . "'>
-                    <input type='submit' class='btn btn-danger' name='botone' value='Bloquear'>
-                    <input type='submit' class='btn btn-primary'  formaction='desbloqueo.php' name='envio' value='Desbloquear'>
+					";
+					if($colum['estado'] =='desbloqueado'){
+					echo "<input type='submit' class='btn btn-danger' name='botone' value='Bloquear'>";
+					}
+					else{
+					echo"                    <input type='submit' class='btn btn-primary'  formaction='desbloqueo.php' name='envio' value='Desbloquear'>";
+					}
+					echo"                    
                   </form> ";
                         }
 

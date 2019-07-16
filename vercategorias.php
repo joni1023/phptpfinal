@@ -145,10 +145,6 @@ require 'header.php';
                             </select>
                         </label>
                     </div>
-                    <ul class="store-grid">
-                        <li class="active"><i class="fa fa-th"></i></li>
-                        <li><a href="#"><i class="fa fa-th-list"></i></a></li>
-                    </ul>
                 </div>
                 <!-- /store top filter -->
 
@@ -170,8 +166,7 @@ require 'header.php';
                         }
 
                         echo "<div class='product-label'>
-                                        <span class='sale'>-30%</span>
-                                        <span class='new'>nuevo</span>
+                                       
                                     </div>
                                 </div></a>
                                 <div class='product-body'>

@@ -72,11 +72,10 @@
                     <div class="footer">
                         <h3 class="footer-title">Servicios</h3>
                         <ul class="footer-links">
-                            <li><a href="#">Mi cuenta</a></li>
-                            <li><a href="#">Ver carrito</a></li>
-                            <li><a href="#">Lista de deseos</a></li>
-                            <li><a href="#">Mis pedidos</a></li>
-                            <li><a href="#">Ayuda</a></li>
+                            <li><a href="resumenUsuario.php">Mi cuenta</a></li>
+                            <li><a href="vercarrito.php">Ver carrito</a></li>
+                            <li><a href="resumenUsuario.php">Mis pedidos</a></li>
+                            <li><a href="resumenUsuario.php">Ayuda</a></li>
                         </ul>
                     </div>
                 </div>

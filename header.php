@@ -205,15 +205,6 @@ while ($row=mysqli_fetch_array($consult)){
                 <!-- ACCOUNT -->
                 <div class="col-md-3 clearfix">
                     <div class="header-ctn">
-                        <!-- Wishlist -->
-                        <div>
-                            <a href="#">
-                                <i class="fa fa-heart-o"></i>
-                                <span>Favoritos</span>
-                                <div class="qty">2</div>
-                            </a>
-                        </div>
-                        <!-- /Wishlist -->
 
                         <!-- Cart -->
                         <?php if(isset($_SESSION['username'])){
