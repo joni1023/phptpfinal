@@ -41,13 +41,12 @@ if (isset($_POST['submit'])) {
                     $pass = sha1($pass);
                     $q="INSERT INTO usuario (nombre,apellido,cuil,email,rol,nick,pass,calle,altura,localidad,latitud,longitud) VALUES ('$nombre','$apellido','$cuil','$email','normal','$nick','$pass','$calle','$altura','$localidad','$lat','$long'); ";
 //para ver los errores de la consulta
-                    if ($usuarioid=$_SESSION['user_id'];)) {
+                    if (mysqli_query($conexion, $q)) {
                         echo "New record created successfully";
                         header("location:login.php");
                     }    else {
                         echo "Error: " . $q . "<br>" . mysqli_error($conexion);
                     }
-
 //                   header("location:index.php");
                 } else {
                     echo "introduzca contraseñas iguales";
