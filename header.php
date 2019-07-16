@@ -123,14 +123,14 @@ while ($row=mysqli_fetch_array($consult)){
                     $nombre=$_SESSION['username'];
                     $carrito=$_SESSION['carrito'];
                     $user_id=$_SESSION['user_id'];?>
-				<li><a href='comision.php'>$ -<?php
+				<li><a href='comision.php'>$ <?php
 				$total = mysqli_fetch_array(mysqli_query($conexion,"SELECT SUM(total_comision) AS total_comision FROM comision where id_usuario='$user_id';"));
 				$comision_total=$total['total_comision'];
 				if($comision_total==null){
 					echo"0";
 				}
 				else{
-				echo number_format($comision_total, 0, '', '');
+				echo "-".number_format($comision_total, 0, '', '');
 				}
 				
 				
