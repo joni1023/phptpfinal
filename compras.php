@@ -76,8 +76,10 @@ while ($items=mysqli_fetch_array($itemComprados)){
                                     <div class="col-lg-5"><p>precio unitario: <?php echo $items['precio']?></p><p>cantidad: <?php echo $items['cantidad']?> </p>
                                     <h6>Vendedor: <?php echo $items['id_usuario'];?></h6></div>
                                     <div class="col-lg-7"><p>N° de pedido: <?php echo $items['id_pedido']?></p><p>fecha de compra:<?php echo $items['fecha']?> </p>
-                                    <a>
-                                        <a href="valoracion.php" <button type="submit" class="primary-btn">Calificar</button></a>
+                                    <form method="post" action="valoracion.php">
+                                        <input type="hidden" name="producto_id" value="<?php echo $items['id'];?>">
+                                            <input type="hidden" name="pedido_id" value="<?php echo $items['id_pedido'];?>">
+                                       <button type="submit" class="primary-btn">Calificar</button>
                                     </form>
                                     </div>
                                 </div>

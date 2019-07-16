@@ -2,6 +2,8 @@
 <?php
 require 'header.php';
 $usuarioid=$_SESSION['user_id'];
+$produc_id=$_POST['producto_id'];
+$pedido_id=$_POST['pedido_id'];
 
 
 ?>
@@ -23,9 +25,12 @@ $usuarioid=$_SESSION['user_id'];
                 <div class="form-group">
                     <textarea name="comentarios" rows="10" cols="40">Escribe aquí tus comentarios</textarea>
                 </div>
-                <input type="hidden" name="usuario" value=$usuarioid">
-
+                <input type="hidden" name="usuario" value="<?php echo $produc_id;?>">
+                <input type="hidden" name="productoId" value="<?php echo $produc_id;?>">
+                <input type="hidden" name="pedidoId" value="<?php echo $pedido_id;?>">
                 <input type="submit" class="btn btn-primary btn-lg active" name="submit" value="Enviar">
+            </div>
+        </form>
     </div>
 <!-- SECTION -->
 <div class="section">
